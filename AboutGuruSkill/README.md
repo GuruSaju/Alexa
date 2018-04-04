@@ -5,3 +5,5 @@ WorkIntent
 RealNameIntent
 
 ColorIntent
+
+SummaryIntent
