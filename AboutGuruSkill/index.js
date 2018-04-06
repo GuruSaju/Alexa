@@ -21,7 +21,7 @@ const guru_work = "Guru works as an Application developer at Nationwide.";
 const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either guru or batman";
 const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. What do you like to know about him ?";
 const guru_color = "His favourite colors are red and black. Although he always told me he wanted rainbow dyed hair";
-const guru_summary = "Guru is a software developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills along with the ability to work both as a team player as well as a solo performer when needed.";
+const guru_summary = "Guru is a software developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed.";
 const guru_favActor = "His favourite actor is Rajnikanth, Hugh Jackman and Vikram";
 const guru_relationship = "He is single and No!, we are not in a relationship";
 const guru_favMovie = "His all time favourite movie is The Prestige directed by Christopher Nolan";
@@ -29,6 +29,14 @@ const guru_nationality = "He is Indian. But he resides now in the US";
 const guru_contact = "You can ask him more by sending an email to him. I have sent his email address to your device";
 const guru_email = "s.srisarguru@gmail.com";
 const guru_contactCardTitle = "Guru's Email Id";
+const guru_favAthlethe = "His most favourite is M.S. Dhoni";
+const guru_favSports = "He likes to watch Cricket, American Football and Hockey";
+const guru_favTeam = "His favourite teams are Chennai Super Kings, Indian cricket team and Boise State Broncos";
+const guru_favFood = "He likes to eat everything except humans";
+const guru_education = "He has a Master's degree in Computer Science";
+const guru_favQuote = "It will be Alright in the end. If it is not Alright, it is not the end";
+const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Anirudh";
+
 
 //=========================================================================================================================================
 //Editing anything below this line might break your skill.
