@@ -7,3 +7,13 @@ RealNameIntent
 ColorIntent
 
 SummaryIntent
+
+ActorIntent
+
+RelationshipIntent
+
+MovieIntent
+
+NationalityIntent
+
+ContactIntent
