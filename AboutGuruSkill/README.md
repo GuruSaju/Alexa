@@ -4,6 +4,10 @@ WorkIntent
 What's his current job
 What does Guru do
 What does he do
+What does he do for a living
+job
+Where does he work
+workplace
 
 RealNameIntent
 What is his full name
