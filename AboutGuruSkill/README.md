@@ -71,6 +71,7 @@ level of education
 What did he study
 
 SportsIntent
+sports
 favourite sport
 What is his favourite sport
 What sports he likes to watch
@@ -78,7 +79,7 @@ What sports he likes to watch
 SportspersonIntent
 sportsperson
 Who is his favourite sportsperson
-Who is his favourite athlethe
+Who is his favourite athlete
 
 FoodIntent
 favourite food
