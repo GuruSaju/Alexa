@@ -91,6 +91,41 @@ const handlers = {
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
+    'CarIntent': function () {
+        const speechOutput = guru_favCar; 
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'DegreeIntent': function () {
+        const speechOutput = guru_education; 
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'SportsIntent': function () {
+        const speechOutput = guru_favSports; 
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'SportspersonIntent': function () {
+        const speechOutput = guru_favAthlethe; 
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'FoodIntent': function () {
+        const speechOutput = guru_favFood; 
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'MusicIntent': function () {
+        const speechOutput = guru_favMusicBand; 
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'FavQuoteIntent': function () {
+        const speechOutput = guru_favQuote; 
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
      'ContactIntent': function () {
         const speechOutput = guru_contact; 
         this.emit(':tellWithCard', speechOutput, guru_contactCardTitle, guru_email);
