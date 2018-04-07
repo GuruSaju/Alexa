@@ -52,3 +52,42 @@ phone number
 contact
 email address
 How can I contact him
+
+CarIntent
+What is his favourite car
+What car does he like
+his dream car
+
+DegreeIntent
+What did he study
+school
+College
+level of qualification
+level of education
+What did he study
+
+SportsIntent
+favourite sport
+What is his favourite sport
+What sports he likes to watch
+
+SportspersonIntent
+sportsperson
+Who is his favourite sportsperson
+Who is his favourite athlethe
+
+FoodIntent
+favourite food
+his favourite food
+What does he likes to eat the most
+
+MusicIntent
+favourite music
+favourite singer
+Who is his favourite band
+What kind of music does he listens to
+
+FavQuoteIntent
+favourtie saying
+Favourite quote
+Which is his favourite quote
