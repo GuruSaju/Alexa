@@ -1,1 +1,7 @@
-# Amazon Alexa my skill -- About myself
+# Amazon Alexa skills
+
+Using alexa-skill-sdk for Node Js
+
+Lambda in AWS to host the endpoint
+
+
