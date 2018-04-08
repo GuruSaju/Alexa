@@ -1,0 +1,4 @@
+START RequestId: ff9de95d-3a00-11e8-8be1-5fdff574b28b Version: $LATEST
+2018-04-07T01:14:19.815Z	ff9de95d-3a00-11e8-8be1-5fdff574b28b	Warning: Application ID is not set
+END RequestId: ff9de95d-3a00-11e8-8be1-5fdff574b28b
+REPORT RequestId: ff9de95d-3a00-11e8-8be1-5fdff574b28b	Duration: 3.02 ms	Billed Duration: 100 ms 	Memory Size: 128 MB	Max Memory Used: 38 MB	

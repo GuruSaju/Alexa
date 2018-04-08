@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "response": {
+    "shouldEndSession": true,
+    "outputSpeech": {
+      "type": "SSML",
+      "ssml": "<speak> Guru works as an Application developer at Nationwide. </speak>"
+    }
+  },
+  "sessionAttributes": {},
+  "userAgent": "ask-nodejs/1.0.25 Node/v6.10.3"
+}
