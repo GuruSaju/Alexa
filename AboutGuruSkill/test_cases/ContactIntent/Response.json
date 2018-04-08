@@ -1,0 +1,19 @@
+{
+	"body": {
+		"version": "1.0",
+		"response": {
+			"outputSpeech": {
+				"type": "SSML",
+				"ssml": "<speak> You can ask him more by sending an email to him. I have sent his email address to your device </speak>"
+			},
+			"card": {
+				"type": "Simple",
+				"title": "Guru's Email Id",
+				"content": "s.srisarguru@gmail.com"
+			},
+			"shouldEndSession": true
+		},
+		"sessionAttributes": {},
+		"userAgent": "ask-nodejs/1.0.25 Node/v6.10.3"
+	}
+}
