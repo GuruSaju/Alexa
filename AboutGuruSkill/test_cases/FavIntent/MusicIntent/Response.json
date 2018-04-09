@@ -1,0 +1,14 @@
+{
+	"body": {
+		"version": "1.0",
+		"response": {
+			"outputSpeech": {
+				"type": "SSML",
+				"ssml": "<speak> He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Anirudh </speak>"
+			},
+			"shouldEndSession": true
+		},
+		"sessionAttributes": {},
+		"userAgent": "ask-nodejs/1.0.25 Node/v6.10.3"
+	}
+}
