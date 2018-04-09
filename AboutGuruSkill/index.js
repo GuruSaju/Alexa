@@ -52,82 +52,144 @@ const handlers = {
         this.emit(':responseReady');
     },
     'WorkIntent': function () {
-        const speechOutput = guru_work; 
+        const speechOutput = guru_work;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'RealNameIntent': function () {
-        const speechOutput = guru_fullName; 
+        const speechOutput = guru_fullName;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
+    'FavoriteIntent': function () {
+        const intentObj = this.event.request.intent;
+        const favAbout = intentObj.slots.favAbout.value;
+        switch (favAbout) {
+            case 'colors':
+            case 'color': {
+                this.emit('ColorIntent');
+                break;
+            }
+            case 'cars':
+            case 'car': {
+                this.emit('CarIntent');
+                break;
+            }
+            case 'actor':
+            case 'actors': {
+                this.emit('ActorIntent');
+                break;
+            }
+            case 'movie':
+            case 'movies':
+            case 'picture': {
+                this.emit('MovieIntent');
+                break;
+            }
+            case 'sport':
+            case 'sports': {
+                this.emit('SportsIntent');
+                break;
+            }
+            case 'sportsperson':
+            case 'sportspersons':
+            case 'athletes':
+            case 'athlete': {
+                this.emit('SportspersonIntent');
+                break;
+            }
+            case 'music':
+            case 'music band':
+            case 'band':
+            case 'singer':
+            case 'musician': {
+                this.emit('MusicIntent');
+                break;
+            }
+            case 'food':
+            case 'food to eat':
+            case 'to eat':
+            case 'dish': {
+                this.emit('FoodIntent');
+                break;
+            }
+            case 'saying':
+            case 'quote':
+            case 'quotes': {
+                this.emit('FavQuoteIntent');
+                break;
+            }
+            default:
+                this.emit('AMAZON.HelpIntent');
+        }
+    },
     'ColorIntent': function () {
-        const speechOutput = guru_color; 
+        const speechOutput = guru_color;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'SummaryIntent': function () {
-        const speechOutput = guru_summary; 
+        const speechOutput = guru_summary;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'ActorIntent': function () {
-        const speechOutput = guru_favActor; 
+        const speechOutput = guru_favActor;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'RelationshipIntent': function () {
-        const speechOutput = guru_relationship; 
+        const speechOutput = guru_relationship;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'MovieIntent': function () {
-        const speechOutput = guru_favMovie; 
+        const speechOutput = guru_favMovie;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'NationalityIntent': function () {
-        const speechOutput = guru_nationality; 
+        const speechOutput = guru_nationality;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'CarIntent': function () {
-        const speechOutput = guru_favCar; 
+        const speechOutput = guru_favCar;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'DegreeIntent': function () {
-        const speechOutput = guru_education; 
+        const speechOutput = guru_education;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'SportsIntent': function () {
-        const speechOutput = guru_favSports; 
+        const speechOutput = guru_favSports;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'SportspersonIntent': function () {
-        const speechOutput = guru_favAthlethe; 
+        const speechOutput = guru_favAthlethe;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FoodIntent': function () {
-        const speechOutput = guru_favFood; 
+        const speechOutput = guru_favFood;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'MusicIntent': function () {
-        const speechOutput = guru_favMusicBand; 
+        const speechOutput = guru_favMusicBand;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FavQuoteIntent': function () {
-        const speechOutput = guru_favQuote; 
+        const speechOutput = guru_favQuote;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
-     'ContactIntent': function () {
-        const speechOutput = guru_contact; 
+    'ContactIntent': function () {
+        const speechOutput = guru_contact;
         this.emit(':tellWithCard', speechOutput, guru_contactCardTitle, guru_email);
     },
     'AMAZON.HelpIntent': function () {
