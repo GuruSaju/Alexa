@@ -1,0 +1,4 @@
+START RequestId: d9917b18-3c6a-11e8-a383-19da487081fd Version: $LATEST
+2018-04-10T02:57:04.953Z	d9917b18-3c6a-11e8-a383-19da487081fd	Warning: Application ID is not set
+END RequestId: d9917b18-3c6a-11e8-a383-19da487081fd
+REPORT RequestId: d9917b18-3c6a-11e8-a383-19da487081fd	Duration: 11.42 ms	Billed Duration: 100 ms 	Memory Size: 128 MB	Max Memory Used: 36 MB
