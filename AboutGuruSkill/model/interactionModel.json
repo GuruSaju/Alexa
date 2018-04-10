@@ -1,0 +1,313 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "guru",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "WorkIntent",
+                    "slots": [],
+                    "samples": [
+                        "What does he do for a living",
+                        "job",
+                        "workplace",
+                        "Where does he work",
+                        "What's his current job",
+                        "What does Guru do",
+                        "What does he do"
+                    ]
+                },
+                {
+                    "name": "RealNameIntent",
+                    "slots": [],
+                    "samples": [
+                        "What is his full name",
+                        "his birth name",
+                        "his full name",
+                        "his real name",
+                        "What is his real name"
+                    ]
+                },
+                {
+                    "name": "SummaryIntent",
+                    "slots": [],
+                    "samples": [
+                        "introduction",
+                        "summary",
+                        "about himself"
+                    ]
+                },
+                {
+                    "name": "ActorIntent",
+                    "slots": [],
+                    "samples": [
+                        "favourite actor",
+                        "his favourite actor",
+                        "Who is his favourite actor"
+                    ]
+                },
+                {
+                    "name": "RelationshipIntent",
+                    "slots": [],
+                    "samples": [
+                        "married",
+                        "girlfriend",
+                        "does he have a girlfriend",
+                        "is he in a relationship",
+                        "is he single",
+                        "Relationship status"
+                    ]
+                },
+                {
+                    "name": "NationalityIntent",
+                    "slots": [],
+                    "samples": [
+                        "nationality",
+                        "Which city is he from",
+                        "Where was he born",
+                        "Where is he from"
+                    ]
+                },
+                {
+                    "name": "ContactIntent",
+                    "slots": [],
+                    "samples": [
+                        "resume",
+                        "phone number",
+                        "contact",
+                        "email address",
+                        "How can I contact him"
+                    ]
+                },
+                {
+                    "name": "DegreeIntent",
+                    "slots": [],
+                    "samples": [
+                        "school",
+                        "College",
+                        "level of qualification",
+                        "level of education",
+                        "What did he study"
+                    ]
+                },
+                {
+                    "name": "FavoriteIntent",
+                    "slots": [
+                        {
+                            "name": "favAbout",
+                            "type": "favThings"
+                        }
+                    ],
+                    "samples": [
+                        "what does he likes to {favAbout} the most",
+                        "What kind of {favAbout} does he likes",
+                        "Who is his favorite {favAbout}",
+                        "which {favAbout} he likes",
+                        "his most liked {favAbout}",
+                        "which {favAbout} does he like the most",
+                        "which {favAbout} does he like",
+                        "his dream {favAbout}",
+                        "his favorite {favAbout}",
+                        "{favAbout}",
+                        "What {favAbout} he likes",
+                        "What {favAbout} does he like",
+                        "What is his favorite {favAbout}"
+                    ]
+                },
+                {
+                    "name": "AnswerIntent",
+                    "slots": [
+                        {
+                            "name": "Answer",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "{Answer}",
+                        "the answer is {Answer}"
+                    ]
+                },
+                {
+                    "name": "DontKnowIntent",
+                    "slots": [],
+                    "samples": [
+                        "I don't know"
+                    ]
+                },
+                {
+                    "name": "GuruTriviaIntent",
+                    "slots": [],
+                    "samples": [
+                        "trivia game",
+                        "Play About guru Trivia"
+                    ]
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "favThings",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "quotes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "quote"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "saying "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dish"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "to eat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "food to eat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "food"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "musician"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "singer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "band"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "music band"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "music"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "athlete"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "athletes "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sportspersons"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sportsperson"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sports"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sport"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "picture"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "movies"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "movie"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "actors"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "actor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cars"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "colors"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "color"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "car"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
