@@ -1,0 +1,4 @@
+START RequestId: 13dc451e-3c6b-11e8-8f33-63e11b78ba21 Version: $LATEST
+2018-04-10T02:58:42.749Z	13dc451e-3c6b-11e8-8f33-63e11b78ba21	Warning: Application ID is not set
+END RequestId: 13dc451e-3c6b-11e8-8f33-63e11b78ba21
+REPORT RequestId: 13dc451e-3c6b-11e8-8f33-63e11b78ba21	Duration: 16.33 ms	Billed Duration: 100 ms 	Memory Size: 128 MB	Max Memory Used: 36 MB

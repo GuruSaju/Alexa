@@ -1,0 +1,14 @@
+{
+	"body": {
+		"version": "1.0",
+		"response": {
+			"outputSpeech": {
+				"type": "SSML",
+				"ssml": "<speak> His all time favourite movie is The Prestige directed by Christopher Nolan </speak>"
+			},
+			"shouldEndSession": true
+		},
+		"sessionAttributes": {},
+		"userAgent": "ask-nodejs/1.0.25 Node/v6.10.3"
+	}
+}
