@@ -7,7 +7,7 @@ module.exports = {
      */
     QUESTIONS: [
         {
-            'What is guru\'s favourite movie?': [
+            'What is guru\'s favorite movie?': [
                 'The Prestige',
                 'The Dark Knight',
                 'The Avengers',
@@ -15,6 +15,50 @@ module.exports = {
                 'Dunkirk',
                 'Kabali',
                 'Logan'
+            ],
+        },
+        {
+            'Who is guru\'s favorite sportsperson?': [
+                'M.S. Dhoni',
+                'Sachin Tendulkar',
+                'Usain Bolt',
+                'Rafael Nadal',
+                'LeBron James',
+                'Christiano Ronaldo',
+                'Lionel Messi'
+            ],
+        },
+        {
+            'What does guru do for a living?': [
+                'Developer',
+                'Tester',
+                'Jobless',
+                'Doctor',
+                'Teacher',
+                'Farmer',
+                'Movie Director'
+            ],
+        },
+        {
+            'What car does guru like the most?': [
+                'Ford Mustang',
+                'Chevi Camero',
+                'Dodge Challenger',
+                'Tesla',
+                'Audi R8',
+                'BMW',
+                'Mercedes Benz'
+            ],
+        },
+        {
+            'Which of the following are guru\'s favorite colors?': [
+                'Red and Black',
+                'Black and Blue',
+                'Red and Yellow',
+                'Brown and Blue',
+                'Red and Blue',
+                'Green and Purple',
+                'Pink and Gold'
             ],
         },
     ]
