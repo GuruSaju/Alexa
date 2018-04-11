@@ -1,20 +1,30 @@
 'use strict';
+
 const Alexa = require('alexa-sdk');
+const questions = require('./questions');
+
+const ANSWER_COUNT = 4; // The number of possible answers per trivia question.
+const GAME_LENGTH = 5;  // The number of questions per trivia game.
+const GAME_STATES = {
+    TRIVIA: "_TRIVIAMODE", // Asking trivia questions.
+    START: "_STARTMODE", // Entry point, start the game.
+    HELP: "_HELPMODE", // The user is asking for help.
+};
 
 //=========================================================================================================================================
-//TODO: The items below this comment need your attention.
+//High level skill constants
 //=========================================================================================================================================
 
 const APP_ID = 'amzn1.ask.skill.6d5effc0-d416-47c5-8d9a-52fb0654f771';
 
 const SKILL_NAME = 'About Guru';
 //const GET_FACT_MESSAGE = "Here's your fact: ";
-const HELP_MESSAGE = 'You can ask guru about what he does, what he likes etc.. What do you like to know about him ?';
+const HELP_MESSAGE = 'You can ask guru about what he does, what he likes etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score.';
 const HELP_REPROMPT = 'What do you want to know about guru?';
 const STOP_MESSAGE = 'Goodbye!';
 
 //=========================================================================================================================================
-//TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
+//Speech output constants about guru
 //=========================================================================================================================================
 
 const guru_work = "Guru works as an Application developer at Nationwide.";
@@ -39,8 +49,38 @@ const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Aniru
 const guru_favCar = "He always wanted a Ford Mustang";
 
 
+//FOR GURU TRIVIA
+const languageString = {
+    "en": {
+        "translation": {
+            "QUESTIONS": questions["QUESTIONS"],
+            "GAME_NAME": "How well do you know Guru",
+            "HELP_MESSAGE": "I will ask you %s multiple choice questions. Respond with the number of the answer. " +
+            "For example, say one, two, three, or four. To start a new game at any time, say, start game. ",
+            "REPEAT_QUESTION_MESSAGE": "To repeat the last question, say, repeat. ",
+            "ASK_MESSAGE_START": "Would you like to start playing?",
+            "HELP_REPROMPT": "To give an answer to a question, respond with the number of the answer. ",
+            "STOP_MESSAGE": "Would you like to keep playing?",
+            "CANCEL_MESSAGE": "Ok, let\'s play again soon.",
+            "NO_MESSAGE": "Ok, we\'ll play another time. Goodbye!",
+            "TRIVIA_UNHANDLED": "Try saying a number between 1 and %s",
+            "HELP_UNHANDLED": "Say yes to continue, or no to end the game.",
+            "START_UNHANDLED": "Say start to start a new game.",
+            "NEW_GAME_MESSAGE": "Welcome to %s. ",
+            "WELCOME_MESSAGE": "I will ask you %s questions, try to get as many right as you can. " +
+            "Just say the number of the answer. Let\'s begin. ",
+            "ANSWER_CORRECT_MESSAGE": "correct. ",
+            "ANSWER_WRONG_MESSAGE": "wrong. ",
+            "CORRECT_ANSWER_MESSAGE": "The correct answer is %s: %s. ",
+            "ANSWER_IS_MESSAGE": "That answer is ",
+            "TELL_QUESTION_MESSAGE": "Question %s. %s ",
+            "GAME_OVER_MESSAGE": "You got %s out of %s questions correct. Thank you for playing!",
+            "SCORE_IS_MESSAGE": "Your score is %s. ",
+        },
+    }
+}
 //=========================================================================================================================================
-//Editing anything below this line might break your skill.
+//Handlers
 //=========================================================================================================================================
 
 const handlers = {
@@ -195,7 +235,6 @@ const handlers = {
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
         const reprompt = HELP_REPROMPT;
-
         this.response.speak(speechOutput).listen(reprompt);
         this.emit(':responseReady');
     },
@@ -206,12 +245,24 @@ const handlers = {
     'AMAZON.StopIntent': function () {
         this.response.speak(STOP_MESSAGE);
         this.emit(':responseReady');
+    }, 
+    "GuruTriviaIntent": function () {
+        this.handler.state = GAME_STATES.START;
+        this.emitWithState("StartGame", true);
     },
+    "AMAZON.StartOverIntent": function () {
+        this.handler.state = GAME_STATES.START;
+        this.emitWithState("StartGame", true);
+    },
+
 };
+
+
 
 exports.handler = function (event, context, callback) {
     const alexa = Alexa.handler(event, context, callback);
     alexa.APP_ID = APP_ID;
+    alexa.resources = languageString;
     alexa.registerHandlers(handlers);
     alexa.execute();
 };
