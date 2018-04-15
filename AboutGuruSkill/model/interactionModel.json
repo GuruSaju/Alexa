@@ -61,6 +61,7 @@
                     "name": "RelationshipIntent",
                     "slots": [],
                     "samples": [
+                        "is he married",
                         "married",
                         "girlfriend",
                         "does he have a girlfriend",
@@ -149,6 +150,10 @@
                     "name": "GuruTriviaIntent",
                     "slots": [],
                     "samples": [
+                        "to play guru game",
+                        "to play guru trivia",
+                        "to play guru quiz",
+                        "to play how well do you know about guru",
                         "trivia game",
                         "Play About guru Trivia"
                     ]
@@ -170,6 +175,31 @@
                 {
                     "name": "favThings",
                     "values": [
+                        {
+                            "name": {
+                                "value": "comic superhero"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "comic hero"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "comic character"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "superheroes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "superhero"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "quotes"

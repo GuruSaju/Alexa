@@ -18,7 +18,6 @@ const GAME_STATES = {
 const APP_ID = 'amzn1.ask.skill.6d5effc0-d416-47c5-8d9a-52fb0654f771';
 
 const SKILL_NAME = 'About Guru';
-//const GET_FACT_MESSAGE = "Here's your fact: ";
 const HELP_MESSAGE = 'You can ask guru about what he does, what he likes etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score.';
 const HELP_REPROMPT = 'What do you want to know about guru?';
 const STOP_MESSAGE = 'Goodbye!';
@@ -32,7 +31,7 @@ const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either gu
 const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. What do you like to know about him ?";
 const guru_color = "His favourite colors are red and black. Although he always told me he wanted rainbow dyed hair";
 const guru_summary = "Guru is a software developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed.";
-const guru_favActor = "His favourite actor is Rajnikanth, Hugh Jackman and Vikram";
+const guru_favActor = "His favourite actors are Hugh Jackman, Rajnikanth and Emma Watson";
 const guru_relationship = "He is single and No!, we are not in a relationship";
 const guru_favMovie = "His all time favourite movie is The Prestige directed by Christopher Nolan";
 const guru_nationality = "He is Indian. But he resides now in the US";
@@ -84,7 +83,7 @@ const languageString = {
 //Handlers
 //=========================================================================================================================================
 
-const handlers = {
+const initialhandlers = {
     'LaunchRequest': function () {
         this.emit('LaunchGuruIntent');
     },
@@ -273,11 +272,67 @@ const handlers = {
 };
 
 
+const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
+    "StartGame": function (newGame) {
+        let speechOutput = newGame ? this.t("NEW_GAME_MESSAGE", this.t("GAME_NAME")) + this.t("WELCOME_MESSAGE", GAME_LENGTH.toString()) : "";
+        
+        const translatedQuestions = this.t("QUESTIONS");
+        // Select GAME_LENGTH questions for the game
+        const gameQuestions = populateGameQuestions(translatedQuestions);
+
+        //TODO
+        // Generate a random index for the correct answer, from 0 to 3
+        
+        // Select and shuffle the answers for each question
+
+        // Build reprompt for the question
+
+        //Build object for session
+
+        //Handle trivia state
+
+        //build and send the response as listen
+        
+    },
+});
+
+//=========================================================================================================================================
+//Guru Trivia Game
+//=========================================================================================================================================
+
+//pick random game length questions for the trivia game
+function populateGameQuestions(translatedQuestions) {
+    const gameQuestions = [];
+    const indexList = [];
+    let index = translatedQuestions.length;
+
+    if (GAME_LENGTH > index) { // handle boundary conditions
+        throw new Error("Invalid Game Length.");
+    }
+
+    for (let i = 0; i < translatedQuestions.length; i++) {
+        indexList.push(i);
+    }
+
+    // Pick GAME_LENGTH random questions from the list to ask the user, make sure there are no repeats.
+    for (let j = 0; j < GAME_LENGTH; j++) {
+        const rand = Math.floor(Math.random() * index);
+        index -= 1;
+
+        const temp = indexList[index];
+        indexList[index] = indexList[rand];
+        indexList[rand] = temp;
+        gameQuestions.push(indexList[index]);
+    }
+
+    return gameQuestions;
+}
+
 
 exports.handler = function (event, context, callback) {
     const alexa = Alexa.handler(event, context, callback);
     alexa.APP_ID = APP_ID;
     alexa.resources = languageString;
-    alexa.registerHandlers(handlers);
+    alexa.registerHandlers(initialhandlers, startStateHandlers);
     alexa.execute();
 };
