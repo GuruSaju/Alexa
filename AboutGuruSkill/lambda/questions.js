@@ -116,5 +116,16 @@ module.exports = {
                 'Cricket, American Football and Boxing'
             ],
         },
+        {
+        'Which of the following actor or actors does guru like?': [
+                'Hugh Jackman, Rajnikanth and Emma Watson',
+                'Christian Bale and Emma Stone ',
+                'Robert Downey Junior and Scarlet Johanson',
+                'Rajnikanth and Amitab Bachan',
+                'Tom Cruise',
+                'Jim Carry and Will Smith',
+                'None of the Above'
+            ],
+        },
     ]
 };
