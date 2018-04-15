@@ -105,3 +105,12 @@ girlfriend
 does he have a girlfriend  
 is he in a relationship  
 is he single  
+  
+GuruTriviaIntent  
+trivia game  
+Play About guru Trivia  
+to play how well do you know about guru  
+to play guru quiz  
+to play guru trivia  
+to play guru game  
+  
