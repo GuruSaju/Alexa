@@ -73,7 +73,7 @@ module.exports = {
             ],
         },
         {
-            'In which country was guru born?': [
+        'In which country was guru born?': [
                 'India',
                 'USA',
                 'Australia',
@@ -81,6 +81,39 @@ module.exports = {
                 'Brazil',
                 'Japan',
                 'South Africa'
+            ],
+        },
+        {
+        'Which major did guru study?': [
+                'Computer Science',
+                'Electrical Engineering',
+                'Material Science',
+                'Civil Engineering',
+                'Accounting',
+                'Health Science',
+                'Mathematics'
+            ],
+        },
+        {
+        'Which of the following  musicians or bands does guru like?': [
+                'Ed Sheeran, Bruno Mars, A.R.Rahman and Frank Sinatra',
+                'Ed Sheeran, Bruno Mars, Michael Jackson and Anirudh',
+                'Eminem, Bruno Mars, A.R.Rahman and Anirudh',
+                'Ed Sheeran, Maroon five, A.R.Rahman and Anirudh',
+                'Ed Sheeran, Bruno Mars, A.R.Rahman and Anirudh',
+                'Taylor Swift, Katy Perry and Rihanna',
+                'Coldplay, Imagine dragons and Akon'
+            ],
+        },
+        {
+        'Which of the following sports that guru likes to watch?': [
+                'Cricket, American Football and Hockey',
+                'Soccer and Cricket',
+                'Cricket, Tennis and Soccer',
+                'Cricket, American Football and Basketball',
+                'Basketball, Cricket and Rugby',
+                'Cricket and Baseball',
+                'Cricket, American Football and Boxing'
             ],
         },
     ]

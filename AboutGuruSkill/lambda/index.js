@@ -45,7 +45,7 @@ const guru_favTeam = "His favourite teams are Chennai Super Kings, Indian cricke
 const guru_favFood = "He likes to eat everything except humans";
 const guru_education = "He has a Master's degree in Computer Science";
 const guru_favQuote = "It will be Alright in the end. If it is not Alright, it is not the end";
-const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Anirudh";
+const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Frank Sinatra";
 const guru_favCar = "He always wanted a Ford Mustang";
 const guru_favSuperhero = "His favorite superhero is The Wolverine";
 
