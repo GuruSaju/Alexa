@@ -65,8 +65,14 @@ CarIntent
 What is his favourite car  
 What car does he like  
 his dream car  
---------------------------------------------------------------------------------------------------------------------------  
   
+FavSuperheroIntent  
+Who is his favorite superhero  
+favorite superhero  
+favorite comic character  
+  
+--------------------------------------------------------------------------------------------------------------------------  
+    
 NationalityIntent  
 nationality  
 Which city is he from  

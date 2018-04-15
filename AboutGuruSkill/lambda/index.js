@@ -47,6 +47,7 @@ const guru_education = "He has a Master's degree in Computer Science";
 const guru_favQuote = "It will be Alright in the end. If it is not Alright, it is not the end";
 const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Anirudh";
 const guru_favCar = "He always wanted a Ford Mustang";
+const guru_favSuperhero = "His favorite superhero is The Wolverine";
 
 
 //FOR GURU TRIVIA
@@ -159,6 +160,15 @@ const handlers = {
                 this.emit('FavQuoteIntent');
                 break;
             }
+            case 'superhero':
+            case 'superheroes':
+            case 'comic superhero':
+            case 'comic character':
+            case 'comic superhero':
+            case 'comic hero': {
+                this.emit('FavSuperheroIntent');
+                break;
+            }
             default:
                 this.emit('AMAZON.HelpIntent');
         }
@@ -225,6 +235,11 @@ const handlers = {
     },
     'FavQuoteIntent': function () {
         const speechOutput = guru_favQuote;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'FavSuperheroIntent': function () {
+        const speechOutput = guru_favSuperhero;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
