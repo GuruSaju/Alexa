@@ -29,6 +29,7 @@ const STOP_MESSAGE = 'Goodbye!';
 const guru_work = "Guru works as an Application developer at Nationwide.";
 const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either guru or batman";
 const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. What do you like to know about him ?";
+const guru_launch_reprompt = "What do you like to know about him ?";
 const guru_color = "His favourite colors are red and black. Although he always told me he wanted rainbow dyed hair";
 const guru_summary = "Guru is a software developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed.";
 const guru_favActor = "His favourite actors are Hugh Jackman, Rajnikanth and Emma Watson";
@@ -88,7 +89,9 @@ const initialhandlers = {
         this.emit('LaunchGuruIntent');
     },
     'LaunchGuruIntent': function () {
-        this.response.speak(guru_launch);
+        const speechOutput = guru_launch;
+        const repromptSpeech = guru_launch_reprompt;
+        this.emit(':ask', speechOutput, repromptSpeech);
         this.emit(':responseReady');
     },
     'WorkIntent': function () {
@@ -319,10 +322,10 @@ const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
 
 //Handler to handle in trivia mode ie during the game after the start handler
 const triviaStateHandlers = Alexa.CreateStateHandler(GAME_STATES.TRIVIA, {
-    "AnswerIntent": function () {
+    "AnswerIntent": function () { //if the user answers a question
         handleUserGuess.call(this, false);
     },
-    "DontKnowIntent": function () {
+    "DontKnowIntent": function () { //if user says he doesn't know
         handleUserGuess.call(this, true);
     },
     "AMAZON.StartOverIntent": function () {
