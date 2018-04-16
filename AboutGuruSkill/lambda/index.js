@@ -271,7 +271,7 @@ const initialhandlers = {
 
 };
 
-
+//Handler to handle the start of the trivia game
 const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
     "StartGame": function (newGame) {
         let speechOutput = newGame ? this.t("NEW_GAME_MESSAGE", this.t("GAME_NAME")) + this.t("WELCOME_MESSAGE", GAME_LENGTH.toString()) : "";
@@ -314,6 +314,46 @@ const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
         this.response.cardRenderer(this.t("GAME_NAME"), repromptText);
         this.emit(":responseReady");
 
+    },
+});
+
+//Handler to handle in trivia mode ie during the game after the start handler
+const triviaStateHandlers = Alexa.CreateStateHandler(GAME_STATES.TRIVIA, {
+    "AnswerIntent": function () {
+        handleUserGuess.call(this, false);
+    },
+    "DontKnowIntent": function () {
+        handleUserGuess.call(this, true);
+    },
+    "AMAZON.StartOverIntent": function () {
+        this.handler.state = GAME_STATES.START;
+        this.emitWithState("StartGame", false);
+    },
+    "AMAZON.RepeatIntent": function () {
+        this.response.speak(this.attributes["speechOutput"]).listen(this.attributes["repromptText"]);
+        this.emit(":responseReady");
+    },
+    "AMAZON.HelpIntent": function () {
+        this.handler.state = GAME_STATES.HELP;
+        this.emitWithState("helpTheUser", false);
+    },
+    "AMAZON.StopIntent": function () {
+        this.handler.state = GAME_STATES.HELP;
+        const speechOutput = this.t("STOP_MESSAGE");
+        this.response.speak(speechOutput).listen(speechOutput);
+        this.emit(":responseReady");
+    },
+    "AMAZON.CancelIntent": function () {
+        this.response.speak(this.t("CANCEL_MESSAGE"));
+        this.emit(":responseReady");
+    },
+    "Unhandled": function () {
+        const speechOutput = this.t("TRIVIA_UNHANDLED", ANSWER_COUNT.toString());
+        this.response.speak(speechOutput).listen(speechOutput);
+        this.emit(":responseReady");
+    },
+    "SessionEndedRequest": function () {
+        console.log(`Session ended in trivia state: ${this.event.request.reason}`);
     },
 });
 
@@ -382,6 +422,14 @@ function populateRoundAnswers(gameQuestionIndexes, correctQuestionIndex, correct
     answers[correctAnswerTargetLocation] = swapTemp2;
     return answers;
 }
+
+//TODO handle user guess
+function handleUserGuess(userGaveUp) {
+}
+
+//=========================================================================================================================================
+//Main export handler
+//=========================================================================================================================================
 
 exports.handler = function (event, context, callback) {
     const alexa = Alexa.handler(event, context, callback);
