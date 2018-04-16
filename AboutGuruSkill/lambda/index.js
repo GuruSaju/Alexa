@@ -280,9 +280,8 @@ const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
         // Select GAME_LENGTH questions for the game
         const gameQuestions = populateGameQuestions(translatedQuestions);
 
-        //TODO
         // Generate a random index for the correct answer, from 0 to 3
-        
+        const correctAnswerIndex = Math.floor(Math.random() * (ANSWER_COUNT));
         // Select and shuffle the answers for each question
 
         // Build reprompt for the question
