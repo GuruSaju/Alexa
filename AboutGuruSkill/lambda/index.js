@@ -259,7 +259,7 @@ const initialhandlers = {
     'AMAZON.StopIntent': function () {
         this.response.speak(STOP_MESSAGE);
         this.emit(':responseReady');
-    }, 
+    },
     "GuruTriviaIntent": function () {
         this.handler.state = GAME_STATES.START;
         this.emitWithState("StartGame", true);
@@ -275,7 +275,7 @@ const initialhandlers = {
 const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
     "StartGame": function (newGame) {
         let speechOutput = newGame ? this.t("NEW_GAME_MESSAGE", this.t("GAME_NAME")) + this.t("WELCOME_MESSAGE", GAME_LENGTH.toString()) : "";
-        
+
         const translatedQuestions = this.t("QUESTIONS");
         // Select GAME_LENGTH questions for the game
         const gameQuestions = populateGameQuestions(translatedQuestions);
@@ -283,15 +283,37 @@ const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
         // Generate a random index for the correct answer, from 0 to 3
         const correctAnswerIndex = Math.floor(Math.random() * (ANSWER_COUNT));
         // Select and shuffle the answers for each question
-
+        const roundAnswers = populateRoundAnswers(gameQuestions, 0, correctAnswerIndex, translatedQuestions);
+        const currentQuestionIndex = 0;
+        const spokenQuestion = Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0];
         // Build reprompt for the question
+        let repromptText = this.t("TELL_QUESTION_MESSAGE", "1", spokenQuestion);
+
+        for (let i = 0; i < ANSWER_COUNT; i++) {
+            repromptText += `${i + 1}. ${roundAnswers[i]}. `;
+        }
 
         //Build object for session
+        speechOutput += repromptText;
 
-        //Handle trivia state
+        Object.assign(this.attributes, {
+            "speechOutput": repromptText,
+            "repromptText": repromptText,
+            "currentQuestionIndex": currentQuestionIndex,
+            "correctAnswerIndex": correctAnswerIndex + 1,
+            "questions": gameQuestions,
+            "score": 0,
+            "correctAnswerText": translatedQuestions[gameQuestions[currentQuestionIndex]][Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0]][0],
+        });
+
+        //Handle trivia state. Set the current state to trivia mode. The skill will now use handlers defined in triviaStateHandlers
+        this.handler.state = GAME_STATES.TRIVIA;
 
         //build and send the response as listen
-        
+        this.response.speak(speechOutput).listen(repromptText);
+        this.response.cardRenderer(this.t("GAME_NAME"), repromptText);
+        this.emit(":responseReady");
+
     },
 });
 
@@ -327,6 +349,39 @@ function populateGameQuestions(translatedQuestions) {
     return gameQuestions;
 }
 
+/**
+ * Get the answers for a given question, and place the correct answer at the spot marked by the
+ * correctAnswerTargetLocation variable. Note that you can have as many answers as you want but
+ * only ANSWER_COUNT will be selected.
+ * */
+function populateRoundAnswers(gameQuestionIndexes, correctQuestionIndex, correctAnswerTargetLocation, translatedQuestions) {
+    const answers = [];
+    const answersCopy = translatedQuestions[gameQuestionIndexes[correctQuestionIndex]][Object.keys(translatedQuestions[gameQuestionIndexes[correctQuestionIndex]])[0]].slice();
+    let index = answersCopy.length;
+
+    if (index < ANSWER_COUNT) {
+        throw new Error("Not enough answers for question.");
+    }
+
+    // Shuffle the answers, excluding the first element which is the correct answer.
+    for (let j = 1; j < answersCopy.length; j++) {
+        const rand = Math.floor(Math.random() * (index - 1)) + 1;
+        index -= 1;
+
+        const swapTemp1 = answersCopy[index];
+        answersCopy[index] = answersCopy[rand];
+        answersCopy[rand] = swapTemp1;
+    }
+
+    // Swap the correct answer into the target location
+    for (let i = 0; i < ANSWER_COUNT; i++) {
+        answers[i] = answersCopy[i];
+    }
+    const swapTemp2 = answers[0];
+    answers[0] = answers[correctAnswerTargetLocation];
+    answers[correctAnswerTargetLocation] = swapTemp2;
+    return answers;
+}
 
 exports.handler = function (event, context, callback) {
     const alexa = Alexa.handler(event, context, callback);
