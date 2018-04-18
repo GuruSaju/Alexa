@@ -77,6 +77,7 @@ const languageString = {
             "TELL_QUESTION_MESSAGE": "Question %s. %s ",
             "GAME_OVER_MESSAGE": "You got %s out of %s questions correct. Thank you for playing!",
             "SCORE_IS_MESSAGE": "Your score is %s. ",
+            "MOVE_ON_TO_NEXT_QUESTION" : "Bummer, Let's move on to the next question",
         },
     }
 }
@@ -426,8 +427,72 @@ function populateRoundAnswers(gameQuestionIndexes, correctQuestionIndex, correct
     return answers;
 }
 
-//TODO handle user guess
+//This is to handle the answer the user responded for a question
 function handleUserGuess(userGaveUp) {
+    const answerSlotValid = isAnswerSlotValid(this.event.request.intent); // to validate the answer
+    let speechOutput = "";
+    let speechOutputAnalysis = "";
+    const gameQuestions = this.attributes.questions;
+   // let correctAnswerIndex = parseInt(this.attributes.correctAnswerIndex, 10);
+    let currentScore = parseInt(this.attributes.score, 10);
+    let currentQuestionIndex = parseInt(this.attributes.currentQuestionIndex, 10);
+   // const correctAnswerText = this.attributes.correctAnswerText;
+    const translatedQuestions = this.t("QUESTIONS");
+
+    if (answerSlotValid && parseInt(this.event.request.intent.slots.Answer.value, 10) === this.attributes["correctAnswerIndex"]) {
+        currentScore++;
+        speechOutputAnalysis = this.t("ANSWER_CORRECT_MESSAGE");
+    } else {
+        if (!userGaveUp) {
+            speechOutputAnalysis = this.t("ANSWER_WRONG_MESSAGE");
+        }
+
+        //speechOutputAnalysis += this.t("CORRECT_ANSWER_MESSAGE", correctAnswerIndex, correctAnswerText);
+    }
+
+    // Check if we can exit the game session after GAME_LENGTH questions (zero-indexed)
+    if (this.attributes["currentQuestionIndex"] === GAME_LENGTH - 1) {
+        speechOutput = userGaveUp ? "" : this.t("MOVE_ON_TO_NEXT_QUESTION");
+        speechOutput += speechOutputAnalysis + this.t("GAME_OVER_MESSAGE", currentScore.toString(), GAME_LENGTH.toString());
+
+        this.response.speak(speechOutput);
+        this.emit(":responseReady");
+    } else {
+        currentQuestionIndex += 1;
+        correctAnswerIndex = Math.floor(Math.random() * (ANSWER_COUNT));
+        const spokenQuestion = Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0];
+        const roundAnswers = populateRoundAnswers.call(this, gameQuestions, currentQuestionIndex, correctAnswerIndex, translatedQuestions);
+        const questionIndexForSpeech = currentQuestionIndex + 1;
+        let repromptText = this.t("TELL_QUESTION_MESSAGE", questionIndexForSpeech.toString(), spokenQuestion);
+
+        for (let i = 0; i < ANSWER_COUNT; i++) {
+            repromptText += `${i + 1}. ${roundAnswers[i]}. `;
+        }
+
+        speechOutput += userGaveUp ? "" : this.t("MOVE_ON_TO_NEXT_QUESTION");
+        speechOutput += speechOutputAnalysis + this.t("SCORE_IS_MESSAGE", currentScore.toString()) + repromptText;
+
+        Object.assign(this.attributes, {
+            "speechOutput": repromptText,
+            "repromptText": repromptText,
+            "currentQuestionIndex": currentQuestionIndex,
+            "correctAnswerIndex": correctAnswerIndex + 1,
+            "questions": gameQuestions,
+            "score": currentScore,
+            "correctAnswerText": translatedQuestions[gameQuestions[currentQuestionIndex]][Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0]][0],
+        });
+
+        this.response.speak(speechOutput).listen(repromptText);
+        this.emit(":responseReady");
+    }
+}
+
+function isAnswerSlotValid(intent) {
+    const answerSlotFilled = intent && intent.slots && intent.slots.Answer && intent.slots.Answer.value;
+    const answerSlotIsInt = answerSlotFilled && !isNaN(parseInt(intent.slots.Answer.value, 10));
+    return answerSlotIsInt
+        && parseInt(intent.slots.Answer.value, 10) < (ANSWER_COUNT + 1)
+        && parseInt(intent.slots.Answer.value, 10) > 0;
 }
 
 //=========================================================================================================================================
