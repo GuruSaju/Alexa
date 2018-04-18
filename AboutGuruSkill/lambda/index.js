@@ -503,6 +503,6 @@ exports.handler = function (event, context, callback) {
     const alexa = Alexa.handler(event, context, callback);
     alexa.APP_ID = APP_ID;
     alexa.resources = languageString;
-    alexa.registerHandlers(initialhandlers, startStateHandlers);
+    alexa.registerHandlers(initialhandlers, startStateHandlers, triviaStateHandlers);
     alexa.execute();
 };
