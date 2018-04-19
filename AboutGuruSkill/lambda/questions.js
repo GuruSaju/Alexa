@@ -62,17 +62,6 @@ module.exports = {
             ],
         },
         {
-            'Which of the following are guru\'s favorite colors?': [
-                'Red and Black',
-                'Black and Blue',
-                'Red and Yellow',
-                'Brown and Blue',
-                'Red and Blue',
-                'Green and Purple',
-                'Pink and Gold'
-            ],
-        },
-        {
         'In which country was guru born?': [
                 'India',
                 'USA',
