@@ -113,7 +113,29 @@ module.exports = {
                 'Rajnikanth and Amitab Bachan',
                 'Tom Cruise',
                 'Jim Carry and Will Smith',
-                'None of the Above'
+                'None of the options'
+            ],
+        },
+         {
+        'Who is guru\'s favorite superhero?': [
+                'The Wolverine',
+                'Batman',
+                'Iron-man',
+                'Spider-man',
+                'Black Panther',
+                'The Flash',
+                'Thor'
+            ],
+        },
+         {
+        'What is guru\'s mother tongue?': [
+                'Tamil',
+                'Hindi',
+                'Telugu',
+                'Spanish',
+                'Chinese',
+                'English',
+                'French'
             ],
         },
     ]
