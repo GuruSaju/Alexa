@@ -72,17 +72,18 @@ favorite superhero
 favorite comic character  
   
 ## FavLeaderIntent    
-Who is his favorite leader 
-Who is his inspiration 
-Which person does he look upto?
+Who is his favorite leader   
+Who is his inspiration  
+Which person does he look upto?  
 
-## FavPlaceIntent    
-Which is guru's favourite place to visit
-His most favorite place
-Which is his favorite place on earth
-Which is his favorite city
+## FavPlaceIntent      
+Which is guru's favourite place to visit  
+His most favorite place  
+Which is his favorite place on earth  
+Which is his favorite city  
 
---------------------------------------------------------------------------------------------------------------------------  
+## --------------------------------------------------------------------------------------------------------------------------  
+
 ## Language Intent
 What languages does guru speak  
 What languages does guru know  
