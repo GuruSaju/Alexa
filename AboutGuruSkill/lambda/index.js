@@ -48,6 +48,9 @@ const guru_favQuote = "It will be Alright in the end. If it is not Alright, it i
 const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Frank Sinatra";
 const guru_favCar = "He always wanted a Ford Mustang";
 const guru_favSuperhero = "His favorite superhero is The Wolverine";
+const guru_languages = "He knows Tamil and English. His native language is Tamil";
+const guru_favPlace = "His most favorite place is Boise, Idaho";
+const guru_favLeader = "He regards A.P.J Abdul Kalam as his inspiration."
 
 
 //FOR GURU TRIVIA
@@ -172,6 +175,22 @@ const initialhandlers = {
                 this.emit('FavSuperheroIntent');
                 break;
             }
+            case 'place':
+            case 'city':
+            case 'place to visit':
+            case 'land':
+            case 'place to live':
+            case 'place on earth': {
+                this.emit('FavPlaceIntent');
+                break;
+            }
+            case 'leader':
+            case 'inspirational leader':
+            case 'look up to':
+            case 'inspiration': {
+                this.emit('FavLeaderIntent');
+                break;
+            }
             default:
                 this.emit('AMAZON.HelpIntent');
         }
@@ -243,6 +262,21 @@ const initialhandlers = {
     },
     'FavSuperheroIntent': function () {
         const speechOutput = guru_favSuperhero;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'LanguageIntent': function () {
+        const speechOutput = guru_languages;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+     'FavPlaceIntent': function () {
+        const speechOutput = guru_favPlace;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+     'FavLeaderIntent': function () {
+        const speechOutput = guru_favLeader;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
