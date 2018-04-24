@@ -62,7 +62,7 @@ module.exports = {
             ],
         },
         {
-        'In which country was guru born?': [
+            'In which country was guru born?': [
                 'India',
                 'USA',
                 'Australia',
@@ -73,7 +73,7 @@ module.exports = {
             ],
         },
         {
-        'Which major did guru study?': [
+            'Which major did guru study?': [
                 'Computer Science',
                 'Electrical Engineering',
                 'Material Science',
@@ -84,7 +84,7 @@ module.exports = {
             ],
         },
         {
-        'Which of the following  musicians or bands does guru like?': [
+            'Which of the following  musicians or bands does guru like?': [
                 'Ed Sheeran, Bruno Mars, A.R.Rahman and Frank Sinatra',
                 'Ed Sheeran, Bruno Mars, Michael Jackson and Anirudh',
                 'Eminem, Bruno Mars, A.R.Rahman and Anirudh',
@@ -95,7 +95,7 @@ module.exports = {
             ],
         },
         {
-        'Which of the following sports that guru likes to watch?': [
+            'Which of the following sports that guru likes to watch?': [
                 'Cricket, American Football and Hockey',
                 'Soccer and Cricket',
                 'Cricket, Tennis and Soccer',
@@ -106,7 +106,7 @@ module.exports = {
             ],
         },
         {
-        'Which of the following actor or actors does guru like?': [
+            'Which of the following actor or actors does guru like?': [
                 'Hugh Jackman, Rajnikanth and Emma Watson',
                 'Christian Bale and Emma Stone ',
                 'Robert Downey Junior and Scarlet Johanson',
@@ -116,8 +116,8 @@ module.exports = {
                 'None of the options'
             ],
         },
-         {
-        'Who is guru\'s favorite superhero?': [
+        {
+            'Who is guru\'s favorite superhero?': [
                 'The Wolverine',
                 'Batman',
                 'Iron-man',
@@ -127,8 +127,8 @@ module.exports = {
                 'Thor'
             ],
         },
-         {
-        'What is guru\'s mother tongue?': [
+        {
+            'What is guru\'s mother tongue?': [
                 'Tamil',
                 'Hindi',
                 'Telugu',
@@ -136,6 +136,28 @@ module.exports = {
                 'Chinese',
                 'English',
                 'French'
+            ],
+        },
+        {
+            'Who is guru\'s favorite and inspirational leader?': [
+                'A.P.J Abdul Kalam',
+                'Nelson Mandela',
+                'Martin Luther King',
+                'Mahatma Gandhi',
+                'Abraham Lincoln',
+                'Mother Teresa',
+                'Alexandar The Great'
+            ],
+        },
+        {
+            'Which is guru\'s favorite place?': [
+                'Boise, Idaho, USA',
+                'Paris, France',
+                'Amsterdam, Netherlands',
+                'Seattle, Washington, USA',
+                'Rio De Janeiro, Brazil',
+                'Seoul, South Korea',
+                'Tokyo, Japan'
             ],
         },
     ]
