@@ -111,6 +111,9 @@
                         }
                     ],
                     "samples": [
+                        "What's guru's favorite {favAbout}",
+                        "Which is guru's favorite {favAbout}",
+                        "Who does guru {favAbout}",
                         "what does he likes to {favAbout} the most",
                         "What kind of {favAbout} does he likes",
                         "Who is his favorite {favAbout}",
@@ -169,12 +172,64 @@
                 {
                     "name": "AMAZON.NoIntent",
                     "samples": []
+                },
+                {
+                    "name": "LanguageIntent",
+                    "slots": [],
+                    "samples": [
+                        "native language",
+                        "mother's tongue",
+                        "What is his mother's tongue",
+                        "What languages does guru speak",
+                        "What languages does he speak",
+                        "What is guru's native language"
+                    ]
                 }
             ],
             "types": [
                 {
                     "name": "favThings",
                     "values": [
+                        {
+                            "name": {
+                                "value": "inspiration"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "look up to"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "inspirational leader"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "leader"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "place to visit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "place to live"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "city"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "place"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "comic superhero"
