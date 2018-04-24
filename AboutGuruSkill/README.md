@@ -1,6 +1,6 @@
 # Amazon Alexa my skill -- About myself
 
-WorkIntent   
+## WorkIntent   
 What's his current job  
 What does Guru do  
 What does he do  
@@ -9,84 +9,84 @@ job
 Where does he work  
 workplace  
   
-RealNameIntent  
+## RealNameIntent  
 What is his full name  
 his birth name  
 his full name  
 his real name  
 What is his real name  
   
-FavIntent: -------------------------------------------------------------------------------------------------------  
+## FavIntent: -------------------------------------------------------------------------------------------------------  
   
-ColorIntent  
+## ColorIntent  
 What color does he like  
 What is his favourite color  
 color  
 his favourite color  
   
-SportsIntent  
+## SportsIntent  
 sports  
 favourite sport  
 What is his favourite sport  
 What sports he likes to watch  
   
-SportspersonIntent  
+## SportspersonIntent  
 sportsperson  
 Who is his favourite sportsperson  
 Who is his favourite athlete  
   
-FoodIntent  
+## FoodIntent  
 favourite food    
 his favourite food  
 What does he likes to eat the most  
   
-MusicIntent  
+## MusicIntent  
 favourite music  
 favourite singer  
 Who is his favourite band  
 What kind of music does he listens to  
 
-FavQuoteIntent  
+## FavQuoteIntent  
 favourtie saying  
 Favourite quote  
 Which is his favourite quote  
   
-ActorIntent  
+## ActorIntent  
 favourite actor  
 his favourite actor  
 Who is his favourite actor  
   
-MovieIntent  
+## MovieIntent  
 which movie does he like the most  
 what is his favourite movie  
 favourite movie  
   
-CarIntent  
+## CarIntent  
 What is his favourite car  
 What car does he like  
 his dream car  
   
-FavSuperheroIntent  
+## FavSuperheroIntent  
 Who is his favorite superhero  
 favorite superhero  
 favorite comic character  
   
 --------------------------------------------------------------------------------------------------------------------------  
     
-NationalityIntent  
+## NationalityIntent  
 nationality  
 Which city is he from  
 Where was he born  
 Where is he from  
   
-ContactIntent  
+## ContactIntent  
 resume  
 phone number  
 contact  
 email address  
 How can I contact him  
   
-DegreeIntent  
+## DegreeIntent  
 What did he study  
 school  
 College  
@@ -94,19 +94,19 @@ level of qualification
 level of education  
 What did he study  
   
-SummaryIntent  
+## SummaryIntent  
 introduction  
 summary  
 about himself  
   
-RelationshipIntent  
+## RelationshipIntent  
 married  
 girlfriend  
 does he have a girlfriend  
 is he in a relationship  
 is he single  
   
-GuruTriviaIntent  
+## GuruTriviaIntent  
 trivia game  
 Play About guru Trivia  
 to play how well do you know about guru  
