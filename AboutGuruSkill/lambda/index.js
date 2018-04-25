@@ -28,7 +28,7 @@ const STOP_MESSAGE = 'Goodbye!';
 
 const guru_work = "Guru works as an Application developer at Nationwide.";
 const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either guru or batman";
-const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. What do you like to know about him ?";
+const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. You can ask him about his likes, his technical skills, his work expereinces and you can also play a trivia game How well do you know guru. What do you like to know about him ?";
 const guru_launch_reprompt = "What do you like to know about him ?";
 const guru_color = "His favourite colors are red and black. Although he always told me he wanted rainbow dyed hair";
 const guru_summary = "Guru is a software developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed.";
@@ -48,10 +48,10 @@ const guru_favQuote = "It will be Alright in the end. If it is not Alright, it i
 const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Frank Sinatra";
 const guru_favCar = "He always wanted a Ford Mustang";
 const guru_favSuperhero = "His favorite superhero is The Wolverine";
-const guru_languages = "He knows Tamil and English. His native language is Tamil";
+const guru_languages = "He knows Tha mil and English. His native language is Tha mil";
 const guru_favPlace = "His most favorite place is Boise, Idaho";
 const guru_favLeader = "He regards A.P.J Abdul Kalam as his inspiration."
-
+const guru_favSongs = "His favorites are Strangers in the night by Frank Sinatra, Heroes by David Bowie, Hurt by Johnny Cash and Antha Arabi Kadalorum by A.R. Rahman";
 
 //FOR GURU TRIVIA
 const languageString = {
