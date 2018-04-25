@@ -522,7 +522,7 @@ function handleUserGuess(userGaveUp) {
     let speechOutput = "";
     let speechOutputAnalysis = "";
     const gameQuestions = this.attributes.questions;
-   // let correctAnswerIndex = parseInt(this.attributes.correctAnswerIndex, 10);
+    let correctAnswerIndex = parseInt(this.attributes.correctAnswerIndex, 10);
     let currentScore = parseInt(this.attributes.score, 10);
     let currentQuestionIndex = parseInt(this.attributes.currentQuestionIndex, 10);
    // const correctAnswerText = this.attributes.correctAnswerText;
