@@ -1,0 +1,4 @@
+START RequestId: bb75aea5-482d-11e8-aa07-3d00da8d0235 Version: $LATEST
+2018-04-25T02:09:49.103Z	bb75aea5-482d-11e8-aa07-3d00da8d0235	Warning: Application ID is not set
+END RequestId: bb75aea5-482d-11e8-aa07-3d00da8d0235
+REPORT RequestId: bb75aea5-482d-11e8-aa07-3d00da8d0235	Duration: 208.96 ms	Billed Duration: 300 ms 	Memory Size: 128 MB	Max Memory Used: 37 MB	

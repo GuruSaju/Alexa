@@ -1,0 +1,40 @@
+{
+	"body": {
+		"version": "1.0",
+		"response": {
+			"outputSpeech": {
+				"type": "SSML",
+				"ssml": "<speak> Welcome to How well do you know Guru. I will ask you 5 questions, try to get as many right as you can. Just say the number of the answer. Let's begin. Question 1. What is guru's favorite movie? 1. The Prestige. 2. Logan. 3. The Avengers. 4. Titanic.  </speak>"
+			},
+			"card": {
+				"type": "Simple",
+				"title": "How well do you know Guru",
+				"content": "Question 1. What is guru's favorite movie? 1. The Prestige. 2. Logan. 3. The Avengers. 4. Titanic. "
+			},
+			"reprompt": {
+				"outputSpeech": {
+					"type": "SSML",
+					"ssml": "<speak> Question 1. What is guru's favorite movie? 1. The Prestige. 2. Logan. 3. The Avengers. 4. Titanic.  </speak>"
+				}
+			},
+			"shouldEndSession": false
+		},
+		"sessionAttributes": {
+			"score": 0,
+			"currentQuestionIndex": 0,
+			"speechOutput": "Question 1. What is guru's favorite movie? 1. The Prestige. 2. Logan. 3. The Avengers. 4. Titanic. ",
+			"correctAnswerText": "The Prestige",
+			"repromptText": "Question 1. What is guru's favorite movie? 1. The Prestige. 2. Logan. 3. The Avengers. 4. Titanic. ",
+			"questions": [
+				0,
+				10,
+				4,
+				3,
+				8
+			],
+			"STATE": "_TRIVIAMODE",
+			"correctAnswerIndex": 1
+		},
+		"userAgent": "ask-nodejs/1.0.25 Node/v6.10.3"
+	}
+}
