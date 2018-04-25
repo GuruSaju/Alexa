@@ -82,6 +82,21 @@ His most favorite place
 Which is his favorite place on earth  
 Which is his favorite city  
 
+## TODO  
+Cricket Player  
+Hockey Player  
+Football Player  
+Season  
+Video game  
+book  
+Tv Show  
+Hobbies  
+Number  
+Restaurent  
+dog  
+cat  
+
+
 ## --------------------------------------------------------------------------------------------------------------------------  
 
 ## Language Intent
