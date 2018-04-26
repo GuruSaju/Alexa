@@ -52,6 +52,7 @@ const guru_languages = "He knows Tha mil and English. His native language is Tha
 const guru_favPlace = "His most favorite place is Boise, Idaho";
 const guru_favLeader = "He regards A.P.J Abdul Kalam as his inspiration."
 const guru_favSongs = "His favorites are Strangers in the night by Frank Sinatra, Heroes by David Bowie, Hurt by Johnny Cash and Antha Arabi Kadalorum by A.R. Rahman";
+const guru_favSeason = "He prefers Spring."
 
 //FOR GURU TRIVIA
 const languageString = {
@@ -191,6 +192,10 @@ const initialhandlers = {
                 this.emit('FavLeaderIntent');
                 break;
             }
+            case 'season':{
+                this.emit('FavSeasonIntent');
+                break;
+            }
             default:
                 this.emit('AMAZON.HelpIntent');
         }
@@ -277,6 +282,11 @@ const initialhandlers = {
     },
      'FavLeaderIntent': function () {
         const speechOutput = guru_favLeader;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'FavSeasonIntent': function () {
+        const speechOutput = guru_favSeason;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
