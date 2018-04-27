@@ -160,5 +160,16 @@ module.exports = {
                 'Tokyo, Japan'
             ],
         },
+        {
+            'Which is guru\'s favorite season?': [
+                'Spring',
+                'Summer',
+                'Fall',
+                'Winter',
+                'All seasons',
+                'None of them',
+                'Every season except winter'
+            ],
+        },
     ]
 };
