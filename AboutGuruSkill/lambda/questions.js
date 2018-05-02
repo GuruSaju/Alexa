@@ -171,5 +171,16 @@ module.exports = {
                 'Every season except winter'
             ],
         },
+        {
+            'Which is guru\'s favorite Tv Show?': [
+                'Breaking Bad',
+                'Grey\'s Anatomy',
+                'The One Hundred',
+                'Doctor House',
+                'Game of Thrones',
+                'Narcos',
+                'Suits'
+            ],
+        },
     ]
 };
