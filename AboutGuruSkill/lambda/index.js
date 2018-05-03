@@ -50,10 +50,11 @@ const guru_favCar = "He always wanted a Ford Mustang";
 const guru_favSuperhero = "His favorite superhero is The Wolverine";
 const guru_languages = "He knows Tha mil and English. His native language is Tha mil";
 const guru_favPlace = "His most favorite place is Boise, Idaho";
-const guru_favLeader = "He regards A.P.J Abdul Kalam as his inspiration."
+const guru_favLeader = "He regards A.P.J Abdul Kalam as his inspiration.";
 const guru_favSongs = "His favorites are Strangers in the night by Frank Sinatra, Heroes by David Bowie, Hurt by Johnny Cash and Antha Arabi Kadalorum by A.R. Rahman";
-const guru_favSeason = "He prefers Spring."
-const guru_favTvSeries = "It is none other than Breaking Bad."
+const guru_favSeason = "He prefers Spring.";
+const guru_favTvSeries = "It is none other than Breaking Bad.";
+const guru_favVideoGame = "Horizon Zero Dawn blew him away. Aloy All the way";
 
 //FOR GURU TRIVIA
 const languageString = {
@@ -204,6 +205,13 @@ const initialhandlers = {
                 this.emit('FavSeriesIntent');
                 break;
             }
+             case 'video game':
+            case 'console game':
+            case 'ps4 game':
+            case 'playstation game':{
+                this.emit('FavVideoGameIntent');
+                break;
+            }
             default:
                 this.emit('AMAZON.HelpIntent');
         }
@@ -300,6 +308,11 @@ const initialhandlers = {
     },
     'FavSeriesIntent':function () {
         const speechOutput = guru_favTvSeries;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'FavVideoGameIntent':function () {
+        const speechOutput = guru_favVideoGame;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
