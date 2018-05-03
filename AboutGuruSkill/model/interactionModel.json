@@ -192,6 +192,56 @@
                     "values": [
                         {
                             "name": {
+                                "value": "playstation game"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ps4 game"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "computer game"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "console game"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "video game"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tv series to watch"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tv show to watch"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tv series"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tv show"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "season"
+                            }
+                        },
+                        {
+                            "name": {
                                 "value": "inspiration"
                             }
                         },
