@@ -182,5 +182,16 @@ module.exports = {
                 'Suits'
             ],
         },
+        {
+            'Which video game does guru like the most?': [
+                'Horizon Zero Dawn',
+                'Far Cry 4',
+                'Call of Duty Black Ops three',
+                'Batman Arkham Knight',
+                'Assasin\'s Creed Syndicate',
+                'Ghost Recon Wildlands',
+                'The Witcher three'
+            ],
+        },
     ]
 };
