@@ -81,15 +81,29 @@ Which is guru's favourite place to visit
 His most favorite place  
 Which is his favorite place on earth  
 Which is his favorite city  
-
+  
+## FavVideoGameIntent
+What is guru's favorite video game to play  
+guru's most favorite video game  
+video game  
+most liked video game  
+most favorite console game  
+  
+## FavSeasonIntent  
+Which is guru's favorite season  
+Which season does guru prefer  
+Which season does guru like  
+   
+## FavTvShow
+Which is gur's favorite tv show  
+Which tv series is his most favorite  
+Tv Show he likes to watch  
+  
 ## TODO  
 Cricket Player  
 Hockey Player  
-Football Player  
-Season  
-Video game  
-book  
-Tv Show  
+Football Player   
+book   
 Hobbies  
 Number  
 Restaurent  
