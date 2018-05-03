@@ -198,14 +198,15 @@ const initialhandlers = {
                 this.emit('FavSeasonIntent');
                 break;
             }
-            case 'Tv Show':
-            case 'Tv Series':
-            case 'Tv Series to Watch':
-            case 'Tv Show to watch':{
+            case 'tv show':
+            case 'tv series':
+            case 'tv series to watch':
+            case 'tv show to watch':{
                 this.emit('FavSeriesIntent');
                 break;
             }
-             case 'video game':
+            case 'video game':
+            case 'computer game':
             case 'console game':
             case 'ps4 game':
             case 'playstation game':{

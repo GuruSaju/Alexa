@@ -88,6 +88,7 @@ guru's most favorite video game
 video game  
 most liked video game  
 most favorite console game  
+favorite computer game
   
 ## FavSeasonIntent  
 Which is guru's favorite season  
@@ -109,6 +110,8 @@ Number
 Restaurent  
 dog  
 cat  
+dream job
+future goals
 
 
 ## --------------------------------------------------------------------------------------------------------------------------  
