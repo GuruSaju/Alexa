@@ -100,6 +100,15 @@ Which is gur's favorite tv show
 Which tv series is his most favorite  
 Tv Show he likes to watch  
   
+## FavSportsTeam
+Which is his favorite football/cricket/hockey/NFL/NHL/IPL/league team  
+Which football/cricket/hockey/NFL/NHL/IPL/league team does he like the most
+football/cricket/hockey/NFL/NHL/IPL/league team  
+  
+## FavSong  
+Which is his favorite song 
+Which songs does he like the most  
+  
 ## TODO  
 Cricket Player  
 Hockey Player  
@@ -110,9 +119,10 @@ Number
 Restaurent  
 dog  
 cat  
-dream job
-future goals
-
+dream job  
+future goals  
+technicial skills  
+repeat   
 
 ## --------------------------------------------------------------------------------------------------------------------------  
 
