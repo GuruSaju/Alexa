@@ -56,6 +56,9 @@ const guru_favSeason = "He prefers Spring.";
 const guru_favTvSeries = "It is none other than Breaking Bad.";
 const guru_favVideoGame = "Horizon Zero Dawn blew him away. Aloy All the way";
 const guru_workExpereince = "He has around 3 plus years’ experience in development, research and teaching. I have sent a brief list of his work history to your device."
+const guru_publications = "He has two publications, first one titled A Certificateless One-Way Group Key Agreement Protocol for Point-to-Point Email Encryption and another titled IMPROVED SUPERVISED CLASSIFICATION OF ACCELEROMETRY DATA" +
+    "TO DISTINGUISH BEHAVIORS OF SOARING BIRDS";
+const guru_certifications = "He has completed Java 8, Bash Shell Scripting and OO Concepts certifications by Brainbench."
 
 //TODO COVERLETTER add project details as a speech and card 
 //========================================================================================
@@ -407,7 +410,7 @@ const initialhandlers = {
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
-    'FavSongIntent': function() {
+    'FavSongIntent': function () {
         const speechOutput = guru_favSongs;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
@@ -416,24 +419,24 @@ const initialhandlers = {
         const speechOutput = guru_contact;
         this.emit(':tellWithCard', speechOutput, guru_contactCardTitle, guru_email);
     },
-    'TechnicalSkillsIntent': function() {
-       this.response.speak(guru_techskills).cardRenderer(guru_techskills_card_title, guru_techskills_card_content);
+    'TechnicalSkillsIntent': function () {
+        this.response.speak(guru_techskills).cardRenderer(guru_techskills_card_title, guru_techskills_card_content);
         if (this.event.context.System.device.supportedInterfaces.Display) {
             const listItemBuilder = new Alexa.templateBuilders.ListItemBuilder();
             const listTemplateBuilder = new Alexa.templateBuilders.ListTemplate1Builder();
-            listItemBuilder.addItem(null,'listItemToken1', makeRichText(guru_ts_title1), makeRichText(guru_ts_content1));
+            listItemBuilder.addItem(null, 'listItemToken1', makeRichText(guru_ts_title1), makeRichText(guru_ts_content1));
             //listItemBuilder.addItem(null,'listItemToken1', makeRichText(guru_ts_title1 + guru_ts_content1));
-            listItemBuilder.addItem(null,'listItemToken2', makeRichText(guru_ts_title2), makeRichText(guru_ts_content2));
-            listItemBuilder.addItem(null,'listItemToken3', makeRichText(guru_ts_title3), makeRichText(guru_ts_content3));
-            listItemBuilder.addItem(null,'listItemToken4', makeRichText(guru_ts_title4), makeRichText(guru_ts_content4));
-            listItemBuilder.addItem(null,'listItemToken5', makeRichText(guru_ts_title5), makeRichText(guru_ts_content5));
-            listItemBuilder.addItem(null,'listItemToken6', makeRichText(guru_ts_title6), makeRichText(guru_ts_content6));
-            listItemBuilder.addItem(null,'listItemToken7', makeRichText(guru_ts_title7), makeRichText(guru_ts_content7));
-            listItemBuilder.addItem(null,'listItemToken8', makeRichText(guru_ts_title8), makeRichText(guru_ts_content8));
-            listItemBuilder.addItem(null,'listItemToken9', makeRichText(guru_ts_title9), makeRichText(guru_ts_content9));
-            listItemBuilder.addItem(null,'listItemToken10', makeRichText(guru_ts_title10), makeRichText(guru_ts_content10));
-            listItemBuilder.addItem(null,'listItemToken11', makeRichText(guru_ts_title11), makeRichText(guru_ts_content11));
-            
+            listItemBuilder.addItem(null, 'listItemToken2', makeRichText(guru_ts_title2), makeRichText(guru_ts_content2));
+            listItemBuilder.addItem(null, 'listItemToken3', makeRichText(guru_ts_title3), makeRichText(guru_ts_content3));
+            listItemBuilder.addItem(null, 'listItemToken4', makeRichText(guru_ts_title4), makeRichText(guru_ts_content4));
+            listItemBuilder.addItem(null, 'listItemToken5', makeRichText(guru_ts_title5), makeRichText(guru_ts_content5));
+            listItemBuilder.addItem(null, 'listItemToken6', makeRichText(guru_ts_title6), makeRichText(guru_ts_content6));
+            listItemBuilder.addItem(null, 'listItemToken7', makeRichText(guru_ts_title7), makeRichText(guru_ts_content7));
+            listItemBuilder.addItem(null, 'listItemToken8', makeRichText(guru_ts_title8), makeRichText(guru_ts_content8));
+            listItemBuilder.addItem(null, 'listItemToken9', makeRichText(guru_ts_title9), makeRichText(guru_ts_content9));
+            listItemBuilder.addItem(null, 'listItemToken10', makeRichText(guru_ts_title10), makeRichText(guru_ts_content10));
+            listItemBuilder.addItem(null, 'listItemToken11', makeRichText(guru_ts_title11), makeRichText(guru_ts_content11));
+
             const listItems = listItemBuilder.build();
             const listTemplate = listTemplateBuilder.setToken('listToken')
                 .setTitle(guru_techskills_card_title)
@@ -488,10 +491,10 @@ const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
         const currentQuestionIndex = 0;
         const spokenQuestion = Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0];
         // Build reprompt for the question
-        let repromptText = this.t("TELL_QUESTION_MESSAGE", "1", spokenQuestion);
+        let repromptText = this.t("TELL_QUESTION_MESSAGE", "1", spokenQuestion+ "\n");
 
         for (let i = 0; i < ANSWER_COUNT; i++) {
-            repromptText += `${i + 1}. ${roundAnswers[i]}. `;
+            repromptText += `${i + 1}. ${roundAnswers[i]}. ` + "\n";
         }
 
         //Build object for session
@@ -715,10 +718,10 @@ function handleUserGuess(userGaveUp) {
         const spokenQuestion = Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0];
         const roundAnswers = populateRoundAnswers.call(this, gameQuestions, currentQuestionIndex, correctAnswerIndex, translatedQuestions);
         const questionIndexForSpeech = currentQuestionIndex + 1;
-        let repromptText = this.t("TELL_QUESTION_MESSAGE", questionIndexForSpeech.toString(), spokenQuestion);
+        let repromptText = this.t("TELL_QUESTION_MESSAGE", questionIndexForSpeech.toString(), spokenQuestion + "\n");
 
         for (let i = 0; i < ANSWER_COUNT; i++) {
-            repromptText += `${i + 1}. ${roundAnswers[i]}. `;
+            repromptText += `${i + 1}. ${roundAnswers[i]}. ` + "\n";
         }
 
         speechOutput = userGaveUp ? this.t("MOVE_ON_TO_NEXT_QUESTION") : "";
