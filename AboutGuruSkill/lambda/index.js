@@ -41,7 +41,7 @@ const guru_email = "s.srisarguru@gmail.com";
 const guru_contactCardTitle = "Guru's Email Id";
 const guru_favAthlethe = "His most favourite is M.S. Dhoni";
 const guru_favSports = "He likes to watch Cricket, American Football and Hockey";
-const guru_favTeam = "His favourite teams are Chennai Super Kings, Indian cricket team and Boise State Broncos";
+const guru_favTeam = "His favourite club cricket team is Chennai Super Kings, his favorite college football team is Boise State Broncos, his favorite NHL team is Columbus Blue Jackets and his favorite NFL team is Dallas Cowboys";
 const guru_favFood = "He likes to eat everything except humans";
 const guru_education = "He has a Master's degree in Computer Science";
 const guru_favQuote = "It will be Alright in the end. If it is not Alright, it is not the end";
@@ -213,6 +213,18 @@ const initialhandlers = {
                 this.emit('FavVideoGameIntent');
                 break;
             }
+            case 'cricket team':
+            case 'football team':
+            case 'sports team':
+            case 'NFL team':
+            case 'college football team':
+            case 'IPL team':
+            case 'league team':
+            case 'NHL team':
+            case 'hockey team': {
+                this.emit('FavSportsTeamIntent');
+                break;
+            }
             default:
                 this.emit('AMAZON.HelpIntent');
         }
@@ -314,6 +326,11 @@ const initialhandlers = {
     },
     'FavVideoGameIntent': function () {
         const speechOutput = guru_favVideoGame;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'FavSportsTeamIntent': function() {
+        const speechOutput = guru_favTeam;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
