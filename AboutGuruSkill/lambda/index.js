@@ -28,17 +28,16 @@ const STOP_MESSAGE = 'Goodbye!';
 
 const guru_work = "Guru works as an Full Stack Developer at Nationwide.";
 const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either guru or batman";
-const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. You can ask him about his likes, his technical skills, his work expereinces and you can also play a trivia game How well do you know guru. What do you like to know about him ?";
+const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. You can ask him about his likes, his technical skills, his work experiennces and you can also play a trivia game How well do you know guru. What do you like to know about him ?";
 const guru_launch_reprompt = "What do you like to know about him ?";
 const guru_color = "His favourite colors are red and black. Although he always told me he wanted rainbow dyed hair";
 const guru_summary = "Guru is a Full Stack developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed.";
+const guru_techskills = "Full Stack Development and proficient in a number of programming languages and scripting languages, databases, web services, tools and frameworks. I have sent all the details of his technical skills to your device";
 const guru_favActor = "His favourite actors are Hugh Jackman, Rajnikanth and Emma Watson";
 const guru_relationship = "He is single and No!, we are not in a relationship";
 const guru_favMovie = "His all time favourite movie is The Prestige directed by Christopher Nolan";
 const guru_nationality = "He is Indian. But he resides now in the US";
 const guru_contact = "You can ask him more by sending an email to him. I have sent his email address to your device";
-const guru_email = "s.srisarguru@gmail.com";
-const guru_contactCardTitle = "Guru's Email Id";
 const guru_favAthlethe = "His most favourite is M.S. Dhoni";
 const guru_favSports = "He likes to watch Cricket, American Football and Hockey";
 const guru_favTeam = "His favourite club cricket team is Chennai Super Kings, his favorite college football team is Boise State Broncos, his favorite NHL team is Columbus Blue Jackets and his favorite NFL team is Dallas Cowboys";
@@ -56,7 +55,40 @@ const guru_favSeason = "He prefers Spring.";
 const guru_favTvSeries = "It is none other than Breaking Bad.";
 const guru_favVideoGame = "Horizon Zero Dawn blew him away. Aloy All the way";
 
+//TODO COVERLETTER 
+//========================================================================================
+// Card constants
+//========================================================================================
+
+const guru_email = "s.srisarguru@gmail.com";
+const guru_contactCardTitle = "Guru's Email Id";
+const guru_techskills_card_title = "Guru's Technical Skills";
+const guru_techskills_card_content = "Programming Proficiency: \n " +
+    "Java, C, C++, Android Java, SQL.\n\n" +
+    "Java/J2EE Frameworks: \n" +
+    "Core Java, Servlets, Spring, Struts, Hibernate, JSP, iBatis \n\n" +
+    "Language/Scripting: \n" +
+    "JavaScript, Angular JS, Node JS, JQuery, HTML5, CSS, Shell scripting \n\n" +
+    "Web Services: \n" +
+    "SOAP, Restful, Apigee \n\n" +
+    "Servers: \n" +
+    "Apache Tomcat, JBoss, Webshpere. \n\n" +
+    "RDBMS: \n" +
+    "Oracle, MySQL and NoSQL. \n\n" +
+    "IDE / Tools: \n" +
+    "Eclipse, RAD, Spring STS, Net Beans and TOAD. \n\n" +
+    "Build & Project Tracking Tools: \n" +
+    "Jenkins, Maven, Ant, Bugzilla, Redmine, HP Quality Center, UCD. \n\n" +
+    "Operating Systems: \n" +
+    "Unix/Linux, Mac OS X, Windows. \n\n" +
+    "Version Control: \n" +
+    "Git, Fossil, SVN. \n\n" +
+    "Others: \n" +
+    "Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap";
+
+//==========================================================================================
 //FOR GURU TRIVIA
+//===========================================================================================
 const languageString = {
     "en": {
         "translation": {
@@ -347,6 +379,10 @@ const initialhandlers = {
     'ContactIntent': function () {
         const speechOutput = guru_contact;
         this.emit(':tellWithCard', speechOutput, guru_contactCardTitle, guru_email);
+    },
+    'TechnicalSkillsIntent': function() {
+        const speechOutput = guru_techskills;
+        this.emit(':tellWithCard', speechOutput, guru_techskills_card_title, guru_techskills_card_content);
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;

@@ -106,7 +106,7 @@ Which football/cricket/hockey/NFL/NHL/IPL/league team does he like the most
 football/cricket/hockey/NFL/NHL/IPL/league team  
   
 ## FavSong  
-Which is his favorite song 
+Which is his favorite song  
 Which songs does he like the most  
   
 ## TODO  
@@ -121,11 +121,17 @@ dog
 cat  
 dream job  
 future goals  
-technicial skills  
 repeat   
 
 ## --------------------------------------------------------------------------------------------------------------------------  
-
+  
+## TechnicalSkillsIntent  
+What are guru's technical skills  
+technical skills  
+What programming languages does he know?  
+What are his computer skills  
+programming skills  
+  
 ## Language Intent
 What languages does guru speak  
 What languages does guru know  
