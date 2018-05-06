@@ -193,5 +193,49 @@ module.exports = {
                 'The Witcher three'
             ],
         },
+        {
+            'Which is guru\'s favorite College Football Team?': [
+                'Boise State Broncos',
+                'Michigan Wolverines',
+                'Clemson Tiger',
+                'Alabama Crimsontide',
+                'Ohio State Buckeyes',
+                'Wisconsin Badgers',
+                'Georgia Bulldogs'
+            ],
+        },
+        {
+            'Which of the following are one of his favorite songs?': [
+                'Strangers in the night by Frank Sinatra',
+                'Uptown Funk by Bruno Mars',
+                'Let Her Go by Passengers',
+                'Roar by Katy Perry',
+                'Why this Kolaveri Di by Anirudh',
+                'Sugar by Maroon 5',
+                'Perfect by Ed Sheeran'
+            ],
+        },
+        {
+            'Which is guru\'s favorite NFL Team?': [
+                'Dallas Cowboys',
+                'Seattle Seahawks',
+                'Cleaveland Browns',
+                'Cincinnati Bengals',
+                'Denver Broncos',
+                'Miami Dolphins',
+                'Philadelphia Eagles'
+            ],
+        },
+        {
+            'Which is guru\'s favorite NhL Team?': [
+                'Columbus Blue Jackets',
+                'Washington Capitols',
+                'Pittsburg Penguins',
+                'L.A. Kings',
+                'New York Rangers',
+                'Nashville Predators',
+                'Boston Bruins'
+            ],
+        },
     ]
 };
