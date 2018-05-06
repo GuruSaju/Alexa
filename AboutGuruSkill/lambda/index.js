@@ -83,7 +83,7 @@ const languageString = {
             "TELL_QUESTION_MESSAGE": "Question %s. %s ",
             "GAME_OVER_MESSAGE": "You got %s out of %s questions correct. Thank you for playing!",
             "SCORE_IS_MESSAGE": "Your score is %s. ",
-            "MOVE_ON_TO_NEXT_QUESTION" : "Bummer, Let's move on to the next question",
+            "MOVE_ON_TO_NEXT_QUESTION": "Bummer, Let's move on to the next question",
         },
     }
 }
@@ -194,14 +194,14 @@ const initialhandlers = {
                 this.emit('FavLeaderIntent');
                 break;
             }
-            case 'season':{
+            case 'season': {
                 this.emit('FavSeasonIntent');
                 break;
             }
-            case 'tv show':
-            case 'tv series':
-            case 'tv series to watch':
-            case 'tv show to watch':{
+            case 'TV show':
+            case 'TV series':
+            case 'TV series to watch':
+            case 'TV show to watch': {
                 this.emit('FavSeriesIntent');
                 break;
             }
@@ -209,7 +209,7 @@ const initialhandlers = {
             case 'computer game':
             case 'console game':
             case 'ps4 game':
-            case 'playstation game':{
+            case 'playstation game': {
                 this.emit('FavVideoGameIntent');
                 break;
             }
@@ -292,12 +292,12 @@ const initialhandlers = {
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
-     'FavPlaceIntent': function () {
+    'FavPlaceIntent': function () {
         const speechOutput = guru_favPlace;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
-     'FavLeaderIntent': function () {
+    'FavLeaderIntent': function () {
         const speechOutput = guru_favLeader;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
@@ -307,12 +307,12 @@ const initialhandlers = {
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
-    'FavSeriesIntent':function () {
+    'FavSeriesIntent': function () {
         const speechOutput = guru_favTvSeries;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
-    'FavVideoGameIntent':function () {
+    'FavVideoGameIntent': function () {
         const speechOutput = guru_favVideoGame;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
@@ -562,7 +562,7 @@ function handleUserGuess(userGaveUp) {
     let correctAnswerIndex = parseInt(this.attributes.correctAnswerIndex, 10);
     let currentScore = parseInt(this.attributes.score, 10);
     let currentQuestionIndex = parseInt(this.attributes.currentQuestionIndex, 10);
-   // const correctAnswerText = this.attributes.correctAnswerText;
+    // const correctAnswerText = this.attributes.correctAnswerText;
     const translatedQuestions = this.t("QUESTIONS");
 
     if (answerSlotValid && parseInt(this.event.request.intent.slots.Answer.value, 10) === this.attributes["correctAnswerIndex"]) {
