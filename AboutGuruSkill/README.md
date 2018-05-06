@@ -131,7 +131,19 @@ technical skills
 What programming languages does he know?  
 What are his computer skills  
 programming skills  
+
+## WorkExperienceIntent  
+work experiences    
+What are his work experiences?  
+about his work experiences?  
+his work history  
+his previous experiences  
+past employments  
+employment  
+previous work  
+Which companies did he work for  
   
+
 ## Language Intent
 What languages does guru speak  
 What languages does guru know  

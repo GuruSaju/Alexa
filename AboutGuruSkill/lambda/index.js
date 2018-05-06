@@ -27,7 +27,7 @@ const STOP_MESSAGE = 'Goodbye!';
 //Speech output constants about guru
 //=========================================================================================================================================
 
-const guru_work = "Guru works as an Full Stack Developer at Nationwide.";
+const guru_work = "Guru works as an Full Stack Developer at Nationwide. Say work experience to know more about guru's work history";
 const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either guru or batman";
 const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. You can ask him about his likes, his technical skills, his work experiennces and you can also play a trivia game How well do you know guru. What do you like to know about him ?";
 const guru_launch_reprompt = "What do you like to know about him ?";
@@ -55,8 +55,9 @@ const guru_favSongs = "His favorites are Strangers in the night by Frank Sinatra
 const guru_favSeason = "He prefers Spring.";
 const guru_favTvSeries = "It is none other than Breaking Bad.";
 const guru_favVideoGame = "Horizon Zero Dawn blew him away. Aloy All the way";
+const guru_workExpereince = "He has around 3 plus years’ experience in development, research and teaching. I have sent a brief list of his work history to your device."
 
-//TODO COVERLETTER 
+//TODO COVERLETTER add project details as a speech and card 
 //========================================================================================
 // Card constants
 //========================================================================================
@@ -86,6 +87,14 @@ const guru_techskills_card_content = "Programming Proficiency: \n " +
     "Git, Fossil, SVN. \n\n" +
     "Others: \n" +
     "Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap";
+const guru_work_title = "Guru's Work Experience";
+const guru_work_content = "Nationwide Insurance, Columbus OH, Full Stack Developer (Java/J2EE) from August 2017 – Present \n" +
+    "Columbus International Corporation, OH, Software Engineer (Java/J2EE) from April 2017 – August 2017 \n" +
+    "Researcher and Developer, RA at CS Department at Boise State University from January 2015 – December 2016 \n" +
+    "Teaching Assistant, CS Department at Boise State University from January 2015 – December 2016 \n" +
+    "HPC Administration, Boise State University OIT from June 2015 – August 2015 \n" +
+    "Part-time Developer at ByteBe® Solutions India Private Limited from July 2013 – May 2014 \n" +
+    "Java Developer Internship at ABT Info Systems from Dec 2012 – May 2013"
 
 //=======================================================================================
 // Display Template constants
@@ -433,6 +442,10 @@ const initialhandlers = {
             this.response.renderTemplate(listTemplate);
         }
         this.emit(':responseReady');
+    },
+    'WorkExperienceIntent': function () {
+        const speechOutput = guru_workExpereince;
+        this.emit(':tellWithCard', speechOutput, guru_work_title, guru_work_content);
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
