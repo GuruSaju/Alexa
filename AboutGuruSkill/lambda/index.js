@@ -18,7 +18,7 @@ const GAME_STATES = {
 const APP_ID = 'amzn1.ask.skill.6d5effc0-d416-47c5-8d9a-52fb0654f771';
 
 const SKILL_NAME = 'About Guru';
-const HELP_MESSAGE = 'You can ask guru about what he does, what he likes etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score.';
+const HELP_MESSAGE = 'You can ask guru about what he does, what he likes, his technical skills, his work experiences etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score.';
 const HELP_REPROMPT = 'What do you want to know about guru?';
 const STOP_MESSAGE = 'Goodbye!';
 
@@ -225,6 +225,11 @@ const initialhandlers = {
                 this.emit('FavSportsTeamIntent');
                 break;
             }
+            case 'song':
+            case 'songs': {
+                this.emit('FavSongIntent');
+                break;
+            }
             default:
                 this.emit('AMAZON.HelpIntent');
         }
@@ -329,8 +334,13 @@ const initialhandlers = {
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
-    'FavSportsTeamIntent': function() {
+    'FavSportsTeamIntent': function () {
         const speechOutput = guru_favTeam;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'FavSongIntent': function() {
+        const speechOutput = guru_favSongs;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
