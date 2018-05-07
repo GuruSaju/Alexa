@@ -184,12 +184,148 @@
                         "What languages does he speak",
                         "What is guru's native language"
                     ]
+                },
+                {
+                    "name": "TechnicalSkillsIntent",
+                    "slots": [],
+                    "samples": [
+                        "professional skills",
+                        "about his technical skills",
+                        "What are his technical skills",
+                        "technical skills"
+                    ]
+                },
+                {
+                    "name": "AMAZON.MoreIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateSettingsIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PreviousIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "WorkExperienceIntent",
+                    "slots": [],
+                    "samples": [
+                        "professional experience",
+                        "Which companies did he work for ",
+                        "previous work ",
+                        "past employments",
+                        "his previous experiences ",
+                        "his work history",
+                        "about his work experiences",
+                        "What are his work experiences",
+                        "work experiences"
+                    ]
+                },
+                {
+                    "name": "CertificationsIntent",
+                    "slots": [],
+                    "samples": [
+                        "programming certifications",
+                        "Does he have any certifications",
+                        "technical cerfications",
+                        "about his certifications",
+                        "What are his professional certifications",
+                        "cerfications"
+                    ]
                 }
             ],
             "types": [
                 {
                     "name": "favThings",
                     "values": [
+                        {
+                            "name": {
+                                "value": "songs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "song"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "league team"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "IPL team"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "college football team"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NFL team"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NHL team"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hockey team"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "football team"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cricket team"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sports team"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "playstation game"
