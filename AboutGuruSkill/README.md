@@ -144,6 +144,14 @@ previous work
 Which companies did he work for  
 professional experience  
   
+## CertificationsIntent  
+cerfications  
+What are his professional certifications?  
+about his certifications? 
+technical cerfications  
+Does he have any certifications  
+programming certifications?  
+  
 ## Language Intent
 What languages does guru speak  
 What languages does guru know  

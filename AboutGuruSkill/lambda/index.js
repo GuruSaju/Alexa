@@ -450,6 +450,11 @@ const initialhandlers = {
         const speechOutput = guru_workExpereince;
         this.emit(':tellWithCard', speechOutput, guru_work_title, guru_work_content);
     },
+    'CertificationsIntent': function () {
+        const speechOutput = guru_certifications;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
         const reprompt = HELP_REPROMPT;
@@ -491,7 +496,7 @@ const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
         const currentQuestionIndex = 0;
         const spokenQuestion = Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0];
         // Build reprompt for the question
-        let repromptText = this.t("TELL_QUESTION_MESSAGE", "1", spokenQuestion+ "\n");
+        let repromptText = this.t("TELL_QUESTION_MESSAGE", "1", spokenQuestion + "\n");
 
         for (let i = 0; i < ANSWER_COUNT; i++) {
             repromptText += `${i + 1}. ${roundAnswers[i]}. ` + "\n";
