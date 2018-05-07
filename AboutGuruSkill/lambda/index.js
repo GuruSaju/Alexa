@@ -92,12 +92,12 @@ const guru_techskills_card_content = "Programming Proficiency: \n " +
     "Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap";
 const guru_work_title = "Guru's Work Experience";
 const guru_work_content = "Nationwide Insurance, Columbus OH, Full Stack Developer (Java/J2EE) from August 2017 – Present \n" +
-    "Columbus International Corporation, OH, Software Engineer (Java/J2EE) from April 2017 – August 2017 \n" +
-    "Researcher and Developer, RA at CS Department at Boise State University from January 2015 – December 2016 \n" +
-    "Teaching Assistant, CS Department at Boise State University from January 2015 – December 2016 \n" +
-    "HPC Administration, Boise State University OIT from June 2015 – August 2015 \n" +
-    "Part-time Developer at ByteBe® Solutions India Private Limited from July 2013 – May 2014 \n" +
-    "Java Developer Internship at ABT Info Systems from Dec 2012 – May 2013"
+    "Columbus International Corporation,Columbus OH, Software Engineer (Java/J2EE) from April 2017 – August 2017 \n" +
+    "CS Department at Boise State University, Researcher and Developer (RA) from January 2015 – December 2016 \n" +
+    "CS Department at Boise State University, Teaching Assistant from January 2015 – December 2016 \n" +
+    "Boise State University OIT, HPC Administration from June 2015 – August 2015 \n" +
+    "ByteBe® Solutions India Private Limited, Part-time Developer from July 2013 – May 2014 \n" +
+    "ABT Info Systems, Java Developer Intern from Dec 2012 – May 2013"
 
 //=======================================================================================
 // Display Template constants
