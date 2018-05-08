@@ -102,28 +102,32 @@ const guru_work_content = "Nationwide Insurance, Columbus OH, Full Stack Develop
 //=======================================================================================
 // Display Template constants
 //=======================================================================================
-const guru_ts_title1 = "<font size=\"6\"> Programming Proficiency:</font>"
-const guru_ts_content1 = "<font size=\"3\">Java, C, C++, Android Java, SQL.</font>"
-const guru_ts_title2 = " <font size=\"6\">Java/J2EE Frameworks:</font>"
-const guru_ts_content2 = "<font size=\"3\">Core Java, Servlets, Spring, Struts, Hibernate, JSP, iBatis</font>"
-const guru_ts_title3 = " <font size=\"6\">Language/Scripting:</font>"
-const guru_ts_content3 = "<font size=\"1\">JavaScript, Angular JS, Node JS, JQuery, HTML5, CSS, Shell scripting</font>"
-const guru_ts_title4 = " <font size=\"6\">Web Services:</font>"
-const guru_ts_content4 = "<font size=\"3\">SOAP, Restful, Apigee </font>"
-const guru_ts_title5 = " <font size=\"6\">Servers:</font>"
-const guru_ts_content5 = "<font size=\"3\">Apache Tomcat, JBoss, Webshpere.</font>"
-const guru_ts_title6 = " <font size=\"6\">RDBMS:</font>"
-const guru_ts_content6 = "<font size=\"3\">Oracle, MySQL and NoSQL.</font>"
-const guru_ts_title7 = " <font size=\"6\">IDE / Tools:</font>"
-const guru_ts_content7 = "<font size=\"3\">Eclipse, RAD, Spring STS, Net Beans and TOAD.</font>"
-const guru_ts_title8 = " <font size=\"6\">Build &amp; Project Tracking Tools: </font>"
-const guru_ts_content8 = "<font size=\"2\">Jenkins, Maven, Ant, Bugzilla, Redmine, HP QC, UCD.</font>"
-const guru_ts_title9 = " <font size=\"6\">Operating Systems:</font>"
-const guru_ts_content9 = "<font size=\"3\">Unix/Linux, Mac OS X, Windows.</font>"
-const guru_ts_title10 = " <font size=\"6\">Version Control:</font>"
-const guru_ts_content10 = "<font size=\"3\">Git, Fossil, SVN.</font>"
-const guru_ts_title11 = " <font size=\"6\">Others:</font>"
-const guru_ts_content11 = "<font size=\"3\">Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap</font>";
+const guru_ts_title1 = "<font size=\"6\"> Programming Proficiency:</font> <br/>";
+const guru_ts_content1 = "<font size=\"3\">Java, C, C++, Android Java, SQL.</font> <br/><br/>";
+const guru_ts_title2 = " <font size=\"6\">Java/J2EE Frameworks:</font> <br/>";
+const guru_ts_content2 = "<font size=\"3\">Core Java, Servlets, Spring, Struts, Hibernate, JSP, iBatis</font> <br/><br/>";
+const guru_ts_title3 = " <font size=\"6\">Language/Scripting:</font> <br/>";
+const guru_ts_content3 = "<font size=\"3\">JavaScript, Angular JS, Node JS, JQuery, HTML5, CSS, Shell scripting</font> <br/><br/>";
+const guru_ts_title4 = " <font size=\"6\">Web Services:</font> <br/>";
+const guru_ts_content4 = "<font size=\"3\">SOAP, Restful, Apigee </font> <br/><br/>";
+const guru_ts_title5 = " <font size=\"6\">Servers:</font><br/>";
+const guru_ts_content5 = "<font size=\"3\">Apache Tomcat, JBoss, Webshpere.</font> <br/><br/>";
+const guru_ts_title6 = " <font size=\"6\">RDBMS:</font> <br/>";
+const guru_ts_content6 = "<font size=\"3\">Oracle, MySQL and NoSQL.</font><br/><br/>";
+const guru_ts_title7 = " <font size=\"6\">IDE / Tools:</font><br/>";
+const guru_ts_content7 = "<font size=\"3\">Eclipse, RAD, Spring STS, Net Beans and TOAD.</font><br/><br/>";
+const guru_ts_title8 = " <font size=\"6\">Build &amp; Project Tracking Tools: </font> <br/>";
+const guru_ts_content8 = "<font size=\"3\">Jenkins, Maven, Ant, Bugzilla, Redmine, HP QC, UCD, Nitro, Splunk.</font> <br/><br/>";
+const guru_ts_title9 = " <font size=\"6\">Operating Systems:</font><br/>";
+const guru_ts_content9 = "<font size=\"3\">Unix/Linux, Mac OS X, Windows.</font><br/><br/>";
+const guru_ts_title10 = " <font size=\"6\">Version Control:</font> <br/>";
+const guru_ts_content10 = "<font size=\"3\">Git, Fossil, SVN.</font> <br/><br/>";
+const guru_ts_title11 = " <font size=\"6\">Others:</font><br/>";
+const guru_ts_content11 = "<font size=\"3\">Amazon Alexa, Microsoft Bot Framework, Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap</font>";
+
+const guru_ts_bodyTemp1_content = guru_ts_title1 + guru_ts_content1 + guru_ts_title2 + guru_ts_content2 + guru_ts_title3 + guru_ts_content3 + guru_ts_title4 + guru_ts_content4
+    + guru_ts_title5 + guru_ts_content5 + guru_ts_title6 + guru_ts_content6 + guru_ts_title7 + guru_ts_content7 + guru_ts_title8 + guru_ts_content8 + guru_ts_title9 + guru_ts_content9
+    + guru_ts_title10 + guru_ts_content10 + guru_ts_title11 + guru_ts_content11;
 
 //==========================================================================================
 //FOR GURU TRIVIA
@@ -422,27 +426,31 @@ const initialhandlers = {
     'TechnicalSkillsIntent': function () {
         this.response.speak(guru_techskills).cardRenderer(guru_techskills_card_title, guru_techskills_card_content);
         if (this.event.context.System.device.supportedInterfaces.Display) {
-            const listItemBuilder = new Alexa.templateBuilders.ListItemBuilder();
-            const listTemplateBuilder = new Alexa.templateBuilders.ListTemplate1Builder();
-            listItemBuilder.addItem(null, 'listItemToken1', makeRichText(guru_ts_title1), makeRichText(guru_ts_content1));
-            //listItemBuilder.addItem(null,'listItemToken1', makeRichText(guru_ts_title1 + guru_ts_content1));
-            listItemBuilder.addItem(null, 'listItemToken2', makeRichText(guru_ts_title2), makeRichText(guru_ts_content2));
-            listItemBuilder.addItem(null, 'listItemToken3', makeRichText(guru_ts_title3), makeRichText(guru_ts_content3));
-            listItemBuilder.addItem(null, 'listItemToken4', makeRichText(guru_ts_title4), makeRichText(guru_ts_content4));
-            listItemBuilder.addItem(null, 'listItemToken5', makeRichText(guru_ts_title5), makeRichText(guru_ts_content5));
-            listItemBuilder.addItem(null, 'listItemToken6', makeRichText(guru_ts_title6), makeRichText(guru_ts_content6));
-            listItemBuilder.addItem(null, 'listItemToken7', makeRichText(guru_ts_title7), makeRichText(guru_ts_content7));
-            listItemBuilder.addItem(null, 'listItemToken8', makeRichText(guru_ts_title8), makeRichText(guru_ts_content8));
-            listItemBuilder.addItem(null, 'listItemToken9', makeRichText(guru_ts_title9), makeRichText(guru_ts_content9));
-            listItemBuilder.addItem(null, 'listItemToken10', makeRichText(guru_ts_title10), makeRichText(guru_ts_content10));
-            listItemBuilder.addItem(null, 'listItemToken11', makeRichText(guru_ts_title11), makeRichText(guru_ts_content11));
-
-            const listItems = listItemBuilder.build();
-            const listTemplate = listTemplateBuilder.setToken('listToken')
-                .setTitle(guru_techskills_card_title)
-                .setListItems(listItems)
+            const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
+            const template = builder.setTitle(guru_techskills_card_title)
+                .setTextContent(makeRichText(guru_ts_bodyTemp1_content))
                 .build();
-            this.response.renderTemplate(listTemplate);
+            /*   const listItemBuilder = new Alexa.templateBuilders.ListItemBuilder();
+               const listTemplateBuilder = new Alexa.templateBuilders.ListTemplate1Builder();
+               listItemBuilder.addItem(null, 'listItemToken1', makeRichText(guru_ts_title1), makeRichText(guru_ts_content1));
+               //listItemBuilder.addItem(null,'listItemToken1', makeRichText(guru_ts_title1 + guru_ts_content1));
+               listItemBuilder.addItem(null, 'listItemToken2', makeRichText(guru_ts_title2), makeRichText(guru_ts_content2));
+               listItemBuilder.addItem(null, 'listItemToken3', makeRichText(guru_ts_title3), makeRichText(guru_ts_content3));
+               listItemBuilder.addItem(null, 'listItemToken4', makeRichText(guru_ts_title4), makeRichText(guru_ts_content4));
+               listItemBuilder.addItem(null, 'listItemToken5', makeRichText(guru_ts_title5), makeRichText(guru_ts_content5));
+               listItemBuilder.addItem(null, 'listItemToken6', makeRichText(guru_ts_title6), makeRichText(guru_ts_content6));
+               listItemBuilder.addItem(null, 'listItemToken7', makeRichText(guru_ts_title7), makeRichText(guru_ts_content7));
+               listItemBuilder.addItem(null, 'listItemToken8', makeRichText(guru_ts_title8), makeRichText(guru_ts_content8));
+               listItemBuilder.addItem(null, 'listItemToken9', makeRichText(guru_ts_title9), makeRichText(guru_ts_content9));
+               listItemBuilder.addItem(null, 'listItemToken10', makeRichText(guru_ts_title10), makeRichText(guru_ts_content10));
+               listItemBuilder.addItem(null, 'listItemToken11', makeRichText(guru_ts_title11), makeRichText(guru_ts_content11));
+   
+               const listItems = listItemBuilder.build();
+               const listTemplate = listTemplateBuilder.setToken('listToken')
+                   .setTitle(guru_techskills_card_title)
+                   .setListItems(listItems)
+                   .build(); */
+            this.response.renderTemplate(template);
         }
         this.emit(':responseReady');
     },
