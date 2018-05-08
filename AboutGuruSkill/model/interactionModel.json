@@ -265,6 +265,22 @@
                         "What are his professional certifications",
                         "cerfications"
                     ]
+                },
+                {
+                    "name": "WorkDetailIntent",
+                    "slots": [
+                        {
+                            "name": "companyType",
+                            "type": "companies"
+                        }
+                    ],
+                    "samples": [
+                        "{companyType} projects",
+                        "which projects he worked on at {companyType}",
+                        "what did he do at {companyType}",
+                        "{companyType}",
+                        "about his experience at {companyType}"
+                    ]
                 }
             ],
             "types": [
@@ -574,6 +590,66 @@
                         {
                             "name": {
                                 "value": "car"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "companies",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "bsu"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "abt info systems"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "abt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "byte be solutions"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "byte be"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bytebe"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "boise state university"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cic"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "columbus international corporation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nationwide insurance"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nationwide"
                             }
                         }
                     ]
