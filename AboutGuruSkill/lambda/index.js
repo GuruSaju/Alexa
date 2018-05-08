@@ -129,6 +129,14 @@ const guru_ts_bodyTemp1_content = guru_ts_title1 + guru_ts_content1 + guru_ts_ti
     + guru_ts_title5 + guru_ts_content5 + guru_ts_title6 + guru_ts_content6 + guru_ts_title7 + guru_ts_content7 + guru_ts_title8 + guru_ts_content8 + guru_ts_title9 + guru_ts_content9
     + guru_ts_title10 + guru_ts_content10 + guru_ts_title11 + guru_ts_content11;
 
+const guru_work_BodyTemp_content = "<font size=\"6\">Nationwide Insurance, OH </font><br/> <font size=\"4\">Full Stack Developer (Java/J2EE) from August 2017 – Present </font><br/><br/>" +
+    "<font size=\"6\">Columbus International Corporation, OH </font> <br/><font size=\"4\">Software Engineer (Java/J2EE) from April 2017 – August 2017 </font><br/><br/>" +
+    "<font size=\"6\">CS Dept at Boise State University, ID </font><br/> <font size=\"4\">Researcher and Developer (RA) from January 2015 – December 2016 </font><br/><br/>" +
+    "<font size=\"6\">CS Dept at Boise State University, ID </font><br/> <font size=\"4\">Teaching Assistant from January 2015 – December 2016 </font><br/><br/>" +
+    "<font size=\"6\">Boise State University OIT </font> <br/><font size=\"4\">HPC Administration from June 2015 – August 2015 </font><br/><br/>" +
+    "<font size=\"6\">ByteBe Solutions India Private Limited, India</font><br/> <font size=\"4\">Part-time Developer from July 2013 – May 2014 </font><br/><br/>" +
+    "<font size=\"6\">ABT Info Systems, India </font><br/> <font size=\"4\">Java Developer Intern from Dec 2012 – May 2013</font>";
+
 //==========================================================================================
 //FOR GURU TRIVIA
 //===========================================================================================
@@ -455,8 +463,15 @@ const initialhandlers = {
         this.emit(':responseReady');
     },
     'WorkExperienceIntent': function () {
-        const speechOutput = guru_workExpereince;
-        this.emit(':tellWithCard', speechOutput, guru_work_title, guru_work_content);
+        this.response.speak(guru_workExpereince).cardRenderer(guru_work_title, guru_work_content);
+        if (this.event.context.System.device.supportedInterfaces.Display) {
+            const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
+            const template = builder.setTitle(guru_work_title)
+                .setTextContent(makeRichText(guru_work_BodyTemp_content))
+                .build();
+            this.response.renderTemplate(template);
+        }
+        this.emit(':responseReady');
     },
     'CertificationsIntent': function () {
         const speechOutput = guru_certifications;
