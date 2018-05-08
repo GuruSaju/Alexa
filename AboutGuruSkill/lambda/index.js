@@ -59,6 +59,17 @@ const guru_workExpereince = "He has around 3 plus years’ experience in develop
 const guru_publications = "He has two publications, first one titled A Certificateless One-Way Group Key Agreement Protocol for Point-to-Point Email Encryption and another titled IMPROVED SUPERVISED CLASSIFICATION OF ACCELEROMETRY DATA" +
     "TO DISTINGUISH BEHAVIORS OF SOARING BIRDS";
 const guru_certifications = "He has completed Java 8, Bash Shell Scripting and OO Concepts certifications by Brainbench."
+const guru_nationwide = "As a member of a T&L team and from a multi-speed IT perspective, his aim was to implement innovative systems of engagement with agility and experimentation in order to optimize internet sales applications and deliver"
+    + "timely solutions within a rapidly evolving online environment. He and his team built innovative Test and learn features for our sales applications (Auto Insurance, Property Insurance and Powersports Insurance) which could"
+    + "be switched on and off when needed and had a line of separation from mainline code. I have sent more details on about his work at Nationwide to your device";
+const guru_cic = "As a software engineer he worked on The Online Product Approval (OPA) application is a web-based workflow engine that manages the product development lifecycle and dialog between the Product Development Associates and Licensee " +
+    "partners. Online Product Approval (OPA) is a system used to accept, manage, and approve licensed product submissions. He worked on adding a new workflow module in addition to the normal workflow to accommodate the BPM team" +
+    "I have sent more details on about his work at Columbus International Corporation to your device";
+
+const guru_bsu = "As a Research Developer at the Computer Science department at Boise State university he did research in cyber-security on point to point email encryption. He designed a protocol on point to point email encryption and developed software prototypes,"
+    + " as a teaching assistant he assisted in tutoring, teaching, mentoring and grading, as a hpc admin he helped other researchers in coding on a 16 node gpu clustered supercomputer. I have sent more details on about his work at Boise State University to your device";
+const guru_bytebe = "As a part time java web developer at ByteBe he worked on developing various web applications for various industries like granite, clubs and e-commerce. I have sent more details on about his work at ByteBe to your device";
+const guru_abt = "As a Java Developer intern at ABT he was working with the Java project team where he learned and developed web applications. I have sent more details on about his work at ABT to your device";
 
 //TODO COVERLETTER add project details as a speech and card 
 //========================================================================================
@@ -97,7 +108,32 @@ const guru_work_content = "Nationwide Insurance, Columbus OH, Full Stack Develop
     "CS Department at Boise State University, Teaching Assistant from January 2015 – December 2016 \n" +
     "Boise State University OIT, HPC Administration from June 2015 – August 2015 \n" +
     "ByteBe® Solutions India Private Limited, Part-time Developer from July 2013 – May 2014 \n" +
-    "ABT Info Systems, Java Developer Intern from Dec 2012 – May 2013"
+    "ABT Info Systems, Java Developer Intern from Dec 2012 – May 2013";
+const guru_work_nationwide_title = "Experience at Nationwide";
+const guru_work_cic_title = "Experience at CIC";
+const guru_work_bsu_title = "Experience at BSU";
+const guru_work_bytebe_title = "Experience at ByteBe";
+const guru_work_abt_title = "Experience at ABT";
+const guru_work_nationwide_content = "PROJECTS: PayPal Payment, Adobe Target for Auto, Property and Powersports, Chatbot for password reset, claims and smartride"
+    + "Amazon Alexa: Find an agent, FAQ, Claims, Smartride, Billing Inquiry and Bill Pay, Current Carrier, Predictive Coverages, Implementation of plugin framework for Powersports" +
+    "Application and several API’s (internal and external) using APIGEE \n"
+    + "ENVIRONMENT:Java/J2EE, Spring (MVC, IOC, AOP, Webflow), JSP, JavaScript, AngularJS, NodeJS, iBatis, Hibernate, jQuery, HTML, CSS, JDBC, Oracle 11g, REST, SOAP, Apigee, WebSphere " +
+    "Application Server, Liberty Server, Maven, HP Quality Center, Amazon Alexa, Microsoft Bot Framework, Git, SVN, Jenkins, UCD";
+
+const guru_work_cic_content = "PROJECT:Online Product Approval (OPA) is a system used to accept, manage, and approve licensed product submissions. The Brand Product Management (BPM) team " +
+    "actively partners with these North America product development teams to review OPA and sample submissions. We had to add new workflow module in addition to the normal workflow to accommodate the BPM team \n" +
+    "ENVIRONMENT:Java/J2EE, Spring (MVC, IOC, AOP), JSP, JavaScript, jQuery, HTML, CSS, JDBC, Stored Proc, MySQL, REST, WebSphere, Maven, Redmine, Git, Log4j.";
+
+const guru_work_bsu_content = "PROJECT: A Certificateless One-way Group Key Agreement Protocol for Point-Point Email Encryption (CLOW-GKA) protocol for P2P email encryption using Elliptic curve cryptography \n" +
+    "ENVIRONMENT:Java, Java GUI, Spring, JSP, JavaScript, AngularJS, Hibernate, jQuery, HTML, CSS, JDBC, Maven, Git \n"
+    + "TA: 221 Computer Science 2, 321 Data Structures, 421/521 Design and Analysis of Algorithms \n" +
+    "HPC: Assisted researchers in Java and C";
+
+const guru_work_bytebe_content = "PROJECTS:Websites for StoneBe, Kongu Association, WONASA \n" +
+    "ENVIRONMENT:Java, Struts, Servlets, JSP, JDBC, jQuery, MySQL, JavaScript, Apache, HTML, SVN and CSS";
+
+const guru_work_abt_content = "PROJECT: E-Learning Web application where you can take a variety of courses and buy books \n" +
+    "ENVIRONMENT:Java, JavaScript, JSP, Servlets, HTML, MySQL and CSS";
 
 //=======================================================================================
 // Display Template constants
@@ -476,6 +512,36 @@ const initialhandlers = {
     'CertificationsIntent': function () {
         const speechOutput = guru_certifications;
         this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'WorkDetailIntent': function () {
+        const intentObj = this.event.request.intent;
+        const company = intentObj.slots.companyType.value;
+        switch (company) {
+            case 'nationwide':
+            case 'nationwide insurance': {
+                this.response.speak(guru_nationwide).cardRenderer(guru_work_nationwide_title, guru_work_nationwide_content);
+            }
+            case 'columbus international corporation':
+            case 'cic': {
+                this.response.speak(guru_cic).cardRenderer(guru_work_cic_title, guru_work_cic_content);
+            }
+            case 'boise state university':
+            case 'bsu': {
+                this.response.speak(guru_bsu).cardRenderer(guru_work_bsu_title, guru_work_bsu_content);
+            }
+            case 'byte be':
+            case 'bytebe':
+            case 'byte be solutions': {
+                this.response.speak(guru_bytebe).cardRenderer(guru_work_bytebe_title, guru_work_bytebe_content);
+            }
+            case 'abt':
+            case 'abt info systems': {
+                this.response.speak(guru_abt).cardRenderer(guru_work_abt_title, guru_work_abt_content);
+            }
+            default:
+                this.emit('AMAZON.HelpIntent');
+        }
         this.emit(':responseReady');
     },
     'AMAZON.HelpIntent': function () {

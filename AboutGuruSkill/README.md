@@ -151,6 +151,13 @@ about his certifications?
 technical cerfications  
 Does he have any certifications  
 programming certifications?  
+
+## WorkDetailIntent  
+about his experience at {companyType}  
+{companyType}  
+what did he do at {companyType}  
+which projects he worked on at {companyType}  
+{companyType} projects  
   
 ## Language Intent
 What languages does guru speak  
