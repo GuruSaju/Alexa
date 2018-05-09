@@ -34,7 +34,7 @@ const guru_launch = "Welcome to About Guru. This skill is to know about guru. If
 const guru_launch_reprompt = "What do you like to know about him ?";
 const guru_color = "His favourite colors are red and black. Although he always told me he wanted rainbow dyed hair";
 const guru_summary = "Guru is a Full Stack developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed.";
-const guru_techskills = "Full Stack Development and proficient in a number of programming languages and scripting languages, databases, web services, tools and frameworks. I have sent all the details of his technical skills to your device";
+const guru_techskills = "Full Stack Development and proficient in a number of programming languages and scripting languages, databases, web services, tools and frameworks. I have sent all the details of his technical skills to your device. Say contact to get guru's email address";
 const guru_favActor = "His favourite actors are Hugh Jackman, Rajnikanth and Emma Watson";
 const guru_relationship = "He is single and No!, we are not in a relationship";
 const guru_favMovie = "His all time favourite movie is The Prestige directed by Christopher Nolan";
@@ -56,10 +56,10 @@ const guru_favSongs = "His favorites are Strangers in the night by Frank Sinatra
 const guru_favSeason = "He prefers Spring.";
 const guru_favTvSeries = "It is none other than Breaking Bad.";
 const guru_favVideoGame = "Horizon Zero Dawn blew him away. Aloy All the way";
-const guru_workExpereince = "He has around 3 plus years’ experience in development, research and teaching. I have sent a brief list of his work history to your device."
-const guru_publications = "He has two publications, first one titled A Certificateless One-Way Group Key Agreement Protocol for Point-to-Point Email Encryption and another titled IMPROVED SUPERVISED CLASSIFICATION OF ACCELEROMETRY DATA" +
+const guru_workExpereince = "He has around 3 plus years’ experience in development, research and teaching. I have sent a brief list of his work history to your device. Please say the name of the company to know more, or, say contact to get the email address of guru.";
+const guru_publications = "He has authored two publications, first one titled, A Certificateless One-Way Group Key Agreement Protocol, for Point-to-Point Email Encryption, and ,another titled, IMPROVED SUPERVISED CLASSIFICATION OF ACCELEROMETRY DATA, " +
     "TO DISTINGUISH BEHAVIORS OF SOARING BIRDS";
-const guru_certifications = "He has completed Java 8, Bash Shell Scripting and OO Concepts certifications by Brainbench."
+const guru_certifications = "He has completed Java 8, Bash Shell Scripting and O O Concepts certifications by Brainbench.";
 const guru_nationwide = "As a member of a Test and Learn team and from a multi-speed IT perspective, his aim was to implement innovative systems of engagement, with agility and experimentation in order to optimize internet sales applications, and deliver"
     + "timely solutions within a rapidly evolving online environment. He and his team built innovative Test and learn features for our sales applications, Auto Insurance, Property Insurance, and Powersports Insurance, which could"
     + "be switched on and off when needed, and had a line of separation from mainline code. I have sent more details about his work at Nationwide to your device";
@@ -71,7 +71,8 @@ const guru_bsu = "As a Research Developer at the Computer Science department at 
     + " as a teaching assistant he assisted in tutoring, teaching, mentoring and grading, as a hpc admin he helped other researchers in coding on a 16 node g p u clustered supercomputer. I have sent more details about his work at Boise State University to your device";
 const guru_bytebe = "As a part time java web developer at ByteBe, he worked on developing various web applications for various industries like granite, clubs and e-commerce. I have sent more details about his work at ByteBe to your device";
 const guru_abt = "As a Java Developer intern at ABT, he was working with the Java project team where he learned and developed web applications. I have sent more details about his work at ABT to your device";
-
+const guru_projects = "Please say the name of the organization he worked for, to know more on his projects or say, side projects to know about his other projects. What would you like to know?";
+const guru_sideProjects = "Guru has worked on several projects on his own and also for school in various technologies. I have sent a list of his projects to your device. In order to get his resume please contact him";
 //TODO COVERLETTER add project details as a speech and card 
 //========================================================================================
 // Card constants
@@ -126,7 +127,7 @@ const guru_work_cic_content = "PROJECT:Online Product Approval (OPA) is a system
     "ENVIRONMENT: Java/J2EE, Spring (MVC, IOC, AOP), JSP, JavaScript, jQuery, HTML, CSS, JDBC, Stored Proc, MySQL, REST, WebSphere, Maven, Redmine, Git, Log4j.";
 
 const guru_work_bsu_content = "RA PROJECT: A Certificateless One-way Group Key Agreement Protocol for Point-Point Email Encryption (CLOW-GKA) protocol for P2P email encryption using Elliptic curve cryptography \n" +
-    "ENVIRONMENT: Java, Java GUI, Spring, JSP, JavaScript, AngularJS, Hibernate, jQuery, HTML, CSS, JDBC, Maven, Git \n"
+    "ENVIRONMENT: Java, Java GUI, Cyber-Security, Spring, JSP, JavaScript, AngularJS, Hibernate, jQuery, HTML, CSS, JDBC, Maven, Git \n"
     + "TA: 221 Computer Science 2, 321 Data Structures, 421/521 Design and Analysis of Algorithms \n" +
     "HPC: Assisted researchers in Java and C";
 
@@ -136,6 +137,7 @@ const guru_work_bytebe_content = "PROJECTS: Websites for StoneBe, Kongu Associat
 const guru_work_abt_content = "PROJECT: E-Learning Web application where you can take a variety of courses and buy books \n" +
     "ENVIRONMENT: Java, JavaScript, JSP, Servlets, HTML, MySQL and CSS";
 
+const guru_side_projects_content = " ";
 //=======================================================================================
 // Display Template constants
 //=======================================================================================
@@ -174,6 +176,26 @@ const guru_work_BodyTemp_content = "<font size=\"6\">Nationwide Insurance, OH </
     "<font size=\"6\">ByteBe Solutions India Private Limited, India</font><br/> <font size=\"4\">Part-time Developer from July 2013 – May 2014 </font><br/><br/>" +
     "<font size=\"6\">ABT Info Systems, India </font><br/> <font size=\"4\">Java Developer Intern from Dec 2012 – May 2013</font>";
 
+const guru_work_nationwide_bodyTemp_content = "<font size=\"6\">PROJECTS:</font><br/> <font size=\"3\">PayPal Payment, Adobe Target for Auto, Property and Powersports, Chatbot for password reset, claims and smartride"
+    + ", Amazon Alexa: Find an agent, FAQ, Claims, Smartride, Billing Inquiry and Bill Pay, Current Carrier, Predictive Coverages, Implementation of plugin framework for Powersports " +
+    "Application and several API’s (internal and external) using APIGEE </font> <br/><br/>"
+    + "<font size=\"6\">ENVIRONMENT:</font><br/> <font size=\"3\">Java/J2EE, Spring (MVC, IOC, AOP, Webflow), JSP, JavaScript, AngularJS, NodeJS, iBatis, Hibernate, jQuery, HTML, CSS, JDBC, Oracle 11g, REST, SOAP, Apigee, WebSphere " +
+    "Application Server, Liberty Server, Maven, HP Quality Center, Amazon Alexa, Microsoft Bot Framework, Git, SVN, Jenkins, UCD</font>";
+
+const guru_work_cic_bodyTemp_content = "<font size=\"6\">PROJECT:</font><br/> <font size=\"3\">Online Product Approval (OPA) is a system used to accept, manage, and approve licensed product submissions. The Brand Product Management (BPM) team " +
+    "actively partners with these North America product development teams to review OPA and sample submissions. We had to add new workflow module in addition to the normal workflow to accommodate the BPM team </font> <br/><br/>" +
+    "<font size=\"6\">ENVIRONMENT:</font><br/> <font size=\"3\">Java/J2EE, Spring (MVC, IOC, AOP), JSP, JavaScript, jQuery, HTML, CSS, JDBC, Stored Proc, MySQL, REST, WebSphere, Maven, Redmine, Git, Log4j.</font>";
+
+const guru_work_bsu_bodyTemp_content = "<font size=\"6\">RA PROJECT:</font><br/> <font size=\"3\">A Certificateless One-way Group Key Agreement Protocol for Point-Point Email Encryption (CLOW-GKA) protocol for P2P email encryption using Elliptic curve cryptography </font> <br/><br/>" +
+    "<font size=\"6\">ENVIRONMENT:</font><br/> <font size=\"3\">Java, Java GUI, Cyber-Security, Spring, JSP, JavaScript, AngularJS, Hibernate, jQuery, HTML, CSS, JDBC, Maven, Git </font> <br/><br/>"
+    + "<font size=\"6\">TA:</font><br/> <font size=\"3\">221 Computer Science 2, 321 Data Structures, 421/521 Design and Analysis of Algorithms </font> <br/><br/>" +
+    "<font size=\"6\">HPC:</font><br/> <font size=\"3\">Assisted researchers in Java and C</font>";
+
+const guru_work_bytebe_bodyTemp_content = "<font size=\"6\">PROJECTS:</font><br/> <font size=\"3\">Websites for StoneBe, Kongu Association, WONASA </font> <br/><br/> " +
+    "<font size=\"6\">ENVIRONMENT:</font><br/> <font size=\"3\">Java, Struts, Servlets, JSP, JDBC, jQuery, MySQL, JavaScript, Apache, HTML, SVN and CSS</font>";
+
+const guru_work_abt_bodyTemp_content = "<font size=\"6\">PROJECT:</font><br/> <font size=\"3\">E-Learning Web application where you can take a variety of courses and buy books </font> <br/><br/> " +
+    "<font size=\"6\">ENVIRONMENT:</font><br/> <font size=\"3\">Java, JavaScript, JSP, Servlets, HTML, MySQL and CSS</font>";
 //==========================================================================================
 //FOR GURU TRIVIA
 //===========================================================================================
@@ -200,13 +222,13 @@ const languageString = {
             "ANSWER_WRONG_MESSAGE": "wrong. ",
             "CORRECT_ANSWER_MESSAGE": "The correct answer is %s: %s. ",
             "ANSWER_IS_MESSAGE": "That answer is ",
-            "TELL_QUESTION_MESSAGE": "Question %s. %s ",
+            "TELL_QUESTION_MESSAGE": "Question %s. %s",
             "GAME_OVER_MESSAGE": "You got %s out of %s questions correct. Thank you for playing!",
             "SCORE_IS_MESSAGE": "Your score is %s. ",
             "MOVE_ON_TO_NEXT_QUESTION": "Bummer, Let's move on to the next question",
         },
     }
-}
+};
 //=========================================================================================================================================
 //Handlers
 //=========================================================================================================================================
@@ -497,6 +519,7 @@ const initialhandlers = {
                    .build(); */
             this.response.renderTemplate(template);
         }
+        this.response.shouldEndSession(false);
         this.emit(':responseReady');
     },
     'WorkExperienceIntent': function () {
@@ -508,6 +531,7 @@ const initialhandlers = {
                 .build();
             this.response.renderTemplate(template);
         }
+        this.response.shouldEndSession(false);
         this.emit(':responseReady');
     },
     'CertificationsIntent': function () {
@@ -518,26 +542,37 @@ const initialhandlers = {
     'WorkDetailIntent': function () {
         const intentObj = this.event.request.intent;
         const company = intentObj.slots.companyType.value;
+        let title = null;
+        let bodyTemp_content = null;
         switch (company) {
             case 'nationwide':
             case 'nationwide insurance': {
                 this.response.speak(guru_nationwide).cardRenderer(guru_work_nationwide_title, guru_work_nationwide_content);
+                title = guru_work_nationwide_title;
+                bodyTemp_content = guru_work_nationwide_bodyTemp_content;
                 break;
             }
-            case 'columbus international corporation':
+            case 'Columbus international corporation':
+            case 'Columbus international':
             case 'cic': {
                 this.response.speak(guru_cic).cardRenderer(guru_work_cic_title, guru_work_cic_content);
+                title = guru_work_cic_title;
+                bodyTemp_content = guru_work_cic_bodyTemp_content;
                 break;
             }
             case 'boise state university':
             case 'bsu': {
                 this.response.speak(guru_bsu).cardRenderer(guru_work_bsu_title, guru_work_bsu_content);
+                title = guru_work_bsu_title;
+                bodyTemp_content = guru_work_bsu_bodyTemp_content;
                 break;
             }
             case 'byte be':
             case 'bytebe':
             case 'byte be solutions': {
                 this.response.speak(guru_bytebe).cardRenderer(guru_work_bytebe_title, guru_work_bytebe_content);
+                title = guru_work_bytebe_title;
+                bodyTemp_content = guru_work_bytebe_bodyTemp_content;
                 break;
             }
             case 'abt':
@@ -545,11 +580,25 @@ const initialhandlers = {
             case 'about':
             case 'about info systems': {
                 this.response.speak(guru_abt).cardRenderer(guru_work_abt_title, guru_work_abt_content);
+                title = guru_work_abt_title;
+                bodyTemp_content = guru_work_abt_bodyTemp_content;
                 break;
             }
             default:
                 this.emit('AMAZON.HelpIntent');
         }
+        if (this.event.context.System.device.supportedInterfaces.Display) {
+            const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
+            const template = builder.setTitle(title)
+                .setTextContent(makeRichText(bodyTemp_content))
+                .build();
+            this.response.renderTemplate(template);
+        }
+        this.emit(':responseReady');
+    },
+    'PublicationsIntent': function () {
+        const speechOutput = guru_publications;
+        this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'AMAZON.HelpIntent': function () {
@@ -589,7 +638,7 @@ const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
         // Generate a random index for the correct answer, from 0 to 3
         const correctAnswerIndex = Math.floor(Math.random() * (ANSWER_COUNT));
         // Select and shuffle the answers for each question
-        const roundAnswers = trivis.populateRoundAnswers(gameQuestions, 0, correctAnswerIndex, translatedQuestions);
+        const roundAnswers = trivia.populateRoundAnswers(gameQuestions, 0, correctAnswerIndex, translatedQuestions);
         const currentQuestionIndex = 0;
         const spokenQuestion = Object.keys(translatedQuestions[gameQuestions[currentQuestionIndex]])[0];
         // Build reprompt for the question
@@ -717,6 +766,7 @@ const helpStateHandlers = Alexa.CreateStateHandler(GAME_STATES.HELP, {
         console.log(`Session ended in help state: ${this.event.request.reason}`);
     },
 });
+
 
 
 //=========================================================================================================================================
