@@ -281,6 +281,19 @@
                         "{companyType}",
                         "about his experience at {companyType}"
                     ]
+                },
+                {
+                    "name": "PublicationsIntent",
+                    "slots": [],
+                    "samples": [
+                        "about his publications",
+                        "has he published any papers",
+                        "his research publications",
+                        "has he published any research papers",
+                        "what are his publications",
+                        "publications",
+                        "publication"
+                    ]
                 }
             ],
             "types": [

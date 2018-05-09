@@ -159,6 +159,15 @@ what did he do at {companyType}
 which projects he worked on at {companyType}  
 {companyType} projects  
   
+## PublicationsIntent  
+about his publications  
+has he published any papers  
+his research publications  
+has he published any research papers  
+what are his publications  
+publications  
+publication  
+  
 ## Language Intent
 What languages does guru speak  
 What languages does guru know  
