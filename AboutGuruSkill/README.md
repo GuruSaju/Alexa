@@ -16,7 +16,7 @@ his full name
 his real name  
 What is his real name  
   
-## FavIntent: -------------------------------------------------------------------------------------------------------  
+## FavIntent: -----------------------------------------------  
   
 ## ColorIntent  
 What color does he like  
@@ -123,7 +123,7 @@ dream job
 future goals  
 repeat   
 
-## --------------------------------------------------------------------------------------------------------------------------  
+## -----------------------------------------------------------------------  
   
 ## TechnicalSkillsIntent  
 What are guru's technical skills  
@@ -167,6 +167,14 @@ has he published any research papers
 what are his publications  
 publications  
 publication  
+
+## OtherProjectsIntent  
+"personal projects"  
+"projects he worked on during his free time"  
+"own projects"  
+"What projects has he worked on his own"  
+"side projects"  
+"other projects"  
   
 ## Language Intent
 What languages does guru speak  

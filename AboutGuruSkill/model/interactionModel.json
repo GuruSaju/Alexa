@@ -9,7 +9,14 @@
                 },
                 {
                     "name": "AMAZON.HelpIntent",
-                    "samples": []
+                    "samples": [
+                        "please help",
+                        "help please",
+                        "help me",
+                        "help",
+                        "to help me",
+                        "for help"
+                    ]
                 },
                 {
                     "name": "AMAZON.StopIntent",
@@ -95,6 +102,15 @@
                     "name": "DegreeIntent",
                     "slots": [],
                     "samples": [
+                        "in which school did he study",
+                        "which college did he study",
+                        "what colle did he go to",
+                        "which college did he go to",
+                        "which school did he go to",
+                        "what school did he go to",
+                        "where did he go to college",
+                        "where did he go to school",
+                        "education",
                         "school",
                         "College",
                         "level of qualification",
@@ -294,12 +310,49 @@
                         "publications",
                         "publication"
                     ]
+                },
+                {
+                    "name": "OtherProjectsIntent",
+                    "slots": [],
+                    "samples": [
+                        "personal projects",
+                        "projects he worked on during his free time",
+                        "own projects",
+                        "What projects has he worked on his own",
+                        "side projects",
+                        "other projects"
+                    ]
                 }
             ],
             "types": [
                 {
                     "name": "favThings",
                     "values": [
+                        {
+                            "name": {
+                                "value": "film actor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "film"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cinema"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "movie actor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "actress"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "songs"
