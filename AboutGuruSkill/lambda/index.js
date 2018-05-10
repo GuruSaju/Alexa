@@ -23,6 +23,7 @@ const SKILL_NAME = 'About Guru';
 const HELP_MESSAGE = 'You can ask guru about what he does, what he likes, his technical skills, his work experiences etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score.';
 const HELP_REPROMPT = 'What do you want to know about guru?';
 const STOP_MESSAGE = 'Goodbye!';
+const CONTACT_REPROMPT = "Say contact guru to get his email address";
 
 //=========================================================================================================================================
 //Speech output constants about guru
@@ -44,7 +45,7 @@ const guru_favAthlethe = "His most favourite is M.S. Dhoni";
 const guru_favSports = "He likes to watch Cricket, American Football and Hockey";
 const guru_favTeam = "His favourite club cricket team is Chennai Super Kings, his favorite college football team is Boise State Broncos, his favorite NHL team is Columbus Blue Jackets and his favorite NFL team is Dallas Cowboys";
 const guru_favFood = "He likes to eat everything except humans";
-const guru_education = "He has a Master's degree in Computer Science";
+const guru_education = "He has a Master's degree in Computer Science from Boise State University. He graduated with a  g p a of three point nine four. Go Broncos!";
 const guru_favQuote = "It will be Alright in the end. If it is not Alright, it is not the end";
 const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Frank Sinatra";
 const guru_favCar = "He always wanted a Ford Mustang";
@@ -81,27 +82,27 @@ const guru_sideProjects = "Guru has worked on several projects on his own and al
 const guru_email = "s.srisarguru@gmail.com";
 const guru_contactCardTitle = "Guru's Email Id";
 const guru_techskills_card_title = "Guru's Technical Skills";
-const guru_techskills_card_content = "Programming Proficiency: \n " +
+const guru_techskills_card_content = "1. Programming Proficiency: \n " +
     "Java, C, C++, Android Java, SQL.\n\n" +
-    "Java/J2EE Frameworks: \n" +
+    "2. Java/J2EE Frameworks: \n" +
     "Core Java, Servlets, Spring, Struts, Hibernate, JSP, iBatis \n\n" +
-    "Language/Scripting: \n" +
+    "3. Language/Scripting: \n" +
     "JavaScript, Angular JS, Node JS, JQuery, HTML5, CSS, Shell scripting \n\n" +
-    "Web Services: \n" +
+    "4. Web Services: \n" +
     "SOAP, Restful, Apigee \n\n" +
-    "Servers: \n" +
+    "5. Servers: \n" +
     "Apache Tomcat, JBoss, Webshpere. \n\n" +
-    "RDBMS: \n" +
+    "6. RDBMS: \n" +
     "Oracle, MySQL and NoSQL. \n\n" +
-    "IDE / Tools: \n" +
+    "7. IDE / Tools: \n" +
     "Eclipse, RAD, Spring STS, Net Beans and TOAD. \n\n" +
-    "Build & Project Tracking Tools: \n" +
+    "8. Build & Project Tracking Tools: \n" +
     "Jenkins, Maven, Ant, Bugzilla, Redmine, HP Quality Center, UCD. \n\n" +
-    "Operating Systems: \n" +
+    "9. Operating Systems: \n" +
     "Unix/Linux, Mac OS X, Windows. \n\n" +
-    "Version Control: \n" +
+    "10. Version Control: \n" +
     "Git, Fossil, SVN. \n\n" +
-    "Others: \n" +
+    "11. Others: \n" +
     "Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap";
 const guru_work_title = "Guru's Work Experience";
 const guru_work_content = "Nationwide Insurance, Columbus OH, Full Stack Developer (Java/J2EE) from August 2017 – Present \n" +
@@ -116,6 +117,7 @@ const guru_work_cic_title = "Experience at CIC";
 const guru_work_bsu_title = "Experience at BSU";
 const guru_work_bytebe_title = "Experience at ByteBe";
 const guru_work_abt_title = "Experience at ABT";
+const guru_side_projects_title = "Guru's Other Projects";
 const guru_work_nationwide_content = "PROJECTS: PayPal Payment, Adobe Target for Auto, Property and Powersports, Chatbot for password reset, claims and smartride"
     + ", Amazon Alexa: Find an agent, FAQ, Claims, Smartride, Billing Inquiry and Bill Pay, Current Carrier, Predictive Coverages, Implementation of plugin framework for Powersports " +
     "Application and several API’s (internal and external) using APIGEE \n\n"
@@ -137,7 +139,9 @@ const guru_work_bytebe_content = "PROJECTS: Websites for StoneBe, Kongu Associat
 const guru_work_abt_content = "PROJECT: E-Learning Web application where you can take a variety of courses and buy books \n" +
     "ENVIRONMENT: Java, JavaScript, JSP, Servlets, HTML, MySQL and CSS";
 
-const guru_side_projects_content = " ";
+const guru_side_projects_content = "1. Amazon Alexa Skill - aboutGuru using AWS and nodeJS \n 2. Single Page Application Website for Tekcel using Angular and Bootstrap \n 3. My Pet - An android " +
+    "app for pet owners using google maps and android java \n 4. Cloudy with a chance of Express JS - a simple weather app using node js, ejs and expressJS \n 5. Patient Registration and Monitoring System - using PHP and MySql" +
+    "\n 6. Nine Man Morris - nine morris game using java GUI which can be played against an AI \n 7. Data Model of Cricket Leagues - a data model of IPL league using TOAD data modeler";
 //=======================================================================================
 // Display Template constants
 //=======================================================================================
@@ -196,6 +200,11 @@ const guru_work_bytebe_bodyTemp_content = "<font size=\"6\">PROJECTS:</font><br/
 
 const guru_work_abt_bodyTemp_content = "<font size=\"6\">PROJECT:</font><br/> <font size=\"3\">E-Learning Web application where you can take a variety of courses and buy books </font> <br/><br/> " +
     "<font size=\"6\">ENVIRONMENT:</font><br/> <font size=\"3\">Java, JavaScript, JSP, Servlets, HTML, MySQL and CSS</font>";
+
+const guru_side_projects_bodyTemp_content = "<font size=\"5\"> Amazon Alexa Skill - aboutGuru</font><br/> <font size=\"3\">using AWS and nodeJS</font> <br/><br/> <font size=\"5\"> Single Page Application Website</font><br/><font size=\"3\">for Tekcel using Angular and Bootstrap</font> <br/><br/> <font size=\"5\"> My Pet </font><br/><font size=\"3\">An android " +
+    "app for pet owners using google maps and android java</font> <br/><br/> <font size=\"5\"> Cloudy with a chance of Express JS</font><br/> <font size=\"3\">a simple weather app using node js, ejs and expressJS</font> <br/><br/> <font size=\"5\"> Patient Registration and Monitoring System </font><br/><font size=\"3\">using PHP and MySql</font> <br/><br/>" +
+    "<font size=\"5\"> Nine Man Morris</font><br/> <font size=\"3\">a game using java GUI which can be played against an AI</font> <br/><br/> <font size=\"5\"> Data Model of Cricket Leagues</font><br/> <font size=\"3\">a data model of IPL league using TOAD data modeler</font> <br/><br/>";
+
 //==========================================================================================
 //FOR GURU TRIVIA
 //===========================================================================================
@@ -218,8 +227,8 @@ const languageString = {
             "NEW_GAME_MESSAGE": "Welcome to %s. ",
             "WELCOME_MESSAGE": "I will ask you %s questions, try to get as many right as you can. " +
             "Just say the number of the answer. Let\'s begin. ",
-            "ANSWER_CORRECT_MESSAGE": "correct. ",
-            "ANSWER_WRONG_MESSAGE": "wrong. ",
+            "ANSWER_CORRECT_MESSAGE": "yay! That is correct. ",
+            "ANSWER_WRONG_MESSAGE": "oops! that is wrong. ",
             "CORRECT_ANSWER_MESSAGE": "The correct answer is %s: %s. ",
             "ANSWER_IS_MESSAGE": "That answer is ",
             "TELL_QUESTION_MESSAGE": "Question %s. %s",
@@ -246,6 +255,7 @@ const initialhandlers = {
     'WorkIntent': function () {
         const speechOutput = guru_work;
         this.response.speak(speechOutput);
+        this.reponse.shouldEndSession(false);
         this.emit(':responseReady');
     },
     'RealNameIntent': function () {
@@ -268,13 +278,18 @@ const initialhandlers = {
                 break;
             }
             case 'actor':
-            case 'actors': {
+            case 'actors':
+            case 'actress':
+            case 'film actor':
+            case 'movie actor': {
                 this.emit('ActorIntent');
                 break;
             }
             case 'movie':
             case 'movies':
-            case 'picture': {
+            case 'picture':
+            case 'film':
+            case 'cinema': {
                 this.emit('MovieIntent');
                 break;
             }
@@ -414,6 +429,8 @@ const initialhandlers = {
     'DegreeIntent': function () {
         const speechOutput = guru_education;
         this.response.speak(speechOutput);
+        this.attributes['previousIntent'] = "DegreeIntent";
+        this.response.shouldEndSession(false);
         this.emit(':responseReady');
     },
     'SportsIntent': function () {
@@ -601,10 +618,23 @@ const initialhandlers = {
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
+    'OtherProjectsIntent': function () {
+        this.response.speak(guru_sideProjects).cardRenderer(guru_side_projects_title, guru_side_projects_content);
+        if (this.event.context.System.device.supportedInterfaces.Display) {
+            const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
+            const template = builder.setTitle(guru_side_projects_title)
+                .setTextContent(makeRichText(guru_side_projects_bodyTemp_content))
+                .build();
+            this.response.renderTemplate(template);
+        }
+        this.response.listen(CONTACT_REPROMPT);
+        this.response.shouldEndSession(false);
+        this.emit(':responseReady');
+    },
     'AMAZON.HelpIntent': function () {
-        const speechOutput = HELP_MESSAGE;
+        const speechOutput = HELP_MESSAGE + " " + guru_contact;
         const reprompt = HELP_REPROMPT;
-        this.response.speak(speechOutput).listen(reprompt);
+        this.response.speak(speechOutput).listen(reprompt).cardRenderer(guru_contactCardTitle, guru_email);
         this.emit(':responseReady');
     },
     'AMAZON.CancelIntent': function () {
@@ -623,7 +653,6 @@ const initialhandlers = {
         this.handler.state = GAME_STATES.START;
         this.emitWithState("StartGame", true);
     },
-
 };
 
 //Handler to handle the start of the trivia game
@@ -779,4 +808,5 @@ exports.handler = function (event, context, callback) {
     alexa.resources = languageString;
     alexa.registerHandlers(initialhandlers, startStateHandlers, triviaStateHandlers, helpStateHandlers);
     alexa.execute();
+
 };
