@@ -264,8 +264,19 @@ const initialhandlers = {
         this.emit(':responseReady');
     },
     'FavoriteIntent': function () {
+        let favAbout = null;
         const intentObj = this.event.request.intent;
-        const favAbout = intentObj.slots.favAbout.value;
+        if (intentObj.slots) {
+            favAbout = intentObj.slots.favAbout.value;
+        }
+        this.response.shouldEndSession(false);
+        this.attributes['previousIntent'] = "FavoriteIntent";
+        if (favAbout != null) {
+            this.attributes['favThing'] = favAbout;
+        }
+        else {
+            favAbout = this.attributes['favThing'];
+        }
         switch (favAbout) {
             case 'colors':
             case 'color': {
@@ -652,6 +663,18 @@ const initialhandlers = {
     "AMAZON.StartOverIntent": function () {
         this.handler.state = GAME_STATES.START;
         this.emitWithState("StartGame", true);
+    },
+    "AMAZON.RepeatIntent": function () {
+        const intent = this.attributes["previousIntent"];
+        this.emit(intent);
+    },
+    "Unhandled": function () {
+        const speechOutput = guru_contact;
+        this.response.speak(speechOutput).cardRenderer(guru_contactCardTitle, guru_email);
+        this.emit(":responseReady");
+    },
+    "SessionEndedRequest": function () {
+        console.log(`Session ended`);
     },
 };
 
