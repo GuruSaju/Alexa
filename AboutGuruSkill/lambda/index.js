@@ -24,7 +24,7 @@ const HELP_MESSAGE = 'You can ask guru about what he does, what he likes, his te
 const HELP_REPROMPT = 'What do you want to know about guru?';
 const STOP_MESSAGE = 'Goodbye!';
 const CONTACT_REPROMPT = "Say contact guru to get his email address";
-
+let workDetailFlag = true;
 //=========================================================================================================================================
 //Speech output constants about guru
 //=========================================================================================================================================
@@ -45,7 +45,7 @@ const guru_favAthlethe = "His most favourite is M.S. Dhoni";
 const guru_favSports = "He likes to watch Cricket, American Football and Hockey";
 const guru_favTeam = "His favourite club cricket team is Chennai Super Kings, his favorite college football team is Boise State Broncos, his favorite NHL team is Columbus Blue Jackets and his favorite NFL team is Dallas Cowboys";
 const guru_favFood = "He likes to eat everything except humans";
-const guru_education = "He has a Master's degree in Computer Science from Boise State University. He graduated with a  g p a of three point nine four. Go Broncos!";
+const guru_education = "He has a Master's degree in Computer Science from Boise State University. He graduated with a  g p a of three point nine four. Go Broncos!. Say Boise State University to know more about his work and research at the university";
 const guru_favQuote = "It will be Alright in the end. If it is not Alright, it is not the end";
 const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Frank Sinatra";
 const guru_favCar = "He always wanted a Ford Mustang";
@@ -72,8 +72,10 @@ const guru_bsu = "As a Research Developer at the Computer Science department at 
     + " as a teaching assistant he assisted in tutoring, teaching, mentoring and grading, as a hpc admin he helped other researchers in coding on a 16 node g p u clustered supercomputer. I have sent more details about his work at Boise State University to your device";
 const guru_bytebe = "As a part time java web developer at ByteBe, he worked on developing various web applications for various industries like granite, clubs and e-commerce. I have sent more details about his work at ByteBe to your device";
 const guru_abt = "As a Java Developer intern at ABT, he was working with the Java project team where he learned and developed web applications. I have sent more details about his work at ABT to your device";
-const guru_projects = "Please say the name of the organization he worked for, to know more on his projects or say, side projects to know about his other projects. What would you like to know?";
+const guru_projects = "Please say the name of the organization or company he worked for, to know more on his projects or say, side projects to know about his other projects. What would you like to know?";
 const guru_sideProjects = "Guru has worked on several projects on his own and also for school in various technologies. I have sent a list of his projects to your device. In order to get his resume please contact him";
+const guru_passion = "He is passionate about natural language processing, machine learning and voice interaction. He likes to keep himself updated on these topics by reading articles. He strongly believes in humanity and thinks AI, will help understand humanity better.";
+const guru_hobbies_interests = "He is interested in Full Stack Development, natural language processing, machine learning and voice interaction. He likes to learn new technologies and work on projects during his free time. Other than that he helps the programming community by comtributing to Stack Overflow. He also enjoys playing his ps4, running, racketball, watching cricket and football.";
 //TODO COVERLETTER add project details as a speech and card 
 //========================================================================================
 // Card constants
@@ -103,7 +105,7 @@ const guru_techskills_card_content = "1. Programming Proficiency: \n " +
     "10. Version Control: \n" +
     "Git, Fossil, SVN. \n\n" +
     "11. Others: \n" +
-    "Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap";
+    "Amazon Alexa, Microsoft Bot Framework, Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap";
 const guru_work_title = "Guru's Work Experience";
 const guru_work_content = "Nationwide Insurance, Columbus OH, Full Stack Developer (Java/J2EE) from August 2017 – Present \n" +
     "Columbus International Corporation,Columbus OH, Software Engineer (Java/J2EE) from April 2017 – August 2017 \n" +
@@ -227,7 +229,7 @@ const languageString = {
             "NEW_GAME_MESSAGE": "Welcome to %s. ",
             "WELCOME_MESSAGE": "I will ask you %s questions, try to get as many right as you can. " +
             "Just say the number of the answer. Let\'s begin. ",
-            "ANSWER_CORRECT_MESSAGE": "yay! That is correct. ",
+            "ANSWER_CORRECT_MESSAGE": "yay. That is correct. ",
             "ANSWER_WRONG_MESSAGE": "oops! that is wrong. ",
             "CORRECT_ANSWER_MESSAGE": "The correct answer is %s: %s. ",
             "ANSWER_IS_MESSAGE": "That answer is ",
@@ -255,7 +257,7 @@ const initialhandlers = {
     'WorkIntent': function () {
         const speechOutput = guru_work;
         this.response.speak(speechOutput);
-        this.reponse.shouldEndSession(false);
+        this.response.shouldEndSession(false);
         this.emit(':responseReady');
     },
     'RealNameIntent': function () {
@@ -320,7 +322,8 @@ const initialhandlers = {
             case 'music band':
             case 'band':
             case 'singer':
-            case 'musician': {
+            case 'musician':
+            case 'music artist': {
                 this.emit('MusicIntent');
                 break;
             }
@@ -569,7 +572,18 @@ const initialhandlers = {
     },
     'WorkDetailIntent': function () {
         const intentObj = this.event.request.intent;
-        const company = intentObj.slots.companyType.value;
+        let company = null;
+        if (workDetailFlag) {
+            company = intentObj.slots.companyType.value;
+        } else {
+            const slot = intentObj.slots.companyType;
+            let resolution = (slot.resolutions && slot.resolutions.resolutionsPerAuthority && slot.resolutions.resolutionsPerAuthority.length > 0) ? slot.resolutions.resolutionsPerAuthority[0] : null;
+            if (resolution && resolution.status.code == 'ER_SUCCESS_MATCH') {
+                let resolutionValue = resolution.values[0].value;
+                company = resolutionValue.name;
+            }
+        }
+
         let title = null;
         let bodyTemp_content = null;
         switch (company) {
@@ -582,7 +596,9 @@ const initialhandlers = {
             }
             case 'Columbus international corporation':
             case 'Columbus international':
-            case 'cic': {
+            case 'cic':
+            case 'c. i. c':
+            case 'CIC': {
                 this.response.speak(guru_cic).cardRenderer(guru_work_cic_title, guru_work_cic_content);
                 title = guru_work_cic_title;
                 bodyTemp_content = guru_work_cic_bodyTemp_content;
@@ -613,7 +629,8 @@ const initialhandlers = {
                 break;
             }
             default:
-                this.emit('AMAZON.HelpIntent');
+                workDetailFlag = false;
+                this.emit('WorkDetailIntent');
         }
         if (this.event.context.System.device.supportedInterfaces.Display) {
             const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
@@ -640,6 +657,21 @@ const initialhandlers = {
         }
         this.response.listen(CONTACT_REPROMPT);
         this.response.shouldEndSession(false);
+        this.emit(':responseReady');
+    },
+    'PassionIntent': function () {
+        const speechOutput = guru_passion;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'HobbiesIntent': function () {
+        const speechOutput = guru_hobbies_interests;
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'ProjectsIntent': function () {
+        const speechOutput = guru_projects;
+        this.response.speak(speechOutput).listen(guru_projects);
         this.emit(':responseReady');
     },
     'AMAZON.HelpIntent': function () {
