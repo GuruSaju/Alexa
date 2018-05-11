@@ -113,17 +113,44 @@ Which songs does he like the most
 Cricket Player  
 Hockey Player  
 Football Player   
-book   
-Hobbies  
+book    
 Number  
 Restaurent  
 dog  
 cat  
-dream job  
-future goals  
-repeat   
+dream job    
 
 ## -----------------------------------------------------------------------  
+
+## PassionIntent  
+"What is he most passionate about",  
+"things he is passionate about",  
+"What is his passion",  
+"What does he beleive in",  
+"What does he want to do in the future",  
+"future goals",  
+"about his passion"  
+"what is he passionate about"  
+
+## "HobbiesIntent"
+"about his hobbies",  
+"What does he do in his free time",  
+"hobbies",  
+"interests",  
+"What technologies is he interested in",  
+"What fields is he interested in",  
+"about his interests",  
+"What are his interests",  
+"What is he interested in",  
+"What are his hobbies"  
+  
+## "ProjectsIntent",  
+"share his projects",  
+"What are the projects he worked on",  
+"about his projects",  
+"What are his projects",  
+"projects",  
+"What projects did he work on"  
   
 ## TechnicalSkillsIntent  
 What are guru's technical skills  

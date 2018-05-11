@@ -127,6 +127,7 @@
                         }
                     ],
                     "samples": [
+                        "What kind of {favAbout} does he like",
                         "What's guru's favorite {favAbout}",
                         "Which is guru's favorite {favAbout}",
                         "Who does guru {favAbout}",
@@ -169,6 +170,10 @@
                     "name": "GuruTriviaIntent",
                     "slots": [],
                     "samples": [
+                        "for the quiz about him",
+                        "for his game",
+                        "for quiz",
+                        "for his quiz",
                         "to play guru game",
                         "to play guru trivia",
                         "to play guru quiz",
@@ -205,6 +210,8 @@
                     "name": "TechnicalSkillsIntent",
                     "slots": [],
                     "samples": [
+                        "Which technologies does he know",
+                        "What programming languages does he know",
                         "professional skills",
                         "about his technical skills",
                         "What are his technical skills",
@@ -291,6 +298,8 @@
                         }
                     ],
                     "samples": [
+                        "What proejcts did he work on at {companyType}",
+                        "about {companyType}",
                         "{companyType} projects",
                         "which projects he worked on at {companyType}",
                         "what did he do at {companyType}",
@@ -322,12 +331,59 @@
                         "side projects",
                         "other projects"
                     ]
+                },
+                {
+                    "name": "PassionIntent",
+                    "slots": [],
+                    "samples": [
+                        "What is he most passionate about",
+                        "things he is passionate about",
+                        "What is his passion",
+                        "What does he beleive in",
+                        "What does he want to do in the future",
+                        "future goals",
+                        "about his passion",
+                        "what is he passionate about"
+                    ]
+                },
+                {
+                    "name": "HobbiesIntent",
+                    "slots": [],
+                    "samples": [
+                        "about his hobbies",
+                        "What does he do in his free time",
+                        "hobbies",
+                        "interests",
+                        "What technologies is he interested in",
+                        "What fields is he interested in",
+                        "about his interests",
+                        "What are his interests",
+                        "What is he interested in",
+                        "What are his hobbies"
+                    ]
+                },
+                {
+                    "name": "ProjectsIntent",
+                    "slots": [],
+                    "samples": [
+                        "share his projects",
+                        "What are the projects he worked on",
+                        "about his projects",
+                        "What are his projects",
+                        "projects",
+                        "What projects did he work on"
+                    ]
                 }
             ],
             "types": [
                 {
                     "name": "favThings",
                     "values": [
+                        {
+                            "name": {
+                                "value": "music artist"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "film actor"
@@ -663,6 +719,11 @@
                 {
                     "name": "companies",
                     "values": [
+                        {
+                            "name": {
+                                "value": "c. i. c."
+                            }
+                        },
                         {
                             "name": {
                                 "value": "bsu"
