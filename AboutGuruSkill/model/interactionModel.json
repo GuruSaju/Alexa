@@ -68,6 +68,9 @@
                     "name": "RelationshipIntent",
                     "slots": [],
                     "samples": [
+                        "is he going out with anyone",
+                        "is he dating anyone",
+                        "Who is he dating",
                         "is he married",
                         "married",
                         "girlfriend",
@@ -163,6 +166,10 @@
                     "name": "DontKnowIntent",
                     "slots": [],
                     "samples": [
+                        "I have no idea",
+                        "don't know",
+                        "no idea",
+                        "pass",
                         "I don't know"
                     ]
                 },
