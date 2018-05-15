@@ -20,7 +20,7 @@ const GAME_STATES = {
 const APP_ID = 'amzn1.ask.skill.6d5effc0-d416-47c5-8d9a-52fb0654f771';
 
 const SKILL_NAME = 'About Guru';
-const HELP_MESSAGE = 'You can ask guru about what he does, what he likes, his technical skills, his work experiences etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score.';
+const HELP_MESSAGE = 'You can ask guru about what he does, what he likes, his technical skills, his work experiences etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score. What do you want to know about guru?';
 const HELP_REPROMPT = 'What do you want to know about guru?';
 const STOP_MESSAGE = 'Goodbye!';
 const CONTACT_REPROMPT = "Say contact guru to get his email address";
@@ -34,11 +34,11 @@ const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either gu
 const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. You can ask him about his likes, his technical skills, his work experiennces and you can also play a trivia game How well do you know guru. What do you like to know about him ?";
 const guru_launch_reprompt = "What do you like to know about him ?";
 const guru_color = "His favourite colors are red and black. Although he always told me he wanted rainbow dyed hair";
-const guru_summary = "Guru is a Full Stack developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed.";
+const guru_summary = "Guru is a Full Stack developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed. He also enjoys playing his ps4, running, racketball, watching cricket and football.";
 const guru_techskills = "Full Stack Development and proficient in a number of programming languages and scripting languages, databases, web services, tools and frameworks. I have sent all the details of his technical skills to your device. Say contact to get guru's email address";
 const guru_favActor = "His favourite actors are Hugh Jackman, Rajnikanth and Emma Watson";
 const guru_relationship = "He is single and No!, we are not in a relationship";
-const guru_favMovie = "His all time favourite movie is The Prestige directed by Christopher Nolan";
+const guru_favMovie = "He likes mystery, sci-fi and drama. His all time favourite movie is The Prestige directed by Christopher Nolan";
 const guru_nationality = "He is Indian. But he resides now in the US";
 const guru_contact = "You can ask him more by sending an email to him. I have sent his email address to your device";
 const guru_favAthlethe = "His most favourite is M.S. Dhoni";
@@ -76,7 +76,7 @@ const guru_projects = "Please say the name of the organization or company he wor
 const guru_sideProjects = "Guru has worked on several projects on his own and also for school in various technologies. I have sent a list of his projects to your device. In order to get his resume please contact him";
 const guru_passion = "He is passionate about natural language processing, machine learning and voice interaction. He likes to keep himself updated on these topics by reading articles. He strongly believes in humanity and thinks AI, will help understand humanity better.";
 const guru_hobbies_interests = "He is interested in Full Stack Development, natural language processing, machine learning and voice interaction. He likes to learn new technologies and work on projects during his free time. Other than that he helps the programming community by comtributing to Stack Overflow. He also enjoys playing his ps4, running, racketball, watching cricket and football.";
-//TODO COVERLETTER add project details as a speech and card 
+//TODO AGE INTENT FAVORITE FRIEND
 //========================================================================================
 // Card constants
 //========================================================================================
@@ -234,9 +234,10 @@ const languageString = {
             "CORRECT_ANSWER_MESSAGE": "The correct answer is %s: %s. ",
             "ANSWER_IS_MESSAGE": "That answer is ",
             "TELL_QUESTION_MESSAGE": "Question %s. %s",
-            "GAME_OVER_MESSAGE": "You got %s out of %s questions correct. Thank you for playing!",
+            "GAME_OVER_MESSAGE": "You got %s out of %s questions correct. Awesome job!. Thank you for playing!",
             "SCORE_IS_MESSAGE": "Your score is %s. ",
-            "MOVE_ON_TO_NEXT_QUESTION": "Bummer, Let's move on to the next question",
+            "MOVE_ON_TO_NEXT_QUESTION": "Bummer, Let's move on to the next question, ",
+            "USE_SKILL_FOR_WRONG_ANSWERS_GAME_OVER_MESSAGE": "You got %s out of %s questions correct. Thank you for playing!. You can use this skill to find out the correct answers",
         },
     }
 };

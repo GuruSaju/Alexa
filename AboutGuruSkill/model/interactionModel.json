@@ -191,7 +191,12 @@
                 },
                 {
                     "name": "AMAZON.RepeatIntent",
-                    "samples": []
+                    "samples": [
+                        "can you repeat",
+                        "please repeat the question",
+                        "please repeat",
+                        "repeat question"
+                    ]
                 },
                 {
                     "name": "AMAZON.YesIntent",

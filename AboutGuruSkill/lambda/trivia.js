@@ -94,8 +94,12 @@ function handleUserGuess(userGaveUp) {
     // Check if we can exit the game session after GAME_LENGTH questions (zero-indexed)
     if (this.attributes["currentQuestionIndex"] === GAME_LENGTH - 1) {
         speechOutput = userGaveUp ? this.t("MOVE_ON_TO_NEXT_QUESTION") : "";
-        speechOutput += speechOutputAnalysis + this.t("GAME_OVER_MESSAGE", currentScore.toString(), GAME_LENGTH.toString());
-
+        if (currentScore.toString() === GAME_LENGTH.toString()) {
+            speechOutput += speechOutputAnalysis + this.t("GAME_OVER_MESSAGE", currentScore.toString(), GAME_LENGTH.toString());
+        }
+        else {
+            speechOutput += speechOutputAnalysis + this.t("USE_SKILL_FOR_WRONG_ANSWERS_GAME_OVER_MESSAGE", currentScore.toString(), GAME_LENGTH.toString());
+        }
         this.response.speak(speechOutput);
         this.emit(":responseReady");
     } else {
