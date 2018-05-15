@@ -56,15 +56,6 @@
                     ]
                 },
                 {
-                    "name": "ActorIntent",
-                    "slots": [],
-                    "samples": [
-                        "favourite actor",
-                        "his favourite actor",
-                        "Who is his favourite actor"
-                    ]
-                },
-                {
                     "name": "RelationshipIntent",
                     "slots": [],
                     "samples": [
@@ -278,6 +269,11 @@
                     "name": "WorkExperienceIntent",
                     "slots": [],
                     "samples": [
+                        "Where did he work previously",
+                        "Where did he work before",
+                        "What are his previous work experiences",
+                        "job experience",
+                        "IT experience",
                         "professional experience",
                         "Which companies did he work for ",
                         "previous work ",
@@ -385,12 +381,26 @@
                         "projects",
                         "What projects did he work on"
                     ]
+                },
+                {
+                    "name": "LikesIntent",
+                    "slots": [],
+                    "samples": [
+                        "What does he like",
+                        "What are his likes",
+                        "about his likes"
+                    ]
                 }
             ],
             "types": [
                 {
                     "name": "favThings",
                     "values": [
+                        {
+                            "name": {
+                                "value": "destination"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "music artist"
@@ -731,6 +741,26 @@
                 {
                     "name": "companies",
                     "values": [
+                        {
+                            "name": {
+                                "value": "columbus corporation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "columbus international corp"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "columbus international"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "boise state"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "c. i. c."
