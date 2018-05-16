@@ -20,18 +20,21 @@ const GAME_STATES = {
 const APP_ID = 'amzn1.ask.skill.6d5effc0-d416-47c5-8d9a-52fb0654f771';
 
 const SKILL_NAME = 'About Guru';
-const HELP_MESSAGE = 'You can ask guru about what he does, what he likes, his technical skills, his work experiences etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score. What do you want to know about guru?';
+const HELP_MESSAGE = 'You can ask guru about what he does, what he likes, his technical skills, his work experiences etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score. If you want to contact him say contact. What do you want to know about guru?';
 const HELP_REPROMPT = 'What do you want to know about guru?';
 const STOP_MESSAGE = 'Goodbye!';
 const CONTACT_REPROMPT = "Say contact guru to get his email address";
+const REPEAT_REPROMPT = "Say repeat if you would like to hear that again";
 let workDetailFlag = true;
+let favThingFlag = true;
+let repeatFlag = false;
 //=========================================================================================================================================
 //Speech output constants about guru
 //=========================================================================================================================================
 
 const guru_work = "Guru works as an Full Stack Developer at Nationwide. Say work experience to know more about guru's work history";
 const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either guru or batman";
-const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. You can ask him about his likes, his technical skills, his work experiennces and you can also play a trivia game How well do you know guru. What do you like to know about him ?";
+const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. You can ask him about his likes, his technical skills, his work experiences and you can also play a trivia game How well do you know guru. What do you like to know about him ?";
 const guru_launch_reprompt = "What do you like to know about him ?";
 const guru_color = "His favourite colors are red and black. Although he always told me he wanted rainbow dyed hair";
 const guru_summary = "Guru is a Full Stack developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed. He also enjoys playing his ps4, running, racketball, watching cricket and football.";
@@ -62,7 +65,7 @@ const guru_publications = "He has authored two publications, first one titled, A
     "TO DISTINGUISH BEHAVIORS OF SOARING BIRDS";
 const guru_certifications = "He has completed Java 8, Bash Shell Scripting and O O Concepts certifications by Brainbench.";
 const guru_nationwide = "As a member of a Test and Learn team and from a multi-speed IT perspective, his aim was to implement innovative systems of engagement, with agility and experimentation in order to optimize internet sales applications, and deliver"
-    + "timely solutions within a rapidly evolving online environment. He and his team built innovative Test and learn features for our sales applications, Auto Insurance, Property Insurance, and Powersports Insurance, which could"
+    + " timely solutions within a rapidly evolving online environment. He and his team built innovative Test and learn features for our sales applications, Auto Insurance, Property Insurance, and Powersports Insurance, which could"
     + "be switched on and off when needed, and had a line of separation from mainline code. I have sent more details about his work at Nationwide to your device";
 const guru_cic = "As a software engineer he worked on The Online Product Approval (OPA) application, which is a web-based workflow engine that manages the product development lifecycle, and dialog between the Product Development Associates and Licensee " +
     "partners. Online Product Approval (OPA) is a system used to accept, manage, and approve licensed product submissions. He worked on adding a new workflow module, in addition to the normal workflow, to accommodate the BPM team." +
@@ -76,6 +79,7 @@ const guru_projects = "Please say the name of the organization or company he wor
 const guru_sideProjects = "Guru has worked on several projects on his own and also for school in various technologies. I have sent a list of his projects to your device. In order to get his resume please contact him";
 const guru_passion = "He is passionate about natural language processing, machine learning and voice interaction. He likes to keep himself updated on these topics by reading articles. He strongly believes in humanity and thinks AI, will help understand humanity better.";
 const guru_hobbies_interests = "He is interested in Full Stack Development, natural language processing, machine learning and voice interaction. He likes to learn new technologies and work on projects during his free time. Other than that he helps the programming community by comtributing to Stack Overflow. He also enjoys playing his ps4, running, racketball, watching cricket and football.";
+const guru_likes = "You can ask him about things he likes. You can for example ask What is his favorite car or What movie does he like. What would you like to know?";
 //TODO AGE INTENT FAVORITE FRIEND
 //========================================================================================
 // Card constants
@@ -267,20 +271,29 @@ const initialhandlers = {
         this.emit(':responseReady');
     },
     'FavoriteIntent': function () {
-        let favAbout = null;
+        let favAboutThing = null;
         const intentObj = this.event.request.intent;
-        if (intentObj.slots) {
-            favAbout = intentObj.slots.favAbout.value;
+        console.log(favThingFlag);
+        if (favThingFlag && intentObj.slots) {
+            favAboutThing = intentObj.slots.favAbout.value;
+        } else if (!favThingFlag) {
+            const slot = intentObj.slots.favAbout;
+            let resolution = (slot.resolutions && slot.resolutions.resolutionsPerAuthority && slot.resolutions.resolutionsPerAuthority.length > 0) ? slot.resolutions.resolutionsPerAuthority[0] : null;
+            if (resolution && resolution.status.code == 'ER_SUCCESS_MATCH') {
+                let resolutionValue = resolution.values[0].value;
+                favAboutThing = resolutionValue.name;
+            }
+        } else {
+            favAboutThing = this.attributes['favThing'];
         }
+
         this.response.shouldEndSession(false);
         this.attributes['previousIntent'] = "FavoriteIntent";
-        if (favAbout != null) {
-            this.attributes['favThing'] = favAbout;
+        if (favAboutThing != null) {
+            this.attributes['favThing'] = favAboutThing;
         }
-        else {
-            favAbout = this.attributes['favThing'];
-        }
-        switch (favAbout) {
+
+        switch (favAboutThing) {
             case 'colors':
             case 'color': {
                 this.emit('ColorIntent');
@@ -355,12 +368,15 @@ const initialhandlers = {
             case 'place to visit':
             case 'land':
             case 'place to live':
-            case 'place on earth': {
+            case 'place on earth':
+            case 'destination': {
                 this.emit('FavPlaceIntent');
                 break;
             }
             case 'leader':
             case 'inspirational leader':
+            case 'inspirational person':
+            case 'leader look up to':
             case 'look up to':
             case 'inspiration': {
                 this.emit('FavLeaderIntent');
@@ -403,7 +419,12 @@ const initialhandlers = {
                 break;
             }
             default:
-                this.emit('AMAZON.HelpIntent');
+                if (favThingFlag) {
+                    favThingFlag = false;
+                    this.emit('FavoriteIntent');
+                } else {
+                    this.emit('AMAZON.HelpIntent');
+                }
         }
     },
     'ColorIntent': function () {
@@ -555,14 +576,20 @@ const initialhandlers = {
         this.emit(':responseReady');
     },
     'WorkExperienceIntent': function () {
-        this.response.speak(guru_workExpereince).cardRenderer(guru_work_title, guru_work_content);
-        if (this.event.context.System.device.supportedInterfaces.Display) {
-            const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
-            const template = builder.setTitle(guru_work_title)
-                .setTextContent(makeRichText(guru_work_BodyTemp_content))
-                .build();
-            this.response.renderTemplate(template);
+        if (repeatFlag) {
+            this.response.speak(guru_workExpereince);
+        } else {
+            this.response.speak(guru_workExpereince).cardRenderer(guru_work_title, guru_work_content);
+            if (this.event.context.System.device.supportedInterfaces.Display) {
+                const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
+                const template = builder.setTitle(guru_work_title)
+                    .setTextContent(makeRichText(guru_work_BodyTemp_content))
+                    .build();
+                this.response.renderTemplate(template);
+            }
         }
+        this.attributes['previousIntent'] = "WorkExperienceIntent";
+        repeatFlag = false;
         this.response.shouldEndSession(false);
         this.emit(':responseReady');
     },
@@ -574,72 +601,101 @@ const initialhandlers = {
     'WorkDetailIntent': function () {
         const intentObj = this.event.request.intent;
         let company = null;
-        if (workDetailFlag) {
+        if (workDetailFlag && intentObj.slots) {
             company = intentObj.slots.companyType.value;
-        } else {
+        } else if (!workDetailFlag) {
             const slot = intentObj.slots.companyType;
             let resolution = (slot.resolutions && slot.resolutions.resolutionsPerAuthority && slot.resolutions.resolutionsPerAuthority.length > 0) ? slot.resolutions.resolutionsPerAuthority[0] : null;
             if (resolution && resolution.status.code == 'ER_SUCCESS_MATCH') {
                 let resolutionValue = resolution.values[0].value;
                 company = resolutionValue.name;
             }
+        } else {
+            company = this.attributes['company'];
         }
-
+        this.attributes['previousIntent'] = "WorkDetailIntent";
+        if (company != null) {
+            this.attributes['company'] = company;
+        }
         let title = null;
         let bodyTemp_content = null;
+        let speechOutput = null;
+        let card_content = null;
         switch (company) {
             case 'nationwide':
             case 'nationwide insurance': {
-                this.response.speak(guru_nationwide).cardRenderer(guru_work_nationwide_title, guru_work_nationwide_content);
+                //  this.response.speak(guru_nationwide).cardRenderer(guru_work_nationwide_title, guru_work_nationwide_content);
+                speechOutput = guru_nationwide;
                 title = guru_work_nationwide_title;
                 bodyTemp_content = guru_work_nationwide_bodyTemp_content;
+                card_content = guru_work_nationwide_content;
                 break;
             }
             case 'Columbus international corporation':
             case 'Columbus international':
+            case 'columbus international corporation':
+            case 'columbus international':
+            case 'Columbus corporation':
+            case 'Columbus corp':
             case 'cic':
             case 'c. i. c':
             case 'CIC': {
-                this.response.speak(guru_cic).cardRenderer(guru_work_cic_title, guru_work_cic_content);
+                // this.response.speak(guru_cic).cardRenderer(guru_work_cic_title, guru_work_cic_content);
+                speechOutput = guru_cic;
                 title = guru_work_cic_title;
                 bodyTemp_content = guru_work_cic_bodyTemp_content;
+                card_content = guru_work_cic_content;
                 break;
             }
             case 'boise state university':
+            case 'boise state':
             case 'bsu': {
-                this.response.speak(guru_bsu).cardRenderer(guru_work_bsu_title, guru_work_bsu_content);
+                // this.response.speak(guru_bsu).cardRenderer(guru_work_bsu_title, guru_work_bsu_content);
+                speechOutput = guru_bsu;
                 title = guru_work_bsu_title;
                 bodyTemp_content = guru_work_bsu_bodyTemp_content;
+                card_content = guru_work_bsu_content;
                 break;
             }
             case 'byte be':
             case 'bytebe':
             case 'byte be solutions': {
-                this.response.speak(guru_bytebe).cardRenderer(guru_work_bytebe_title, guru_work_bytebe_content);
+                // this.response.speak(guru_bytebe).cardRenderer(guru_work_bytebe_title, guru_work_bytebe_content);
+                speechOutput = guru_bytebe;
                 title = guru_work_bytebe_title;
                 bodyTemp_content = guru_work_bytebe_bodyTemp_content;
+                card_content = guru_work_bytebe_content;
                 break;
             }
             case 'abt':
             case 'abt info systems':
             case 'about':
             case 'about info systems': {
-                this.response.speak(guru_abt).cardRenderer(guru_work_abt_title, guru_work_abt_content);
+                //this.response.speak(guru_abt).cardRenderer(guru_work_abt_title, guru_work_abt_content);
+                speechOutput = guru_abt;
                 title = guru_work_abt_title;
                 bodyTemp_content = guru_work_abt_bodyTemp_content;
+                card_content = guru_work_abt_content;
                 break;
             }
             default:
                 workDetailFlag = false;
                 this.emit('WorkDetailIntent');
         }
-        if (this.event.context.System.device.supportedInterfaces.Display) {
-            const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
-            const template = builder.setTitle(title)
-                .setTextContent(makeRichText(bodyTemp_content))
-                .build();
-            this.response.renderTemplate(template);
+        if (repeatFlag) {
+            this.response.speak(speechOutput);
+        } else {
+            this.response.speak(speechOutput).cardRenderer(title, card_content);
+            if (this.event.context.System.device.supportedInterfaces.Display) {
+                const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
+                const template = builder.setTitle(title)
+                    .setTextContent(makeRichText(bodyTemp_content))
+                    .build();
+                this.response.renderTemplate(template);
+            }
         }
+        this.response.listen(REPEAT_REPROMPT);
+        repeatFlag = false;
         this.emit(':responseReady');
     },
     'PublicationsIntent': function () {
@@ -675,10 +731,17 @@ const initialhandlers = {
         this.response.speak(speechOutput).listen(guru_projects);
         this.emit(':responseReady');
     },
+    'LikesIntent': function () {
+        const speechOutput = guru_likes;
+        this.response.speak(speechOutput);
+        this.response.shouldEndSession(false);
+        this.emit(':responseReady');
+    },
     'AMAZON.HelpIntent': function () {
-        const speechOutput = HELP_MESSAGE + " " + guru_contact;
+        const speechOutput = HELP_MESSAGE;
         const reprompt = HELP_REPROMPT;
-        this.response.speak(speechOutput).listen(reprompt).cardRenderer(guru_contactCardTitle, guru_email);
+        this.attributes['previousIntent'] = "AMAZON.HelpIntent";
+        this.response.speak(speechOutput).listen(reprompt);
         this.emit(':responseReady');
     },
     'AMAZON.CancelIntent': function () {
@@ -699,6 +762,9 @@ const initialhandlers = {
     },
     "AMAZON.RepeatIntent": function () {
         const intent = this.attributes["previousIntent"];
+        favThingFlag = true;
+        workDetailFlag = true;
+        repeatFlag = true;
         this.emit(intent);
     },
     "Unhandled": function () {
