@@ -258,5 +258,12 @@ to play guru game
 Want to know about Guru's likes, technical skills, work experience and more? Ask him. Want to test how well you know him? Play how well do you know guru.  
     
 ## Detailed description  
-This skill allows you to ask Guru questions on his likes, job, education, work experience, his technical skills, projects, publications, certifications, interests or you could ask to contact him and get his email address. 
-If you think you know him well enough then take the quiz, How well do you know guru! a simple game of quiz about guru and see how well you score.
+This skill allows you to ask Guru questions on his likes, job, education, work experience, his technical skills, projects, publications, certifications, interests or you could ask to contact him and get his email address.   
+If you think you know him well enough then take the quiz, How well do you know guru! a simple game of quiz about guru and see how well you score.  
+Using the skill with phrases:  
+say "open guru's diary" then you can ask things like "technical skills", "favorite color" etc. 
+Or use phrases like  
+"ask guru's diary about his technical skills"  
+"ask guru's diary for his contact"  
+"ask guru's diary about his publications"  
+"ask guru's diary what is his favorite song"  

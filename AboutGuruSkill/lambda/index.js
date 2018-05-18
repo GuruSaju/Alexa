@@ -20,11 +20,12 @@ const GAME_STATES = {
 const APP_ID = 'amzn1.ask.skill.6d5effc0-d416-47c5-8d9a-52fb0654f771';
 
 const SKILL_NAME = 'About Guru';
-const HELP_MESSAGE = 'You can ask guru about what he does, what he likes, his technical skills, his work experiences etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score. If you want to contact him say contact. What do you want to know about guru?';
+const HELP_MESSAGE = 'You can ask guru about what he does, what he likes, his technical skills, his work experiences, his projects, his interests, his publications etc.. or play, How well do you know Guru? a small trivia about guru and see how well you score. If you want to contact him say contact. What do you want to know about guru?';
 const HELP_REPROMPT = 'What do you want to know about guru?';
 const STOP_MESSAGE = 'Goodbye!';
-const CONTACT_REPROMPT = "Say contact guru to get his email address";
-const REPEAT_REPROMPT = "Say repeat if you would like to hear that again";
+const CONTACT_REPROMPT = " Say contact guru to get his email address";
+const REPEAT_REPROMPT = " Say repeat if you would like to hear that again";
+const LIKE_TO_KNOW = " Would you like to know anything else?";
 let workDetailFlag = true;
 let favThingFlag = true;
 let repeatFlag = false;
@@ -32,51 +33,51 @@ let repeatFlag = false;
 //Speech output constants about guru
 //=========================================================================================================================================
 
-const guru_work = "Guru works as an Full Stack Developer at Nationwide. Say work experience to know more about guru's work history";
-const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either guru or batman";
-const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. You can ask him about his likes, his technical skills, his work experiences and you can also play a trivia game How well do you know guru. What do you like to know about him ?";
+const guru_work = "Guru works as an Full Stack Developer at Nationwide. Say work experience to know more about guru's work history.";
+const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either guru or batman.";
+const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. You can ask him about his likes, his technical skills, his work experiences, his projects and you can also play a trivia game How well do you know guru. What do you like to know about him ?.";
 const guru_launch_reprompt = "What do you like to know about him ?";
 const guru_color = "His favourite colors are red and black. Although he always told me he wanted rainbow dyed hair";
-const guru_summary = "Guru is a Full Stack developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed. He also enjoys playing his ps4, running, racketball, watching cricket and football.";
-const guru_techskills = "Full Stack Development and proficient in a number of programming languages and scripting languages, databases, web services, tools and frameworks. I have sent all the details of his technical skills to your device. Say contact to get guru's email address";
-const guru_favActor = "His favourite actors are Hugh Jackman, Rajnikanth and Emma Watson";
-const guru_relationship = "He is single and No!, we are not in a relationship";
-const guru_favMovie = "He likes mystery, sci-fi and drama. His all time favourite movie is The Prestige directed by Christopher Nolan";
-const guru_nationality = "He is Indian. But he resides now in the US";
-const guru_contact = "You can ask him more by sending an email to him. I have sent his email address to your device";
-const guru_favAthlethe = "His most favourite is M.S. Dhoni";
-const guru_favSports = "He likes to watch Cricket, American Football and Hockey";
-const guru_favTeam = "His favourite club cricket team is Chennai Super Kings, his favorite college football team is Boise State Broncos, his favorite NHL team is Columbus Blue Jackets and his favorite NFL team is Dallas Cowboys";
-const guru_favFood = "He likes to eat everything except humans";
-const guru_education = "He has a Master's degree in Computer Science from Boise State University. He graduated with a  g p a of three point nine four. Go Broncos!. Say Boise State University to know more about his work and research at the university";
-const guru_favQuote = "It will be Alright in the end. If it is not Alright, it is not the end";
-const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Frank Sinatra";
-const guru_favCar = "He always wanted a Ford Mustang";
-const guru_favSuperhero = "His favorite superhero is The Wolverine";
-const guru_languages = "He knows Tha mil and English. His native language is Tha mil";
-const guru_favPlace = "His most favorite place is Boise, Idaho";
+const guru_summary = "Guru is a Full Stack developer with a passion for technology, development and innovation. He strongly believes that learning is a continuous process and that the best way to gain knowledge, is not only by learning but also by sharing. He enjoys working on both backend as well as frontend, with a constant lookout to learn new technologies currently used in the industry. His career path has helped him to develop strong problem-solving, communication, mentoring and leadership skills, along with the ability to work both as a team player as well as a solo performer when needed. He also enjoys playing his ps4, running, racketball, watching cricket and football. Say repeat to hear that again or say contact to get his email address.";
+const guru_techskills = "Full Stack Development and proficient in a number of programming languages and scripting languages, databases, web services, conversational interfaces, tools and frameworks. I have sent all the details of his technical skills to your device. Say contact to get guru's email address or say work experience to know about his work history.";
+const guru_favActor = "His favourite actors are Hugh Jackman, Rajnikanth and Emma Watson.";
+const guru_relationship = "He is single and No!, we are not in a relationship.";
+const guru_favMovie = "He likes mystery, sci-fi and drama. His all time favourite movie is The Prestige directed by Christopher Nolan.";
+const guru_nationality = "He is Indian. But he resides now in the US.";
+const guru_contact = "You can ask him more by sending an email to him. I have sent his email address to your device.";
+const guru_favAthlethe = "His most favourite is M.S. Dhoni.";
+const guru_favSports = "He likes to watch Cricket, American Football and Hockey.";
+const guru_favTeam = "His favourite club cricket team is Chennai Super Kings, his favorite college football team is Boise State Broncos, his favorite NHL team is Columbus Blue Jackets and his favorite NFL team is Dallas Cowboys.";
+const guru_favFood = "He likes to eat everything except humans.";
+const guru_education = "He has a Master's degree in Computer Science from Boise State University. He graduated with a  g p a of three point nine four. Go Broncos!. Say Boise State University to know more about his work and research at the university.";
+const guru_favQuote = "It will be Alright in the end. If it is not Alright, it is not the end.";
+const guru_favMusicBand = "He likes Ed Sheeran, Bruno Mars, A.R.Rahman and Frank Sinatra.";
+const guru_favCar = "He always wanted a Ford Mustang.";
+const guru_favSuperhero = "His favorite superhero is The Wolverine.";
+const guru_languages = "He knows Tha mil and English. His native language is Tha mil.";
+const guru_favPlace = "His most favorite place is Boise, Idaho.";
 const guru_favLeader = "He regards A.P.J Abdul Kalam as his inspiration.";
-const guru_favSongs = "His favorites are Strangers in the night by Frank Sinatra, Heroes by David Bowie, Hurt by Johnny Cash and Antha Arabi Kadalorum by A.R. Rahman";
+const guru_favSongs = "His favorites are Strangers in the night by Frank Sinatra, Heroes by David Bowie, Hurt by Johnny Cash and Antha Arabi Kadalorum by A.R. Rahman.";
 const guru_favSeason = "He prefers Spring.";
 const guru_favTvSeries = "It is none other than Breaking Bad.";
-const guru_favVideoGame = "Horizon Zero Dawn blew him away. Aloy All the way";
+const guru_favVideoGame = "Horizon Zero Dawn blew him away. Aloy All the way.";
 const guru_workExpereince = "He has around 3 plus years’ experience in development, research and teaching. I have sent a brief list of his work history to your device. Please say the name of the company to know more, or, say contact to get the email address of guru.";
 const guru_publications = "He has authored two publications, first one titled, A Certificateless One-Way Group Key Agreement Protocol, for Point-to-Point Email Encryption, and ,another titled, IMPROVED SUPERVISED CLASSIFICATION OF ACCELEROMETRY DATA, " +
-    "TO DISTINGUISH BEHAVIORS OF SOARING BIRDS";
+    "TO DISTINGUISH BEHAVIORS OF SOARING BIRDS.";
 const guru_certifications = "He has completed Java 8, Bash Shell Scripting and O O Concepts certifications by Brainbench.";
 const guru_nationwide = "As a member of a Test and Learn team and from a multi-speed IT perspective, his aim was to implement innovative systems of engagement, with agility and experimentation in order to optimize internet sales applications, and deliver"
     + " timely solutions within a rapidly evolving online environment. He and his team built innovative Test and learn features for our sales applications, Auto Insurance, Property Insurance, and Powersports Insurance, which could"
-    + "be switched on and off when needed, and had a line of separation from mainline code. I have sent more details about his work at Nationwide to your device";
+    + "be switched on and off when needed, and had a line of separation from mainline code. I have sent more details about his work at Nationwide to your device.";
 const guru_cic = "As a software engineer he worked on The Online Product Approval (OPA) application, which is a web-based workflow engine that manages the product development lifecycle, and dialog between the Product Development Associates and Licensee " +
     "partners. Online Product Approval (OPA) is a system used to accept, manage, and approve licensed product submissions. He worked on adding a new workflow module, in addition to the normal workflow, to accommodate the BPM team." +
     " I have sent more details about his work at Columbus International Corporation to your device";
 
 const guru_bsu = "As a Research Developer at the Computer Science department at Boise State university, he did research in cyber-security on point to point email encryption. He designed a protocol on point to point email encryption and developed software prototypes,"
-    + " as a teaching assistant he assisted in tutoring, teaching, mentoring and grading, as a hpc admin he helped other researchers in coding on a 16 node g p u clustered supercomputer. I have sent more details about his work at Boise State University to your device";
-const guru_bytebe = "As a part time java web developer at ByteBe, he worked on developing various web applications for various industries like granite, clubs and e-commerce. I have sent more details about his work at ByteBe to your device";
-const guru_abt = "As a Java Developer intern at ABT, he was working with the Java project team where he learned and developed web applications. I have sent more details about his work at ABT to your device";
-const guru_projects = "Please say the name of the organization or company he worked for, to know more on his projects or say, side projects to know about his other projects. What would you like to know?";
-const guru_sideProjects = "Guru has worked on several projects on his own and also for school in various technologies. I have sent a list of his projects to your device. In order to get his resume please contact him";
+    + " as a teaching assistant he assisted in tutoring, teaching, mentoring and grading, as a hpc admin he helped other researchers in coding on a 16 node g p u clustered supercomputer. I have sent more details about his work at Boise State University to your device.";
+const guru_bytebe = "As a part time java web developer at ByteBe, he worked on developing various web applications for various industries like granite, clubs and e-commerce. I have sent more details about his work at ByteBe to your device.";
+const guru_abt = "As a Java Developer intern at ABT, he was working with the Java project team where he learned and developed web applications. I have sent more details about his work at ABT to your device.";
+const guru_projects = "Please say the name of the organization or company he worked for, to know more on his projects or say, side projects to know about his other projects. Say work experience to get a list of his work experiences. What would you like to know?";
+const guru_sideProjects = "Guru has worked on several projects on his own and also for school in various technologies. I have sent a list of his projects to your device. In order to get his resume please contact him.";
 const guru_passion = "He is passionate about natural language processing, machine learning and voice interaction. He likes to keep himself updated on these topics by reading articles. He strongly believes in humanity and thinks AI, will help understand humanity better.";
 const guru_hobbies_interests = "He is interested in Full Stack Development, natural language processing, machine learning and voice interaction. He likes to learn new technologies and work on projects during his free time. Other than that he helps the programming community by comtributing to Stack Overflow. He also enjoys playing his ps4, running, racketball, watching cricket and football.";
 const guru_likes = "You can ask him about things he likes. You can for example ask What is his favorite car or What movie does he like. What would you like to know?";
@@ -94,21 +95,23 @@ const guru_techskills_card_content = "1. Programming Proficiency: \n " +
     "Core Java, Servlets, Spring, Struts, Hibernate, JSP, iBatis \n\n" +
     "3. Language/Scripting: \n" +
     "JavaScript, Angular JS, Node JS, JQuery, HTML5, CSS, Shell scripting \n\n" +
-    "4. Web Services: \n" +
-    "SOAP, Restful, Apigee \n\n" +
-    "5. Servers: \n" +
+    "4. Web Services/Cloud: \n" +
+    "SOAP, Restful, Apigee, AWS Lambda, Firebase \n\n" +
+    "5. Conversational Interfaces: \n" +
+    "Amazon Alexa, Microsoft Bot framework, DialogFlow \n\n" +
+    "6. Servers: \n" +
     "Apache Tomcat, JBoss, Webshpere. \n\n" +
-    "6. RDBMS: \n" +
+    "7. RDBMS: \n" +
     "Oracle, MySQL and NoSQL. \n\n" +
-    "7. IDE / Tools: \n" +
+    "8. IDE / Tools: \n" +
     "Eclipse, RAD, Spring STS, Net Beans and TOAD. \n\n" +
-    "8. Build & Project Tracking Tools: \n" +
+    "9. Build & Project Tracking Tools: \n" +
     "Jenkins, Maven, Ant, Bugzilla, Redmine, HP Quality Center, UCD. \n\n" +
-    "9. Operating Systems: \n" +
+    "10. Operating Systems: \n" +
     "Unix/Linux, Mac OS X, Windows. \n\n" +
-    "10. Version Control: \n" +
+    "11. Version Control: \n" +
     "Git, Fossil, SVN. \n\n" +
-    "11. Others: \n" +
+    "12. Others: \n" +
     "Amazon Alexa, Microsoft Bot Framework, Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap";
 const guru_work_title = "Guru's Work Experience";
 const guru_work_content = "Nationwide Insurance, Columbus OH, Full Stack Developer (Java/J2EE) from August 2017 – Present \n" +
@@ -145,9 +148,9 @@ const guru_work_bytebe_content = "PROJECTS: Websites for StoneBe, Kongu Associat
 const guru_work_abt_content = "PROJECT: E-Learning Web application where you can take a variety of courses and buy books \n" +
     "ENVIRONMENT: Java, JavaScript, JSP, Servlets, HTML, MySQL and CSS";
 
-const guru_side_projects_content = "1. Amazon Alexa Skill - aboutGuru using AWS and nodeJS \n 2. Single Page Application Website for Tekcel using Angular and Bootstrap \n 3. My Pet - An android " +
-    "app for pet owners using google maps and android java \n 4. Cloudy with a chance of Express JS - a simple weather app using node js, ejs and expressJS \n 5. Patient Registration and Monitoring System - using PHP and MySql" +
-    "\n 6. Nine Man Morris - nine morris game using java GUI which can be played against an AI \n 7. Data Model of Cricket Leagues - a data model of IPL league using TOAD data modeler";
+const guru_side_projects_content = "1. Amazon Alexa Skill - aboutGuru using AWS and nodeJS \n 2. Google Assistant Skill - aboutGuru using DialogFlow, Firebase and nodeJS \n 3. Single Page Application Website for Tekcel using Angular and Bootstrap \n 4. My Pet - An android " +
+    "app for pet owners using google maps and android java \n 5. Cloudy with a chance of Express JS - a simple weather app using node js, ejs and expressJS \n 6. Patient Registration and Monitoring System - using PHP and MySql" +
+    "\n 7. Nine Man Morris - nine morris game using java GUI which can be played against an AI \n 8. Data Model of Cricket Leagues - a data model of IPL league using TOAD data modeler";
 //=======================================================================================
 // Display Template constants
 //=======================================================================================
@@ -157,8 +160,10 @@ const guru_ts_title2 = " <font size=\"6\">Java/J2EE Frameworks:</font> <br/>";
 const guru_ts_content2 = "<font size=\"3\">Core Java, Servlets, Spring, Struts, Hibernate, JSP, iBatis</font> <br/><br/>";
 const guru_ts_title3 = " <font size=\"6\">Language/Scripting:</font> <br/>";
 const guru_ts_content3 = "<font size=\"3\">JavaScript, Angular JS, Node JS, JQuery, HTML5, CSS, Shell scripting</font> <br/><br/>";
-const guru_ts_title4 = " <font size=\"6\">Web Services:</font> <br/>";
-const guru_ts_content4 = "<font size=\"3\">SOAP, Restful, Apigee </font> <br/><br/>";
+const guru_ts_title4 = " <font size=\"6\">Web Services/Cloud:</font> <br/>";
+const guru_ts_content4 = "<font size=\"3\">SOAP, Restful, Apigee, AWS Lambda, Firebase </font> <br/><br/>";
+const guru_ts_title45 = " <font size=\"6\">Conversational Interfaces:</font> <br/>";
+const guru_ts_content45 = "<font size=\"3\">Amazon Alexa, Microsoft Bot framework, DialogFlow </font> <br/><br/>";
 const guru_ts_title5 = " <font size=\"6\">Servers:</font><br/>";
 const guru_ts_content5 = "<font size=\"3\">Apache Tomcat, JBoss, Webshpere.</font> <br/><br/>";
 const guru_ts_title6 = " <font size=\"6\">RDBMS:</font> <br/>";
@@ -172,9 +177,9 @@ const guru_ts_content9 = "<font size=\"3\">Unix/Linux, Mac OS X, Windows.</font>
 const guru_ts_title10 = " <font size=\"6\">Version Control:</font> <br/>";
 const guru_ts_content10 = "<font size=\"3\">Git, Fossil, SVN.</font> <br/><br/>";
 const guru_ts_title11 = " <font size=\"6\">Others:</font><br/>";
-const guru_ts_content11 = "<font size=\"3\">Amazon Alexa, Microsoft Bot Framework, Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap</font>";
+const guru_ts_content11 = "<font size=\"3\">Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap</font>";
 
-const guru_ts_bodyTemp1_content = guru_ts_title1 + guru_ts_content1 + guru_ts_title2 + guru_ts_content2 + guru_ts_title3 + guru_ts_content3 + guru_ts_title4 + guru_ts_content4
+const guru_ts_bodyTemp1_content = guru_ts_title1 + guru_ts_content1 + guru_ts_title2 + guru_ts_content2 + guru_ts_title3 + guru_ts_content3 + guru_ts_title4 + guru_ts_content4 +guru_ts_title45 + guru_ts_content45
     + guru_ts_title5 + guru_ts_content5 + guru_ts_title6 + guru_ts_content6 + guru_ts_title7 + guru_ts_content7 + guru_ts_title8 + guru_ts_content8 + guru_ts_title9 + guru_ts_content9
     + guru_ts_title10 + guru_ts_content10 + guru_ts_title11 + guru_ts_content11;
 
@@ -207,7 +212,7 @@ const guru_work_bytebe_bodyTemp_content = "<font size=\"6\">PROJECTS:</font><br/
 const guru_work_abt_bodyTemp_content = "<font size=\"6\">PROJECT:</font><br/> <font size=\"3\">E-Learning Web application where you can take a variety of courses and buy books </font> <br/><br/> " +
     "<font size=\"6\">ENVIRONMENT:</font><br/> <font size=\"3\">Java, JavaScript, JSP, Servlets, HTML, MySQL and CSS</font>";
 
-const guru_side_projects_bodyTemp_content = "<font size=\"5\"> Amazon Alexa Skill - aboutGuru</font><br/> <font size=\"3\">using AWS and nodeJS</font> <br/><br/> <font size=\"5\"> Single Page Application Website</font><br/><font size=\"3\">for Tekcel using Angular and Bootstrap</font> <br/><br/> <font size=\"5\"> My Pet </font><br/><font size=\"3\">An android " +
+const guru_side_projects_bodyTemp_content = "<font size=\"5\"> Amazon Alexa Skill - aboutGuru</font><br/> <font size=\"3\">using AWS and nodeJS</font> <br/><br/> <font size=\"5\"> Google Assistant Skill - aboutGuru</font><br/> <font size=\"3\">using DialogFlow, Firebase and nodeJS</font> <br/><br/><font size=\"5\"> Single Page Application Website</font><br/><font size=\"3\">for Tekcel using Angular and Bootstrap</font> <br/><br/> <font size=\"5\"> My Pet </font><br/><font size=\"3\">An android " +
     "app for pet owners using google maps and android java</font> <br/><br/> <font size=\"5\"> Cloudy with a chance of Express JS</font><br/> <font size=\"3\">a simple weather app using node js, ejs and expressJS</font> <br/><br/> <font size=\"5\"> Patient Registration and Monitoring System </font><br/><font size=\"3\">using PHP and MySql</font> <br/><br/>" +
     "<font size=\"5\"> Nine Man Morris</font><br/> <font size=\"3\">a game using java GUI which can be played against an AI</font> <br/><br/> <font size=\"5\"> Data Model of Cricket Leagues</font><br/> <font size=\"3\">a data model of IPL league using TOAD data modeler</font> <br/><br/>";
 
@@ -288,6 +293,7 @@ const initialhandlers = {
         }
 
         this.response.shouldEndSession(false);
+        this.response.listen(LIKE_TO_KNOW);
         this.attributes['previousIntent'] = "FavoriteIntent";
         if (favAboutThing != null) {
             this.attributes['favThing'] = favAboutThing;
@@ -428,17 +434,19 @@ const initialhandlers = {
         }
     },
     'ColorIntent': function () {
-        const speechOutput = guru_color;
+        const speechOutput = guru_color + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'SummaryIntent': function () {
         const speechOutput = guru_summary;
         this.response.speak(speechOutput);
+        this.attributes['previousIntent'] = "SummaryIntent";
+        this.response.shouldEndSession(false);
         this.emit(':responseReady');
     },
     'ActorIntent': function () {
-        const speechOutput = guru_favActor;
+        const speechOutput = guru_favActor + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
@@ -448,7 +456,7 @@ const initialhandlers = {
         this.emit(':responseReady');
     },
     'MovieIntent': function () {
-        const speechOutput = guru_favMovie;
+        const speechOutput = guru_favMovie + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
@@ -458,7 +466,7 @@ const initialhandlers = {
         this.emit(':responseReady');
     },
     'CarIntent': function () {
-        const speechOutput = guru_favCar;
+        const speechOutput = guru_favCar + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
@@ -470,32 +478,32 @@ const initialhandlers = {
         this.emit(':responseReady');
     },
     'SportsIntent': function () {
-        const speechOutput = guru_favSports;
+        const speechOutput = guru_favSports + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'SportspersonIntent': function () {
-        const speechOutput = guru_favAthlethe;
+        const speechOutput = guru_favAthlethe + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FoodIntent': function () {
-        const speechOutput = guru_favFood;
+        const speechOutput = guru_favFood + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'MusicIntent': function () {
-        const speechOutput = guru_favMusicBand;
+        const speechOutput = guru_favMusicBand + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FavQuoteIntent': function () {
-        const speechOutput = guru_favQuote;
+        const speechOutput = guru_favQuote + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FavSuperheroIntent': function () {
-        const speechOutput = guru_favSuperhero;
+        const speechOutput = guru_favSuperhero + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
@@ -505,37 +513,37 @@ const initialhandlers = {
         this.emit(':responseReady');
     },
     'FavPlaceIntent': function () {
-        const speechOutput = guru_favPlace;
+        const speechOutput = guru_favPlace + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FavLeaderIntent': function () {
-        const speechOutput = guru_favLeader;
+        const speechOutput = guru_favLeader + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FavSeasonIntent': function () {
-        const speechOutput = guru_favSeason;
+        const speechOutput = guru_favSeason + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FavSeriesIntent': function () {
-        const speechOutput = guru_favTvSeries;
+        const speechOutput = guru_favTvSeries + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FavVideoGameIntent': function () {
-        const speechOutput = guru_favVideoGame;
+        const speechOutput = guru_favVideoGame + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FavSportsTeamIntent': function () {
-        const speechOutput = guru_favTeam;
+        const speechOutput = guru_favTeam + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'FavSongIntent': function () {
-        const speechOutput = guru_favSongs;
+        const speechOutput = guru_favSongs + REPEAT_REPROMPT;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
@@ -544,7 +552,11 @@ const initialhandlers = {
         this.emit(':tellWithCard', speechOutput, guru_contactCardTitle, guru_email);
     },
     'TechnicalSkillsIntent': function () {
-        this.response.speak(guru_techskills).cardRenderer(guru_techskills_card_title, guru_techskills_card_content);
+        if (repeatFlag) {
+            this.response.speak(guru_techskills);
+        } else {
+            this.response.speak(guru_techskills).cardRenderer(guru_techskills_card_title, guru_techskills_card_content);
+        }
         if (this.event.context.System.device.supportedInterfaces.Display) {
             const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
             const template = builder.setTitle(guru_techskills_card_title)
@@ -573,6 +585,8 @@ const initialhandlers = {
             this.response.renderTemplate(template);
         }
         this.response.shouldEndSession(false);
+        repeatFlag = false;
+        this.attributes['previousIntent'] = "TechnicalSkillsIntent";
         this.emit(':responseReady');
     },
     'WorkExperienceIntent': function () {
@@ -580,14 +594,14 @@ const initialhandlers = {
             this.response.speak(guru_workExpereince);
         } else {
             this.response.speak(guru_workExpereince).cardRenderer(guru_work_title, guru_work_content);
-            if (this.event.context.System.device.supportedInterfaces.Display) {
+        }
+        if (this.event.context.System.device.supportedInterfaces.Display) {
                 const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
                 const template = builder.setTitle(guru_work_title)
                     .setTextContent(makeRichText(guru_work_BodyTemp_content))
                     .build();
                 this.response.renderTemplate(template);
-            }
-        }
+         }
         this.attributes['previousIntent'] = "WorkExperienceIntent";
         repeatFlag = false;
         this.response.shouldEndSession(false);
@@ -683,18 +697,18 @@ const initialhandlers = {
                 this.emit('WorkDetailIntent');
         }
         if (repeatFlag) {
-            this.response.speak(speechOutput);
+            this.response.speak(speechOutput + REPEAT_REPROMPT);
         } else {
-            this.response.speak(speechOutput).cardRenderer(title, card_content);
-            if (this.event.context.System.device.supportedInterfaces.Display) {
+            this.response.speak(speechOutput + REPEAT_REPROMPT).cardRenderer(title, card_content);
+        }
+        if (this.event.context.System.device.supportedInterfaces.Display) {
                 const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
                 const template = builder.setTitle(title)
                     .setTextContent(makeRichText(bodyTemp_content))
                     .build();
                 this.response.renderTemplate(template);
-            }
         }
-        this.response.listen(REPEAT_REPROMPT);
+        this.response.listen(LIKE_TO_KNOW);
         repeatFlag = false;
         this.emit(':responseReady');
     },
@@ -704,7 +718,7 @@ const initialhandlers = {
         this.emit(':responseReady');
     },
     'OtherProjectsIntent': function () {
-        this.response.speak(guru_sideProjects).cardRenderer(guru_side_projects_title, guru_side_projects_content);
+        this.response.speak(guru_sideProjects + CONTACT_REPROMPT).cardRenderer(guru_side_projects_title, guru_side_projects_content);
         if (this.event.context.System.device.supportedInterfaces.Display) {
             const builder = new Alexa.templateBuilders.BodyTemplate1Builder();
             const template = builder.setTitle(guru_side_projects_title)
@@ -713,7 +727,9 @@ const initialhandlers = {
             this.response.renderTemplate(template);
         }
         this.response.listen(CONTACT_REPROMPT);
+        this.attributes['previousIntent'] = "OtherProjectsIntent";
         this.response.shouldEndSession(false);
+        repeatFlag = false;
         this.emit(':responseReady');
     },
     'PassionIntent': function () {
@@ -729,6 +745,8 @@ const initialhandlers = {
     'ProjectsIntent': function () {
         const speechOutput = guru_projects;
         this.response.speak(speechOutput).listen(guru_projects);
+        this.attributes['previousIntent'] = "ProjectsIntent";
+        repeatFlag = false;
         this.emit(':responseReady');
     },
     'LikesIntent': function () {
@@ -766,6 +784,11 @@ const initialhandlers = {
         workDetailFlag = true;
         repeatFlag = true;
         this.emit(intent);
+    },
+    "AMAZON.NoIntent": function () {
+        const speechOutput = "Thank you for taking your time to know guru. Goodbye!";
+        this.response.speak(speechOutput);
+        this.emit(":responseReady");
     },
     "Unhandled": function () {
         const speechOutput = guru_contact;
