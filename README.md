@@ -23,27 +23,32 @@ Click on the skills and select Enable skill.
 If you have an android phone you are one of the lucky ones.
 You just have to click on the alexa icon.
 
-![alt text](https://github.com/GuruSaju/Alexa-aboutGuru/blob/2018.06/images/android.png)
+                      ![alt text](https://github.com/GuruSaju/Alexa-aboutGuru/blob/2018.06/images/android.png)
+
+
 Tap the button and speak to alexa.  
 
 ### IOS (After step 4)
 This is where it gets a little complicated. As you can see below there is no alexa icon
-![alt text](https://github.com/GuruSaju/Alexa-aboutGuru/blob/2018.06/images/ios.png)
+
+                  ![alt text](https://github.com/GuruSaju/Alexa-aboutGuru/blob/2018.06/images/ios.png)
+
 
 Amazon has not yet rolled this feature up for IOS but it is on the way. Meanwhile here is the workaround. 
 
 Once you have enabled the skill on your app in ios. Download the amazon app with below logo.
-![alt text](https://github.com/GuruSaju/Alexa-aboutGuru/blob/2018.06/images/appicon.png)
+
+                        ![alt text](https://github.com/GuruSaju/Alexa-aboutGuru/blob/2018.06/images/appicon.png)
 
 Open the amazon app not the amazon alexa app. Login with same credentials that you used for amazon alexa app. 
 Now tap on the alexa icon. just below the shopping cart in the upper right corner.
 
-![alt text](https://github.com/GuruSaju/Alexa-aboutGuru/blob/2018.06/images/iconlocation.png)
+                       ![alt text](https://github.com/GuruSaju/Alexa-aboutGuru/blob/2018.06/images/iconlocation.png)
 
  You will see a blue line at the bottom like this and you can use alexa. 
  Use the alexa app to see the contents that alexa sends to you. 
 
-![alt text](https://github.com/GuruSaju/Alexa-aboutGuru/blob/2018.06/images/talkalexa.png)
+                       ![alt text](https://github.com/GuruSaju/Alexa-aboutGuru/blob/2018.06/images/talkalexa.png)
 
 ## What to ask Alexa:
 
@@ -53,12 +58,13 @@ This skill allows you to ask Guru questions on his likes, job, education, work e
 If you think you know him well enough then take the quiz, How well do you know guru! a simple game of quiz about guru and see how well you score.
 
 ### Phrases:
-<b>A little background<b/> - once you enable a skill there will be an invocation name for that skill (guru’s diary) for my skill. So you have to use the invocation name to use my skill as described below. If the session is open (the blue ring on echo devices and blue line in your app glows) you can just ask alexa about me without the invocation name.
+A little background - once you enable a skill there will be an invocation name for that skill (guru’s diary) for my skill. So you have to use the invocation name to use my skill as described below. If the session is open (the blue ring on echo devices and blue line in your app glows) you can just ask alexa about me without the invocation name.
 Eg: what is his favorite movie? 
 But if the session ends then you should use the invocation name (guru’s diary) to ask about me 
 Eg: ask guru’s diary, what is his favorite color ?
 
 ### Using the skill with phrases:
+
 say "open guru's diary" then you can ask things like "technical skills", "favorite color" etc. (until session is open meaning the blue ring on echo devices and blue line in your app glows) 
 
 Or use phrases like
