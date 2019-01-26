@@ -33,7 +33,7 @@ let repeatFlag = false;
 //Speech output constants about guru
 //=========================================================================================================================================
 
-const guru_work = "Guru works as an Full Stack Developer at Nationwide. Say work experience to know more about guru's work history.";
+const guru_work = "Guru works as an Application Developer at L Brands. Say work experience to know more about guru's work history.";
 const guru_fullName = "His full name is Srisarguru Sridhar. He goes by either guru or batman.";
 const guru_launch = "Welcome to About Guru. This skill is to know about guru. If you don't know him well you can get to know him through this skill. You can ask him about his likes, his technical skills, his work experiences, his projects and you can also play a trivia game How well do you know guru. What do you like to know about him ?.";
 const guru_launch_reprompt = "What do you like to know about him ?";
@@ -90,11 +90,11 @@ const guru_email = "s.srisarguru@gmail.com";
 const guru_contactCardTitle = "Guru's Email Id";
 const guru_techskills_card_title = "Guru's Technical Skills";
 const guru_techskills_card_content = "1. Programming Proficiency: \n " +
-    "Java, C, C++, Android Java, SQL.\n\n" +
+    "Java, Go, C, C++, Android Java, SQL.\n\n" +
     "2. Java/J2EE Frameworks: \n" +
     "Core Java, Servlets, Spring, Struts, Hibernate, JSP, iBatis \n\n" +
     "3. Language/Scripting: \n" +
-    "JavaScript, Angular JS, Node JS, JQuery, HTML5, CSS, Shell scripting \n\n" +
+    "JavaScript, Angular JS, Node JS, Vue JS, JQuery, HTML5, CSS, Shell scripting \n\n" +
     "4. Web Services/Cloud: \n" +
     "SOAP, Restful, Apigee, AWS Lambda, Firebase \n\n" +
     "5. Conversational Interfaces: \n" +
@@ -112,9 +112,10 @@ const guru_techskills_card_content = "1. Programming Proficiency: \n " +
     "11. Version Control: \n" +
     "Git, Fossil, SVN. \n\n" +
     "12. Others: \n" +
-    "Amazon Alexa, Microsoft Bot Framework, Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap";
+    "Matlab, Cyber-Security, Latex, Python, PHP, Bootstrap";
 const guru_work_title = "Guru's Work Experience";
-const guru_work_content = "Nationwide Insurance, Columbus OH, Full Stack Developer (Java/J2EE) from August 2017 – Present \n" +
+const guru_work_content = "L Brands, Columbus OH, Application Developer (Java/J2EE) from August 2018 – Present \n" + 
+    "Nationwide Insurance, Columbus OH, Full Stack Developer (Java/J2EE) from August 2017 – August 2018 \n" +
     "Columbus International Corporation,Columbus OH, Software Engineer (Java/J2EE) from April 2017 – August 2017 \n" +
     "CS Department at Boise State University, Researcher and Developer (RA) from January 2015 – December 2016 \n" +
     "CS Department at Boise State University, Teaching Assistant from January 2015 – December 2016 \n" +
@@ -155,11 +156,11 @@ const guru_side_projects_content = "1. Amazon Alexa Skill - aboutGuru using AWS 
 // Display Template constants
 //=======================================================================================
 const guru_ts_title1 = "<font size=\"6\"> Programming Proficiency:</font> <br/>";
-const guru_ts_content1 = "<font size=\"3\">Java, C, C++, Android Java, SQL.</font> <br/><br/>";
+const guru_ts_content1 = "<font size=\"3\">Java, Go, C, C++, Android Java, SQL.</font> <br/><br/>";
 const guru_ts_title2 = " <font size=\"6\">Java/J2EE Frameworks:</font> <br/>";
 const guru_ts_content2 = "<font size=\"3\">Core Java, Servlets, Spring, Struts, Hibernate, JSP, iBatis</font> <br/><br/>";
 const guru_ts_title3 = " <font size=\"6\">Language/Scripting:</font> <br/>";
-const guru_ts_content3 = "<font size=\"3\">JavaScript, Angular JS, Node JS, JQuery, HTML5, CSS, Shell scripting</font> <br/><br/>";
+const guru_ts_content3 = "<font size=\"3\">JavaScript, Angular JS, Vue JS, Node JS, JQuery, HTML5, CSS, Shell scripting</font> <br/><br/>";
 const guru_ts_title4 = " <font size=\"6\">Web Services/Cloud:</font> <br/>";
 const guru_ts_content4 = "<font size=\"3\">SOAP, Restful, Apigee, AWS Lambda, Firebase </font> <br/><br/>";
 const guru_ts_title45 = " <font size=\"6\">Conversational Interfaces:</font> <br/>";
@@ -183,7 +184,8 @@ const guru_ts_bodyTemp1_content = guru_ts_title1 + guru_ts_content1 + guru_ts_ti
     + guru_ts_title5 + guru_ts_content5 + guru_ts_title6 + guru_ts_content6 + guru_ts_title7 + guru_ts_content7 + guru_ts_title8 + guru_ts_content8 + guru_ts_title9 + guru_ts_content9
     + guru_ts_title10 + guru_ts_content10 + guru_ts_title11 + guru_ts_content11;
 
-const guru_work_BodyTemp_content = "<font size=\"6\">Nationwide Insurance, OH </font><br/> <font size=\"4\">Full Stack Developer (Java/J2EE) from August 2017 – Present </font><br/><br/>" +
+const guru_work_BodyTemp_content =  "<font size=\"6\">L Brands, OH </font><br/> <font size=\"4\">Application Developer from August 2018 – Present </font><br/><br/>" +
+    "<font size=\"6\">Nationwide Insurance, OH </font><br/> <font size=\"4\">Full Stack Developer (Java/J2EE) from August 2017 – August 2018 </font><br/><br/>" +
     "<font size=\"6\">Columbus International Corporation, OH </font> <br/><font size=\"4\">Software Engineer (Java/J2EE) from April 2017 – August 2017 </font><br/><br/>" +
     "<font size=\"6\">CS Dept at Boise State University, ID </font><br/> <font size=\"4\">Researcher and Developer (RA) from January 2015 – December 2016 </font><br/><br/>" +
     "<font size=\"6\">CS Dept at Boise State University, ID </font><br/> <font size=\"4\">Teaching Assistant from January 2015 – December 2016 </font><br/><br/>" +
