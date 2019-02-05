@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "guru",
+            "invocationName": "guru's diary",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -269,6 +269,8 @@
                     "name": "WorkExperienceIntent",
                     "slots": [],
                     "samples": [
+                        "about his work experience",
+                        "What are his work experience",
                         "Where did he work previously",
                         "Where did he work before",
                         "What are his previous work experiences",
@@ -306,7 +308,8 @@
                         }
                     ],
                     "samples": [
-                        "What proejcts did he work on at {companyType}",
+                        "about his work at {companyType}",
+                        "What projects did he work on at {companyType}",
                         "about {companyType}",
                         "{companyType} projects",
                         "which projects he worked on at {companyType}",
@@ -741,6 +744,16 @@
                 {
                     "name": "companies",
                     "values": [
+                        {
+                            "name": {
+                                "value": "limited brands"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "l brands"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "columbus corporation"
