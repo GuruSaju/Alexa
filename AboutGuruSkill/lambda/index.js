@@ -65,6 +65,8 @@ const guru_workExpereince = "He has around 3 plus years’ experience in develop
 const guru_publications = "He has authored two publications, first one titled, A Certificateless One-Way Group Key Agreement Protocol, for Point-to-Point Email Encryption, and ,another titled, IMPROVED SUPERVISED CLASSIFICATION OF ACCELEROMETRY DATA, " +
     "TO DISTINGUISH BEHAVIORS OF SOARING BIRDS.";
 const guru_certifications = "He has completed Java 8, Bash Shell Scripting and O O Concepts certifications by Brainbench.";
+const guru_lbrands = "As an application developer of a omni channel ecommerce team he worked on implementing the new order mangement system using the microservice architecture with Golang." + 
+" This OMS system will be the working force behind the online sales of L Brands flagship brands like Victoria's secret and Pink and also support the brand's stores. I have sent more details about his work at L Brands to your device.";
 const guru_nationwide = "As a member of a Test and Learn team and from a multi-speed IT perspective, his aim was to implement innovative systems of engagement, with agility and experimentation in order to optimize internet sales applications, and deliver"
     + " timely solutions within a rapidly evolving online environment. He and his team built innovative Test and learn features for our sales applications, Auto Insurance, Property Insurance, and Powersports Insurance, which could"
     + "be switched on and off when needed, and had a line of separation from mainline code. I have sent more details about his work at Nationwide to your device.";
@@ -122,12 +124,18 @@ const guru_work_content = "L Brands, Columbus OH, Application Developer (Java/J2
     "Boise State University OIT, HPC Administration from June 2015 – August 2015 \n" +
     "ByteBe® Solutions India Private Limited, Part-time Developer from July 2013 – May 2014 \n" +
     "ABT Info Systems, Java Developer Intern from Dec 2012 – May 2013";
+const guru_work_lbrands_title = "Experience at L Brands";
 const guru_work_nationwide_title = "Experience at Nationwide";
 const guru_work_cic_title = "Experience at CIC";
 const guru_work_bsu_title = "Experience at BSU";
 const guru_work_bytebe_title = "Experience at ByteBe";
 const guru_work_abt_title = "Experience at ABT";
 const guru_side_projects_title = "Guru's Other Projects";
+
+const guru_work_lbrands_content = "PROJECTS:Order Management System (OMS) is a system which handles all the ecommerce sales of L brands right from browsing, checkout, shipping, returns, emails and so on. "+ 
+"Also worked on a product catalog application for internal business to view details of a product using different product ID's \n" +
+    "ENVIRONMENT: Java/J2EE, Springboot (current OMS), Golang (new OMS), Microservices, Kafka, JavaScript, jQuery, HTML, CSS, Vue JS, REST, Couch DB, My SQL, Consul, NGinx, Docker, Git, Jira.";
+    
 const guru_work_nationwide_content = "PROJECTS: PayPal Payment, Adobe Target for Auto, Property and Powersports, Chatbot for password reset, claims and smartride"
     + ", Amazon Alexa: Find an agent, FAQ, Claims, Smartride, Billing Inquiry and Bill Pay, Current Carrier, Predictive Coverages, Implementation of plugin framework for Powersports " +
     "Application and several API’s (internal and external) using APIGEE \n\n"
@@ -193,6 +201,10 @@ const guru_work_BodyTemp_content =  "<font size=\"6\">L Brands, OH </font><br/> 
     "<font size=\"6\">ByteBe Solutions India Private Limited, India</font><br/> <font size=\"4\">Part-time Developer from July 2013 – May 2014 </font><br/><br/>" +
     "<font size=\"6\">ABT Info Systems, India </font><br/> <font size=\"4\">Java Developer Intern from Dec 2012 – May 2013</font>";
 
+const guru_work_lbrands_bodyTemp_content = "<font size=\"6\">PROJECTS:</font><br/> <font size=\"3\">Order Management System (OMS) is a system which handles all the ecommerce sales of L brands right from browsing, checkout, shipping, returns, emails and so on. "
+    + "Also worked on a product catalog application for internal business to view details of a product using different product ID's </font> <br/><br/>"
+    + "<font size=\"6\">ENVIRONMENT:</font><br/> <font size=\"3\">Java/J2EE, Springboot (current OMS), Golang (new OMS), Microservices, Kafka, JavaScript, jQuery, HTML, CSS, Vue JS, REST, Couch DB, My SQL, Consul, NGinx, Docker, Git, Jira.</font>";
+    
 const guru_work_nationwide_bodyTemp_content = "<font size=\"6\">PROJECTS:</font><br/> <font size=\"3\">PayPal Payment, Adobe Target for Auto, Property and Powersports, Chatbot for password reset, claims and smartride"
     + ", Amazon Alexa: Find an agent, FAQ, Claims, Smartride, Billing Inquiry and Bill Pay, Current Carrier, Predictive Coverages, Implementation of plugin framework for Powersports " +
     "Application and several API’s (internal and external) using APIGEE </font> <br/><br/>"
@@ -638,6 +650,17 @@ const initialhandlers = {
         let speechOutput = null;
         let card_content = null;
         switch (company) {
+            case 'L Brands':
+            case 'Limited Brands':
+            case 'limited brands':
+            case 'l brands': {
+                //  this.response.speak(guru_nationwide).cardRenderer(guru_work_nationwide_title, guru_work_nationwide_content);
+                speechOutput = guru_lbrands;
+                title = guru_work_lbrands_title;
+                bodyTemp_content = guru_work_lbrands_bodyTemp_content;
+                card_content = guru_work_lbrands_content;
+                break;
+            }
             case 'nationwide':
             case 'nationwide insurance': {
                 //  this.response.speak(guru_nationwide).cardRenderer(guru_work_nationwide_title, guru_work_nationwide_content);
